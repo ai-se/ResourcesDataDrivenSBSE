@@ -5,6 +5,64 @@
 \usepackage{booktabs} % For formal tables
 \usepackage{url}
 
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{graphicx} 
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{rotating}
+\usepackage{eqparbox}
+\usepackage{wrapfig}
+\usepackage{mathtools}
+\usepackage{xspace}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{lstlinebgrd}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+
+\usepackage{lstautogobble}
+\usepackage[framemethod=tikz]{mdframed}
+\usetikzlibrary{shadows}
+\newmdenv[tikzsetting= {fill=white!20},roundcorner=10pt, shadow=true]{myshadowbox}
+\usepackage{graphics}
+\usepackage{colortbl} 
+\usepackage{multirow} 
+\usepackage{balance}
+\usepackage{picture}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{makecell}
+
+
+\usepackage{times}
+\usepackage{wasysym}
+
+\renewcommand\theadalign{cb}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand\ceil[1]{\lceil#1\rceil}
+\newcommand{\bibemph}[1]{{\em#1}}
+\newcommand{\bibemphic}[1]{{\em#1\/}}
+\newcommand{\bibsc}[1]{{\sc#1}}
+
+\usepackage{verbatim}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage[export]{adjustbox}
+\renewcommand{\footnotesize}{\scriptsize}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+\usepackage{caption}
+
+
 % Copyright
 %\setcopyright{none}
 %\setcopyright{acmcopyright}
@@ -14,6 +72,32 @@
 %\setcopyright{usgovmixed}
 %\setcopyright{cagov}
 %\setcopyright{cagovmixed}
+
+\usepackage{verbatim}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+\definecolor{MyDarkBlue}{rgb}{0,0.08,0.45} 
+\lstset{
+    language=Python,
+    basicstyle=\sffamily\fontsize{2.3mm}{0.8em}\selectfont,
+    breaklines=true,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=l,
+    showtabs=false,
+    escapechar=|,
+    columns=fullflexible,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\bfseries\sffamily,
+    emph={generate, fitness, recombination_op, elitism, ML.train, model, find_best_model, model_building}, emphstyle=\bfseries\color{blue!50!black},
+    stringstyle=\color{green!50!black},
+    commentstyle=\color{red!50!black}\it,
+    numbers=left,
+    captionpos=t,
+}
+
 
 % DOI
 \acmDOI{XX.YY/ZZ}
@@ -31,8 +115,9 @@
 \acmSubmissionID{123-A12-B3}
 
 \begin{document}
-\title{Research and Teaching
-Tools for Data-Driven Search-Based Software Engineering}
+\title{
+% Research and Teaching Tools for 
+Data-Driven Search-Based Software Engineering}
 % \titlenote{Produces the permission block, and
 %   copyright information}
 % \subtitle{Extended Abstract}
@@ -40,22 +125,17 @@ Tools for Data-Driven Search-Based Software Engineering}
 %   \texttt{acmart.pdf} document}
 
 \author{Vivek Nair, everyone else, Tim Menzies}
-% \authornote{Dr.~Trovato insisted his name be first.}
-% \orcid{1234-5678-9012}
 \affiliation{%
   \institution{North Carolina State University, USA}
-%   \streetaddress{P.O. Box 1212}
   \city{Raleigh} 
   \state{NC} 
   \postcode{27606}
 }
-\email{dchen20@ncsu.edu,  wfu@ncsu.edu,  tim@menzies.us}
+\email{}
 
 
 \begin{abstract}
-This paper provides a sample of a \LaTeX\ document which conforms,
-somewhat loosely, to the formatting guidelines for
-ACM SIG Proceedings.\footnote{This is an abstract footnote}
+This paper introduces ideas and resources for a new field of software engineering research: Data-Driven Search-based software engineering (DSE), which includes insights from Software Analytics (SA) and Search-based Software Engineering (SBSE). The paper argues that these domains within Software Engineering should not work in isolation but exchange ideas among them. Such techniques can be particularly useful for situations which require learning from a lot of data or optimizing problems which need resources. This paper also presents resources and report our experience of tackling various SE problems.  Among the numerous questions that we try to answer are: (1) What are the various topics addressed by DSE?, (2) What are the types of data used by the researchers, (3) What research approaches do researchers use?, and  (4) What are levels of simplifications that can be added to these approaches. The paper briefly sets out to act as a practical guide to develop new data-driven techniques and also serve as a teaching resource.
 \end{abstract}
 
 %
@@ -94,149 +174,476 @@ ACM SIG Proceedings.\footnote{This is an abstract footnote}
 % \ccsdesc[100]{Networks~Network reliability}
 
 
-\keywords{ACM proceedings, \LaTeX, text tagging}
+\keywords{}
 
 
 \maketitle
 
 % \input{samplebody-conf}
 \section{Introduction}
+Software Analytics (SA) and Search-based Software Engineering (SBSE) are two of the newer fields in Software Engineering (SE) which deals with searching through a lot of data or options to find useful and actionable information. However, these two areas have evolved in isolation from each other. 
+SA focuses on mining data generated during the software processes such as development, testing, etc. and uses various Machine Learning (ML) algorithms to extract information and relationships between different features of the collected data. 
+Hidden in these data is precious and valuable information about the quality of software and services and the dynamics of software development. Mining of Software Repositories is a conference which is focused on software analytics. SBSE, on the other hand, involved formulating a software engineering problems as a search problem and uses meta-heuristic algorithms to balance competing constraints, trade-offs between concerns and requirements. SBSE has opened venues which promotes reformulation of various software engineering problems and has provided numerous inspirations for improving SE.  SBSE uses a data-driven approach to find the optimal (or near optimal) solutions to software engineering problems with the use of a fitness function which is used to differentiate between good (favorable) and bad (unfavorable) solutions. Symposium of Search-based Software Engineering (SSBSE) and Symposium of Search-based Software Testing (SBST) are the two venues which are dedicated to the dissemination of information in this area.
 
-    \subsection{Why Actionable Software Analytics?}
-        Software analytics aim to
-        obtain actionable insights
-        from software artifacts that
-        help practitioners accomplish tasks 
-        related to software development, systems, 
-        and users.
-        
-        The key part of software analytics is to provide 
-        actionable insights, which means it have to 
-        ignore the unimportant and irrelevant information, 
-        while provide the most important one clearly and directly.
-        For example, if the manager is driving toward a cliff, 
-        we don’t want to distract her with analytics 
-        telling her about the clouds in the sky or 
-        the flowers on the side of the road. Instead, 
-        we want our smart analytics to shout in her ear, 
-        “There’s a cliff up ahead! Turn left immediately!”
-        
-        So why actionable software analytics? 
-        For software vendors, managers, developers and users, 
-        the actionable insights provided by software analytics 
-        are considered as the core deliverable~\cite{tan2016defining}. 
-        In fact, for software analytics with no actionable advice provided, 
-        it is hard to imagine its usefulness and existence. 
-        More importantly,
-        actionable insight is the key driver for businesses 
-        to invest in data analytics initiatives~\cite{sawyer2013bi}. 
+In a very loose sense, we can associate \textit{learning} with SA, since most of the work in this area attempts to learn from massive amounts of data, and \textit{optimization} with SBSE. In this paper, we show how learning and optimization are mutually inclusive---one cannot happen in isolation, which also goes to show that the field of SA and SBSE should not grow in isolation but rather exchange ideas.  
 
-    \subsection{Why heuristics work?}
-        Heuristics, together with logic and probability 
-        are three central ideas in the intellectual history of our mind.
-        Unlike statistical optimization procedures, 
-        heuristics do not try to find the best solution
-        but rather find a good-enough solution). 
-        Because of that, 
-        people tends to believe heuristics produce second-best results, 
-        while optimization is always better.
-        In spite of this one, Gigerenzer pointed out the other five common but erroneous beliefs about heuristics\cite{gigerenzer2008heuristics}, e.g. "People rely on heuristics only in routine
-        decisions of little importance", 
-        "People with higher cognitive capacities employ
-        complex weighting and integration of
-        information; those with lesser capacities use
-        simple heuristics", and 
-        "More information and computation is always
-        better".
-        
-        In the late 90s, Gigerenzer discovered 
-        the take-the-best heuristic is
-        both more frugal and more accurate than 
-        multiple regression
-        
-        Czerlinski et al. confirmed 
-        the take-the-best heuristic is
-        both more frugal and more accurate than 
-        multiple regression result for 20 real-world problems\cite{czerlinski1999good}. 
-        In 2006, Brighton showed for the first time that 
-        the take-the-best heuristic is 
-        often more accurate and frugal than
-        complex nonlinear algorithms, including neural networks, 
-        exemplar models, and classification and regression trees~\cite{brighton2006robust}. 
-        
-        So why do heuristics work? As Gigerenzer summarized in 2008, heuristics exploit evolved capacities that
-        come for free, and thus they can provide solutions to problems
-        that are different from strategies of logic and probability. 
-        
-        The take-the-best heuristic is designed to help choose
-        between two alternatives, thus could be adjusted for 
-        classification tasks, where each object needs to be assigned to
-        one of several classes. 
-        Basically, the resulting classification rule is a 
-        fast and frugal tree, which allows for a quick decision 
-        at each node of the tree~\cite{martignon2003naive}. 
-        
-    \subsection{What is Fast and Frugal Trees(FFTs)? }
-        Fast-and-frugal trees were proposed by Martignon et al. at 2018
-        as decision trees with exactly two branches extending
-        from each node, where either one or both branches is an exit
-        branch leading to a leaf~\city{martignon2008categorization}. 
-        That is to say, in an FFT,  every question posed by a node will 
-        trigger an immediate decision. Because FFTs have an exit
-        branch on every node, they usually make decisions faster
-        than common decision trees while
-        simultaneously being easier to understand and use.
+Let us draw a comparison between these two fields. Please note that SA is very similar to traditional data mining but on software engineering data or data obtained from software processes. 
+
+\noindent\textbf{Data:} SBSE predominantly uses meta-heuristics algorithms such as NSGA-II~\cite{deb2000fast}, SPEA~\cite{zitzler2001spea2} to navigate the space of possible options. These algorithms rely on fitness functions to differentiate between good and bad solutions. This means there is no universal fitness function, for every problem, there is an associated fitness function. Similarly in SA, which uses different kinds of data miners to model the given data (or a problem). Different kinds of data miners work best of different kinds of data. This goes to show both techniques of SA and SBSE needs to be adjusted to fit the needs of the problem or the practitioner. 
+
+\noindent\textit{Design Choice:} The choice of the fitness function (in SBSE) and data miner (in SA) depends on the type of data used for that experiments. 
+
+\noindent\textbf{Goals:} In SBSE, the meta-heuristic algorithms used in an experiment depends on the number of goals of the experiment. A single goal or single-objective problem can be solved using algorithms such as \textit{Simulated Annealing}~\cite{van1987simulated} or hill climbing~\cite{rudlof1997stochastic}, whereas for multiple goal or multi-objective problems can be solved using algorithms such as NSGA-II, SPEA, MOEA/D~\cite{zhang2007moea}. In SA, if the data table has no goal columns, then this is an \textit{unsupervised learning problem} which can be addressed by (say) finding clusters of similar rows using, say, K-means or expectation maximization. An alternate approach, taken by the Apriori association rule learner, is to assume that every column is a goal and to look for what combinations of any values predict for any combination of any other. If a table has one goal, then this is a \textit{supervised learning problem} where the task is to find combinations of values from the other columns that predict for the goal values. Note that for datasets with one discrete goal feature, it is common to call that goal the class of the dataset. If a table has multiple goals, then the ML model (or combination of models) should trade-off in goal space by domination predicates (dominance counts, dominance depth, dominance ranks).
+
+\noindent\textit{Design Choice:} The meta-heuristic algorithm (SBSE) or the data miner (SA) used for the experiments must be adjusted based on the number of goals in the experiment.
+
+\noindent\textbf{Computational Overhead:} In SBSE, the size of the search space and the number of constraints in it, govern the computational budget of the experiment. Larger the search space or a highly constrained space means the meta-heuristic algorithms requires long run times or high computational budget. In SA, the size of the dataset dictates the time required to train the chosen ML algorithm, and hence various engineering decisions need to be taken to handle the size of the data. 
+
+\noindent\textit{Design Choice:} The computational budget required to run both SBSE and SA techniques are governed by the size of the search space and data respectively.
+
+\noindent\textbf{Parameter Tuning:} In SBSE, the convergence of the meta-heuristic algorithms are governed by the parameters of the meta-heuristic algorithm~\cite{eiben2011parameter}. Similarly, in SA, the effectiveness of the ML algorithm used is controlled by its various parameters~\cite{fu2016tuning, fu2016differential, tantithamthavorn2016automated}. 
+
+\noindent\textit{Design Choice:} The performance of the meta-heuristic algorithm (in SBSE), and machine learning algorithms (in SA) is governed by the parameters used in them. 
+
+So, syntactically, there is much overlap between design choices in SBSE and SA. Hence we can say that learning and optimization go hand in hand and we should not treat both of these techniques in isolation. Instead, we should exchange ideas between these two domains. We call the marriage of these two fields by Data-Driven Search-based Software Engineering (DSE\footnote{DDSSE might be a more appropriate abbreviation but let us remove redundancy in the name.}). We appeal to the community that it is time to modify our approaches. It is not longer SBSE or SA. Let us tie these two domain and exchange ideas to bring the learning and searching closer---thereby learning from each other. \footnote{The geneses of the ideas presented in this paper happened in the \href{http://shonan.nii.ac.jp/shonan/blog/2016/09/08/data-driven-search-based-software-engineering/}{No.105 Data-Driven Search-Based Software Engineering}, where leading practitioners came together to propose and exchange ideas.}  
+
+The contributions of the paper are:
+\begin{itemize}
+    \item To show that optimization (SBSE) and learning (SA) goes hand in hand,
+    \item Provide resources to seed various research,
+    \item Provide teaching resources, which can be used to create DSE courses, and
+    \item Based on our experience, various strategies which can be used to make these DSE techniques more efficient.
+\end{itemize}
+
+
+\section{Background}
+
+\subsection{Search-based Software Engineering}
+The term search-based software engineering was coined by Jones and Harman~\cite{harman2001search} in 2001 and over the years have been used in various fields of software engineering for example, requirements~\cite{ZhangHL13, chen2017beyond}, automatic program repair~\cite{le2012genprog}, Software Product Lines~\cite{chen2017sampling, sayyad2013value, guo2017smtibea}, Performance configuration optimization~\cite{nair2017using, guo2017data, oh2017finding, nair2018finding} to name of few. SBSE has been applied to other fields and has their own surveys such as design~\cite{raiha2010survey}, model-driven engineering~\cite{boussaid2017survey}, genetic improvement of programs~\cite{petke2017genetic}, refactoring~\cite{mariani2017systematic}, Testing~\cite{silva2017systematic, khari2017extensive} as well as more general surveys~\cite{clarke2003reformulating, harman2007current}. To convert a software engineering problem to an optimization problem, most prior works use the following steps.
+
+\noindent\textbf{Data Collection or Model building: } SBSE process can either rely on a model, which represent a software process~\cite{boehm1995cost} or can be directly applied to any software engineering problem including problems which requires evaluating a solution by running a specific benchmark~\cite{krall2015gale}. This is very similar to model-driven engineering (MDE), and there are several works drawing parallels of these two fields~\cite{boussaid2017survey, kessentini2013searching}. Along with the data collection, it is also essential to determine the performance metric which needs to be optimized (the goal of optimization).
+
+\noindent\textbf{Representation: } The process of search starts by creating random solutions (valid or invalid) of certain problems. In some cases, practitioners have also tried to seed the initial population for faster convergence of the search process~\cite{saber2017seeding, chen2017beyond, chen2017sampling, henard2015combining}. The representation of these solutions is significant to generate the landscape of the problem (details in Section~\ref{sec:help}). The general representation of the problem uses either boolean or numerics. This representation can also be called as the \textit{Decision Space}.
+
+\noindent\textbf{Fitness Function: } A fitness function maps the solution (which is represented using numerics) to a numeric scale (also called as \textit{Objective Space}) which is used to distinguish between good and not so good solutions. This measure is a domain-specific measure (single objective) or measures (multi-objective) which is useful for the practitioners. Examples of various fitness used in SBSE are (i) difference between the lowest
+and the highest number of transformation elements~\cite{fleck2017model} or (ii) number of test cases passed~\cite{oliveira2016improved}. The fitness function determines the fitness landscape of the problem---which characterizes the problem and defines the `hardness' of the problem. Fitness landscape should not be too flat, which means the meta-heuristic algorithms cannot find the best possible direction to explore. Simply put fitness function is a transformation function which converts the point in the decision space to an objective space. 
+
+\noindent\textbf{Operators: } Meta-heuristic algorithms require \textit{recombination operators} such as crossover and mutation operators which can be applied along with \textit{elitism operator} to simulate the `survival of the fittest' strategy. The combination operator combines the features of various solutions in the population to generate new candidates---effectiveness of which is then measured using the fitness function. The elitism operator uses these fitness values to eliminate the not so good solutions from the population. The intuition behind this process is to remove bad solutions and move towards better solutions. 
+
+
+
+\subsection{Software Analytics}\label{sec:SA}
+Most decisions (resource allocation, effort estimation) in software engineering are based on the perception of people (decision makers). As the size of the software systems and the number of interactions (developers and consumers) grow, there is a growing need for data-driven decision-making solutions. Additionally, decision-makers often struggle to come to a conclusion or common consensus (when more than one decision maker is involved) under a lot of uncertainty. They constantly look for techniques that return solutions which are reliable and can assist the decision-making processes which in turn affect the product, team, and the processes. These concerns have drawn much attention to software measurement, software quality, and software cost/ effort estimation, namely descriptive and predictive analytics~\cite{bener2015lessons}. 
+
+SA can be used by the practitioners to build reliable models based on historical data or empirical observations. Using these models, decision makers can make informed decisions about how to manage resources, cost, developers, etc. Most of the work in SA follows the following steps.
+
+\noindent\textbf{Data Collection:} The primary process of SA starts with the collection of data from the software processes. This can be CK metrics from the source code~\cite{subramanyam2003empirical}, feature models from software product lines~\cite{sayyad2013value}, text dumps from Stackoverflow~\cite{agrawalwrong} to name a few. These data are divided into columns or features~\footnote{In case of textual data, it has to be tokenized and converted into a table.} and rows. Each column represents the features of the data whereas each row represents a data point (modules in case of CK metrics). Please note, the data may or may not have a target variable---used to quantify the performance of the data point. For example, CK metrics have been used to predict for defects in a software module, and in this case, the target variable associated to the CK metrics of a specific module can be the number of defects found in that module. Another aspect can be the preparation of data---fixing the weaker regions of the
+training data using \textit{resampling techniques}, so that the performance of the model trained using the (resampled) data improves dramatically~\cite{agrawal2017better, bennin2017mahakil}. It should be noted that in this scenario, it is assumed that there is some historical data (from past projects) which can be used to find the target variable (associated number of defects in our setting). But, there are instances, where such historical data is unavailable, which means the data (CK metrics) does not have a corresponding target variable~\cite{yang2016effort}. 
+
+\noindent\textbf{Clustering:} The data can be \textit{clustered} into various sub-classes either based on the target variable or based on the feature space. This is done to overcome the effects of data heterogeneity---the data can have local regions which behave very differently than other (sub-)regions. Prior work in this area has found that treating these regions in isolation can result in inconclusive results~\cite{menzies2011local, menzies2013local, bettenburg2012think}. A more profound finding by the prior work is that practitioners should not seek to find general principals which can be applied to many projects but rather focus on ways to find the best local lessons for groups of related projects. 
+
+\noindent\textbf{Pruning: }Data Pruning can be divided into two major classes---(i) Row Pruning, and (ii) Columns Pruning. Row pruning can be either done to divide the available data into different subsets (similar to clustering) or to remove columns which adds uncertainty or noise to the data. Column Pruning is beneficial only to consider columns which affect the target variable. This removes unwanted noise from the data as well as reduces the cost of data collection in the future projects~\cite{kirsopp2003case, hall2003benchmarking, chen2005finding, gao2011choosing}.\footnote{If a model is built using all the features available; it means that all the future projects need to extract all these features from the available data. This increases the cost of data collection in the future. } Other advantages of data pruning are: reducing variance in model predictions, removing irrelevant data points and noise removal.
+
+\noindent\textbf{Learner selection and Parameter Tuning: } The machine learning algorithms or the learner used in SA experiments are selected carefully. ML domain has several techniques and best practices that are used to choose the best algorithms~\cite{witten2016data, malkomes2016bayesian}. Hall et al. showed a ranking list of various learners, which best suited for defect prediction in software projects. However, these ranking cannot be trusted without careful varying the parameters of the model. The ranking of the learners, as presented by Hall et al.~\cite{hall2012systematic}, change drastically when the parameters of the learners are changed~\cite{fu2016tuning, tantithamthavorn2016automated, fu2017easy}. 
+
+\section{Data-driven Software Engineering: How SBSE met SA}
+A lot of work in SBSE and SA have tried and solved various software engineering problems using very different techniques. SBSE focused on formalizing the problem as an optimization problem, where as SA treated the problem as a learning problem---building a model which can be used to characterize the problem or feature space. Even though the strategies used in both these domains are different, we claim that practitioner in both the domains can learn from the advances in the other community. In this section, we would describe simple scenarios on how techniques from SA can be used to increase the effectiveness of SBSE techniques and vice versa. 
+
+\begin{figure}[t]
+\small
+\hspace{0.4cm}\begin{lstlisting}[xrightmargin=5.0ex,mathescape,frame=none,numbers=right]
+  # A Traditional bare-bone algorithm
+  def EA(problem, pop_size, budget):
+  # Generate the decision space by randomly generating solutions
+  initial_pop = [generate(random=True) for _ in range(pop_size)]
+  # Evaluate all the individuals in the initial_pop using problem 
+  # specific fitness function
+  pop = [individual.fitness(problem) for individual in initial_pop]
+  while budget > 0:
+    # Generate mutant or new individuals by recombining individuals from pop
+    # Size of new_pop is equal to size of pop.
+    new_pop = recombination_op(pop)
+    # Evaluate the mutants from the new_pop
+    new_pop = [mutant.fitness(problem) for mutant in new_pop]
+    # Select the best performing individual from pop + new_pop
+    pop = elitism(new_pop + pop)
+    # Reduce the budget by 1. 
+    budget -= 1
+  return pop
+
+\end{lstlisting}
+\caption{\small{Psuedocode of Evolutionary Algorithm.}
+}
+\label{fig:EA}  
+\end{figure}
+
+\subsection{How techniques from SA can help SBSE?}\label{sec:help}
+
+The whole process of SBSE can be simplified using a \textit{black-box model}---where a searcher (meta-heuristic algorithm) probes the black-box (fitness evaluation) to find the maximum or minimum value. The process can also be simplified using the notion of \textit{landscape}. A problem has two landscape associated with it namely (i) decision landscape, and (ii) objective or fitness landscape. It is fair to assume that these landscapes are correlated, which means that data points which are close in decision space are also close in the objective space. 
+The objective of a searcher is to efficiently search through the decision space and probe the black-box model to the maximum (or minimum) in the fitness landscape.
+
+In essence, the whole process of searching can be described as a strategy to maneuver the fitness landscape. Using this terminology, let us try to redefine a meta-heuristic based on the black-box model. We use an Evolutionary algorithm as a representative meta-heuristic algorithm since EA has by far the most widely used algorithm in practise~\cite{nair2016accidental}.
+An Evolutionary Algorithm (EA) uses a population-based method to find the maximum or minimum value in the function (or a fitness landscape). It is called evolutionary since it iteratively selects `promising' solutions and improves them by using recombination operators. It starts by \textit{generating} a population (either randomly or using some heuristics or checks). These are solutions evaluated using fitness function or probing the black-box. The combination operators use the population and the associated fitness function to generate a new population. This new population ideally explores areas which are considered more `promising'---higher fitness value than the prior generation. This means EAs uses the current population to move towards the most promising region or regions of the fitness space. 
+
+Since SBSE, depends on a population-based strategy, it is plagued with slow runtimes and convergence rates. This makes it infeasible for cases where each model evaluation is expensive. For example, if we want to find the (near) optimal configuration (e.g., minimizing the load time for a specific benchmark) of an Apache web server. The configuration space in our setting represents the decision space with constraints---constrained by the feature model, which represents the constraints among the configuration options. The fitness function represents executing the workload for a specific configuration. This can be very time consuming, and SBSE techniques is not a viable option for these kinds of problems. In the optimization literature, these types of problems are referred to as \textit{expensive problems}. 
+
+In SA, an ML algorithm is used to model the data. The model is then used to answer questions of the stakeholder (as seen in section~\ref{sec:SA}). In problems, where fitness evaluation is expensive, we can use an ML model to learn the (approximate) landscape of the configuration space. The machine learning model now becomes a cheap black-box, which can be probed for free (since predicting a data point (using an ML model) requires almost no time). This is also known as surrogate-based optimization (refer to \cite{jin2011surrogate} for more details). 
+
+In Figure~\ref{fig:EA},  we list a generic algorithm for EA. The algorithm starts with randomly generating a population (\textit{initial\_pop}) of size (\textit{pop\_size}) (Line 4). All the individuals in the \textit{initial\_pop} is evaluated and stored in \textit{pop} (Line 5). In literature, the size of the \textit{new\_pop} is equal to the size of the \textit{pop}. A new population (\textit{new\_pop}) is generated using recombination operators (Line 11). The fitness of the newly generated individuals are evaluated (Line 13) after which an elitism operator is used to filter out the not so `promising' individuals (Line 15).  This process continues till the budget runs out (number of generations in our setting).
+EA can be slow since it evaluates all the newly created individuals in the while loop (Line 8-17) and makes it unsuitable to use for problems where the cost (time or resources) required to evaluate the \textit{fitness} of an individual is high.
+
+\begin{figure}[t]
+\small
+\hspace{0.4cm}
+\begin{lstlisting}[xleftmargin=5.0ex,mathescape,frame=none,numbers=left,linebackgroundcolor={%
+        \ifnum\value{lstnumber}>11
+            \ifnum\value{lstnumber}<25
+                \color{gray!25}
+            \fi
+        \fi},autogobble=true,]
+  # A SA based EA
+  def EA(problem, pop_size, budget, gen_budget):
+  # List to collect all evaluated individuals
+  evaluated = list()
+  # Generate the decision space by randomly generating solutions
+  initial_pop = [generate(random=True) for _ in range(pop_size)]
+  # Evaluate all the individuals in the initial_pop using problem 
+  # specific fitness function
+  pop = [individual.fitness(problem) for individual in initial_pop]
+  evaluated += pop
+  while budget > 0:
+    # Generate mutant or new individuals by recombining individuals from pop.
+    # Size of new_pop is much larger to size of pop.
+    new_pop = recombination_op(pop){
+    # Train a machine learning model using individuals from pop 
+    model = ML.train(evaluated)
+    # Evaluate new_pop using the model---cheaper than individual.fitness 
+    pred_new_pop = [model.fitness(individual) for individual in new_pop]
+    # Only evaluate the most promising candidates defined by gen_budget
+    new_pop = sorted(pred_new_pop, reverse=True).select(gen_budget)
+    # Evaluate the individual which are predicted to be promising
+    new_pop = [selected.fitness(problem) for selected in new_pop]
+    # Adding evaluated individuals
+    evaluated += new_pop
+    # Select the best performing individual from pop + new_pop
+    pop = elitism(pred_new_pop + pop)
+    # Reduce the budget by 1. 
+    budget -= 1
+  return pop
+
+\end{lstlisting}
+\caption{\small{Psuedocode of combining SA technique to a SBSE technique.}
+}
+\label{fig:SAEA}  
+\end{figure}
+
+To overcome this problem of EA, we can use an ML algorithm to learn the landscape of the problem. We can use already evaluated individuals to train an ML model to learn the landscape and only evaluate the promising individuals (as predicted by the ML model). In Figure~\ref{fig:SAEA}, we show the EA algorithm which incorporates an ML model (shown in the shaded region)  to reduce the number of evaluations. Similar to EA, a \textit{new\_pop} is generated by recombining the individuals from the \textit{pop} (Line 11). The only difference (from EA) is, the size of the \textit{new\_pop} is much larger than the size \textit{pop}. The already evaluated individuals are used to train an ML model (Line 13). This trained model, \textit{model}, is then used to predict the fitness values of the solutions in \textit{new\_pop} (Line 18). The \textit{pred\_new\_pop} is then sorted (assuming larger fitness value is good) and only \textit{gen\_budget} number of individuals are selected (Line 22). All the individuals in \textit{gen\_budget} is stored in the \textit{evaluated} list for subsequent model training (Line 24). This process continues till a budget is reached. 
+
+This is a very simplistic approach to reduce the cost of running the EAs and increasing the convergence rate. For example, in the Figures~\ref{fig:EA},~\ref{fig:SAEA}, if the $\mathit{pop\_size}=100$, $\mathit{budget}=10$, and $\mathit{gen\_budget}=10$, the total number of fitness evaluations (probing) done by EA is 1100 ($100 + 10\times100$), whereas in SA inspired EA it is 200 ($100 + 10\times10$). Please note, this is only one of the many possible strategies to use an SA technique to improve the performance of an EA (both in terms of time and convergence). In section~\ref{sec:scenarios}, we describe several strategies to solve an SBSE problem using techniques from SA. 
+
+
+\begin{figure}[t]
+\small
+\hspace{0.4cm}
+\begin{lstlisting}[xrightmargin=5.0ex,mathescape,frame=none,numbers=right]
+  # Analytic Task
+  def model_building(ml_alg, train_data, test_data,parameter=default):
+    # Train the classifier using the default parameter using the training data
+    model = ml_alg(parameter).train(train_data.features, train_data.label)
+    # Trained model is used to predict the labels of the test data
+    return model.predict(test_data.features)
+\end{lstlisting}
+\caption{\small{Psuedocode of the analytic task}
+}
+\label{fig:SA_default}  
+\end{figure}
+
+
+\begin{figure}[t]
+\small
+\hspace{0.4cm}
+\begin{lstlisting}[xrightmargin=5.0ex,mathescape,frame=none,numbers=right,linebackgroundcolor={%
+        \ifnum\value{lstnumber}>9
+            \ifnum\value{lstnumber}<30
+                \color{gray!25}
+            \fi
+        \fi},autogobble=true,]
+  # Analytic Task
+  def model_building(ml_alg, parameter_space, train_data, test_data):
+    # Find the best parameter to train a classifier using the training data
+    parameter = find_best_model(ml_alg, parameter, space, train_data)
+    # Train a model using the parameter 
+    model = ml_alg(parameter).train(train_data.features, train_data.label)
+    # Trained model is used to predict the labels of the test data
+    return model.predict(test_data.features)
+  # An EA
+  def find_best_model(ml_alg, parameter_space, train_data, budget):
+    # The training data is split into two. 
+    train_1, train_2 = train_data.split()
+    # Initial population---parameters of classifier is generated
+    initial_pop = [generate(parameter_space) for _ in range(pop_size)]
+    # The performance of the parameters is measured by training a model with a 
+    # specific parameter on the train_1 and testing on train_2
+    pop = [ind.fitness(ml_alg,train_1,train_2) for ind in initial_pop]
+    while budget > 0:
+      # Generate mutant or new individuals by recombining individuals from pop
+      # Size of new_pop is equal to size of pop.
+      new_pop = recombination_op(pop)
+      # Evaluate the mutants from the new_pop
+      new_pop = [mut.fitness(ml_alg,train_1,train_2) for mut in new_pop]
+      # Select the best performing individual from pop + new_pop
+      pop = elitism(new_pop + pop, performance)
+      # Reduce the budget by 1. 
+      budget -= 1
+    # Return the parameter which gave the best result
+    return max(pop)
+
+\end{lstlisting}
+\caption{\small{Psuedocode of combining SBSE technique to enhance SA.}
+}
+\label{fig:EASA}  
+\end{figure}
+
+
+\subsection{How strategies from SBSE can help SA}
+
+SA utilizes data-driven approaches to enable software practitioners to perform data exploration and analysis to obtain insightful and actionable information. To handle the volume of the data produced during the software development problem, SA practitioners use analytic tools to find patterns in the data. The process of SA can be broadly divided into the data preparation and the analytic task which is performed on the data. An example of SA task can be a classification task, such as defect prediction, where historical data is used to classify the software modules as defect prone or non-defective. This can be then used to concentrate testing efforts. 
+
+In this section, we would concentrate on how techniques from SBSE can be used to improve the analytic task of software analytics. Once the data is prepared, cleaned, and resampled for the practitioner to use, the next important task is to find the best suited analytic tools. The community is divided as to which analytic tool is the most effective. There have been several ranking studies, which tried to rank classifier based on their effectiveness~\cite{lessmann2008benchmarking,hall2012systematic,elish2008predicting,menzies2010defect,gondra2008applying}. However, they do not consider the parameter of the classifiers. In the machine learning community, hyper-parameter tuning is one of the most critical steps of the model building---which was not explored, until recently, in SA. Hyper-parameter tuning requires adjusting the parameters (of classifiers) to maximize the performance measure, such as Precision, recall. This problem in itself is an optimization problem, which can be solved using techniques from SBSE. 
+
+In Figure~\ref{fig:SA_default}, we list a generic algorithm for an SA task. The algorithms start with training a classifier (\textit{ml\_alg}) using the training data or the historical data (Line 4). The parameter used to train the classifier is the default parameter---as provided by the library developers. The trained classifier (\textit{model}) is then used to predict the labels of the testing data (Line 6). Testing data in our setting, are the code base which is yet to be tested. 
+
+In Figure~\ref{fig:EASA}, we list a generic algorithm of how the effectiveness of an SA task can be enhanced by using the SBSE technique. The code highlighted in \textcolor{gray}{gray} is the SBSE technique used. Here, unlike the usual SA task, rather than using the default parameter, the practitioner provides the parameter space---space which contains the best parameter (Line 2). Please note that the size of the parameter space is decided based on the budget (\textit{budget}) available to perform hyper-parameter tuning. Next step is to used the EA (\textit{find\_best\_model}) to find the parameters which would result in the best classifier (\textit{model}) (Line 4). In \textit{find\_best\_model}, the training data (\textit{train\_data}) is divided into two parts (\textit{train\_1} and \textit{train\_2}) (Line 12). The initial population (\textit{initial\_pop}) is generated from within the parameter space provided by the practitioner (Line 14). The initial population contains parameters of the classifier. The fitness of the parameter is evaluated by training  the classifier (\textit{ml\_alg}) using \textit{train\_1} and testing its performance on \textit{train\_2} (Line 17). The search process to find the best parameter is same as described in Figure~\ref{fig:EA}. Once EA terminates the best parameter is selected and returned (Line 29). The model is then trained using the parameter returned by \textit{find\_best\_model} (Line 6). The trained classifier (\textit{model}) is then used to predict the labels of the testing data (Line 8). This process has proven to be very useful in multiple domains~\cite{fu2016tuning, fu2016differential, fu2017easy, agrawal2017better, tantithamthavorn2016automated}.
+
+\cite{mathew2017shorter}
+
+\begin{table*}[]
+\centering
+\caption{Different problems and associated strategies explored in this paper. The characteristic of the decision space (C/D) represents whether there are continuous or discrete in nature. The column Links represent the URL from where the problems can be download (prefix http://tiny.cc/ to the Link)}
+\label{tbl:only1}
+\begin{tabular}{@{}cp{3cm}cp{0.7cm}rp{3cm}lr@{}}
+\toprule
+\textbf{Domain} & \textbf{Problem} & \textbf{Decision Space} & \textbf{C/D} & \textbf{Projects} & \textbf{Description} & \textbf{Links} & \textbf{Related Work} \\ \midrule
+ & Defect Prediction & Numeric & D & 10 & CK Metric & \href{http://tiny.cc/raise_data_defect}{raise\_data\_defect} & \cite{fu2016tuning} \\
+ & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \multicolumn{1}{c}{\cellcolor[HTML]{EFEFEF}} & \cellcolor[HTML]{EFEFEF}1 & \cellcolor[HTML]{EFEFEF}Citamap & \cellcolor[HTML]{EFEFEF}\href{http://tiny.cc/raise_data_pits}{raise\_data\_pits} & \cellcolor[HTML]{EFEFEF} \\
+ & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \multicolumn{1}{c}{\cellcolor[HTML]{EFEFEF}} & \cellcolor[HTML]{EFEFEF}6 & \cellcolor[HTML]{EFEFEF}Pits & \cellcolor[HTML]{EFEFEF}\href{http://tiny.cc/raise_data_pits}{raise\_data\_pits} & \cellcolor[HTML]{EFEFEF} \\
+\multirow{-4}{*}{SA} & \multirow{-3}{*}{\cellcolor[HTML]{EFEFEF}Text Classification} & \multirow{-3}{*}{\cellcolor[HTML]{EFEFEF}Text} & \multicolumn{1}{c}{\multirow{-3}{*}{\cellcolor[HTML]{EFEFEF}-}} & \cellcolor[HTML]{EFEFEF}1 & \cellcolor[HTML]{EFEFEF}StackOverflow & \cellcolor[HTML]{EFEFEF}\href{http://tiny.cc/SOProcess}{SOProcess} & \multirow{-3}{*}{\cellcolor[HTML]{EFEFEF}\cite{agrawalwrong}} \\ \midrule
+ & Software Product Lines & Boolean & D & 5 & Product Lines & \href{http://tiny.cc/raise_data_SPL}{raise\_data\_SPL} & \cite{chen2017sampling} \\
+ & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF}7 & \cellcolor[HTML]{EFEFEF}DTLZ & \cellcolor[HTML]{EFEFEF}\href{http://tiny.cc/raise_dtlz_zdt}{raise\_dtlz\_zdt} & \cellcolor[HTML]{EFEFEF} \\
+ & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}General Optimization} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}Numeric} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}C} & \cellcolor[HTML]{EFEFEF}6 & \cellcolor[HTML]{EFEFEF}ZDT & \cellcolor[HTML]{EFEFEF}\href{http://tiny.cc/raise_dtlz_zdt}{raise\_dtlz\_zdt} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}\cite{nair2016accidental}} \\
+ & Workflow & Numeric & D & 20 & Workflow & \href{http://tiny.cc/raise_gen_workflow}{raise\_gen\_workflow} & \cite{chen2017riot} \\
+ & \cellcolor[HTML]{EFEFEF}\begin{tabular}[c]{@{}l@{}}Performance\\Optimization\end{tabular} & \cellcolor[HTML]{EFEFEF}Mixed & \cellcolor[HTML]{EFEFEF}D & \cellcolor[HTML]{EFEFEF}22 & \cellcolor[HTML]{EFEFEF}Performance Configuration optimization & \cellcolor[HTML]{EFEFEF}\href{http://tiny.cc/raise_data_perf}{raise\_data\_perf} & \cellcolor[HTML]{EFEFEF}\cite{nair2017faster, nair2017using, nair2018finding} \\
+ & Text Discovery & Text & - & 4 & Reading Faster & \href{http://tiny.cc/raise_data_fastread}{raise\_data\_fastread} & \cite{yu2016read} \\
+ & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF}5 & \cellcolor[HTML]{EFEFEF}Xomo & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} \\
+ & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}Software Processes} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}Numeric} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}C} & \cellcolor[HTML]{EFEFEF}4 & \cellcolor[HTML]{EFEFEF}POM3 & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}\href{http://tiny.cc/raise_pom_xomo}{raise\_pom\_xomo}} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}\cite{nair2016accidental, chen2017beyond}} \\
+\multirow{-9}{*}{SBSE} & \begin{tabular}[c]{@{}l@{}}Requirement\\ Engineering\end{tabular} & Numeric & D & 8 & \begin{tabular}[c]{@{}l@{}}Requirement\\ Engineering\end{tabular} & \href{http://tiny.cc/raise_short}{raise\_short} & \cite{mathew2017shorter} \\ \bottomrule
+\end{tabular}
+\end{table*}
+
+
+
+\section{Resources for Data-driven Software Engineering}\label{sec:scenarios}
+In this section, we describe the data-driven strategies to solve SA and SBSE problem from different domains. Table~\ref{tbl:only1} shows the problems used in this section.
+    \subsection{Software Product Lines}
+    \textbf{Problem Domain: } SBSE
     
-         provides an example of fast and frugal tree. 
-        
-        ~\ref{fig:fft-demo} presents an FFT designed to classify a change
-        as being bug or not.
-        The three nodes in the FFT correspond to the results of
-        three features/cues: wmc, rdc, ce
-        
-        % thal indicates the result of a thallium
-        % scintigraphy, a nuclear imaging test that shows how well
-        % blood flows into the heart while exercising or at rest. The
-        % result of the test can either be normal (n), indicate a fixed
-        % defect (fd), or a reversible defect (rd). The second node
-        % uses the cue cp, indicating a patient’s type of chest pain,
-        % which can be either typical angina (ta), atypical angina (aa),
-        % non-anginal pain (np), or asymptomatic (a). Finally, ca
-        % indicates the number of major vessels colored by fluoroscopy,
-        % a continuous x-ray imaging tool, whose values can range
-        % from 0 to 3.
-        
-        
-        \begin{figure}[!t]
-            \centering
-            \includegraphics[width=3.1in]{img/fft-demo.png}
-            \caption{An example Fast Frugal Tree on the log4j dataset. 
-            (Generated by 
-            \href{https://econpsychbasel.shinyapps.io/ShinyFFTrees/}{ShinyFFTrees} 
-            from Nathaniel.)
-            }
-            \label{fig:fft-demo}
-        \end{figure}
+    \noindent\textbf{Problem:} With fast-paced development cycle, traditional code-reuse techniques have been infeasible. Now, Software companies are moving a software product line model to reduce cost and increase reliability. Companies concentrate on building software out of core components, and quickly use these components with specializations for certain customers. This allows the companies to have a fast turn around time. In a more concrete sense, a software product line (SPL) is a collection of related software products, which share some core functionality~\cite{harman2014search}. From one product line, many products can be generated. 
     
-    \subsection{Why use FFTs?}
-        A lot of recent works have shown that the fast and frugal tree 
-        could performs comparably well to the complex models in different kinds of domains, e.g. public health, medical risk management, performance science, etc.~\cite{jenny2013simple, laskey2014comparing, raab2015power}
+    \begin{figure}[!t]
+ \includegraphics[width=\linewidth]{img/ft.png}
+\caption{Feature model for mobile phone product line. To form a mobile phone, ``Calls'' and ``Screen'' are the mandatory features(shown as \textit{solid $\bullet$}), while the ``GPS'' and ``Media'' features are optimal(shown as \textit{hollow $\circ$}). The ``Screen'' feature can be ``Basic``, ``Color'' or ``High resolution'' (the \textit{alternative} relationship). The ``Media'' feature contains ``camera'', ``MP3'', or both (the \textit{Or} relationship).}
+\label{fig:mobile}
+\end{figure}
 
 
-\section{Methods}
-    \subsection{Data}
-    
-    \subsection{Models}
-    
-    \subsection{Evaluation}
-    
+Figure \ref{fig:mobile} shows a feature model for a mobile phone
+product line. All features are organized as a tree. The relationship
+between two features might be ``mandatory'', ``optional'',
+``alternative'', or ``or''. Also, there exist some cross-tree constraints, which means the preferred features are not in the same sub-tree. These cross-tree constraints complicate the process of exploring feature models\footnote{Without cross-tree constraints, one can generate products in linear time using a top-down traversal of the feature model.}. 
+Researchers who explore these kinds of models~\cite{sayyad13a, sayyad13b, harman2014search, henard2015combining}
+define a ``good'' product as the one that satisfies five objectives:
+(1) find the valid products (products not violating any cross-tree constraint or tree structure), (2) with more features, (3) less known defects, (4) less total cost, and (5) most features used in prior applications.
 
-\section{Results}
+\noindent\textbf{Challenges: } Finding a valid product in real-world software product lines can be very difficult due to the sheer scale of these product lines. Some software product line models comprise up to tens of thousands
+of features,  with 100,000s of constraints. These constraints make it difficult to generate valid product through random assignments (similar to \textit{generate} function in Figure~\ref{fig:EA}). In some cases, chances of finding valid solutions through random assignment is $0.04\%$. Most of the meta-heuristic algorithms often fail to find valid solutions or take a long time to find one. Given the large and constrained search space ($2^N$, where N is the number of features) using an EA algorithm can be infeasible.
 
-\section{Discussions}
+\noindent\textbf{Strategy:} Since exploring all the possible solutions is expensive and often infeasible. The SWAY, or the ``Sampling WAY'', cluster the individual products based on their features. Please note, clustering does not require evaluations---to find the fitness of each product. SWAY uses a domain-specific distance function to cluster the points. A domain-specific distance function was required because (1) clusters should have similar products---similar fitness values, and (2) the decision space is a boolean space. This is in line with the observation of Zhang et al.~\cite{zhang2013software}, who reports that SA practitioners understand the data using domain knowledge. Once the products are clustered, a product is selected (at random) from each cluster. Based on the fitness values of the `representative product,' the not so promising clusters are eliminated. This step is similar to the \textit{elitism} operator of EAs. This process continues recursively till a certain budget is reached. Please refer to \cite{nair2016accidental, chen2017beyond, chen2017sampling} for more details. The reproduction package of SWAY and associated material can be found in \url{http://tiny.cc/raise_spl}.
+
+
+\subsection{Performance Configuration Optimization}
+\noindent\textbf{Problem Domain: } SBSE
+
+\noindent\textbf{Problem: } Modern software systems come with a lot of knobs or configuration options, which can be tweaked to modify the functional or non-functional (e.g., throughput or runtime). Finding the best or optimal configuration to run a particular workload is essential since there is a significant difference between the best and the worst configurations. Many researchers report that modern software systems come with a daunting number of configuration options~\cite{xu2015hey}. The size of the configuration space increases exponentially with the number of configuration options. The long runtimes or cost required to run benchmarks make this problem more challenging.
+
+\noindent\textbf{Challenges: } Most prior work in this area used a machine learning method to accurately model the
+configuration space. The model is built sequentially, where new configurations are sampled randomly, and the quality
+or accuracy of the model is measured using a holdout set. The size of the holdout set in some cases could be up to 20\% of the configuration space~\cite{nair2017using} and need to be evaluated (i.e., measured) before even the machine learning model is fully built. This strategy makes these methods not suitable in a practical setting since the generated holdout set can be (very) expensive. On the other hand, there are software systems for which an accurate model cannot be built. 
+
+\noindent\textbf{Strategy: } The problem of finding the (near) optimal configuration is expensive and often infeasible using the current techniques. A useful strategy could be to build a machine learning model which can differentiate between the good and not so good solutions. Flash, a Sequential Model-based Optimization (SMBO), is a useful
+strategy to find extremes of an unknown objective. Flash is
+efficient because of its ability to incorporate prior belief as
+already measured solutions (or configurations), to help direct
+further sampling. Here, the prior represents the already
+known areas of the search (or performance optimization) problem. The prior can be used to estimate the rest of the
+points (or unevaluated configurations). Once we have evaluated
+one (or many) points based on the prior, we can define
+the posterior. The posterior captures our updated belief in
+the objective function. This step is performed by using a
+machine learning model, also called surrogate model. 
+The concept of Flash can be simply stated as:
+\begin{itemize}
+\item Given what we know about the problem,
+\item what should we do next?
+\end{itemize}
+The ``given what we know about the problem'' part is
+achieved by using a machine learning model whereas ``what
+should we do next'' is performed by an acquisition function.
+Such acquisition function automatically adjusts the exploration
+(``should we sample in uncertain parts of the search
+space'') and exploitation (``should we stick to what is already
+known'') behavior of the method. Please refer to  \cite{nair2018finding} and  \cite{nair2017using,nair2017faster} to similar strategies. The reproduction package is available in \url{http://tiny.cc/flashrepo/}.
+
+
+\subsection{Topic Modelling}
+\noindent\textbf{Problem Domain: } SA
+
+\noindent\textbf{Problem:} Currently a grand challenge in software analytics is understanding unstructured data. One of the ways is to provide a gist about this unstructured text into few related topics (an area called topic modeling), which can be done using Latent Dirichlet allocation (LDA). But what if these topics generated are misleading due to a systematic error found in LDA. This error exists in all kinds of non-deterministic and probabilistic-based method. Especially in the case of streaming data, your input order of data to LDA is changing which leads to different outputs~\cite{gennari1989models}. If these topics generated being used in an unsupervised task such as to make a conclusion or supervised task such as predicting for a text document to be relevant or not, your results could be wrong. A good topic model is the one in which topics generated are consistent, and effect of randomness due to input order has been effectively reduced.
+
+\noindent\textbf{Challenges: } Researchers have found this kind of error/instability in the generated LDA topic model but have hardly done any work to reduce its effects. For this error to exist, it is essential that input order of data needs to be changed and this usually happens when LDA is run over a stream of data inputs. Once it is identified that the input order is changed, optimization of LDA can be done. But due to such a large space of configurations, finding an optimal configuration is an expensive task. 
+
+\noindent\textbf{Strategy:} Exploring all possible configurations either using a Grid search or traditional EA is an expensive task. For this, we propose an intelligent search-based optimizer, called Differential Evolution (DE), which generates different configurable parameters by supporting vector level mutation. This new method, called LDADE, reduces the effects created due to order effects. The topics generated by LDADE are consistent and gave good performance for an unsupervised and supervised task. Please refer to~\cite{agrawalwrong} for more details. The reproduction package and associated material can be found at \url{https://github.com/ai-se/Pits_lda}.
+
+ \subsection{Requirements Models}
+    \textbf{Problem Domain: } SBSE
+    
+    \noindent\textbf{Problem:} Prior work ~\cite{Lamsweerde2001,amyot10} shows that the process of building and analyzing complex requirements engineering models can help stakeholders better understand the ramifications of their decisions. But models can sometimes overwhelm stakeholders. For example, consider a committee reviewing a goal model(see fig. \ref{fig:csServices}) that describes the information needs of a computer science department. Although the model is entangled, on manual and careful examination, we observe that much of the model depends on a few ``key'' decisions such that once their values are assigned, it becomes very simple to reason over the remaining decisions. It is beneficial to look for these ``keys'' in requirements models since, if they exist, we can achieve ``shorter'' reasoning about large RE models, where ``shorter'' is measured as follows:
+    \begin{itemize}
+     \item{Large models can be processed in a very short time.}
+     \item{Runtimes for automatic reasoning about RE models are shorter so stakeholders can get faster feedback on their models.}
+     \item{The time required for manual reasoning about models is shorter since stakeholders need only debate a small percent of the issues (just the key decisions).}
+    \end{itemize}
+   
+    
+    \begin{figure}[!t] 
+  ~~~\includegraphics[width=3.1in]{img/CSServices.pdf} 
+    \caption{Options for services in a CS department (i* format).}
+    \label{fig:csServices}
+\end{figure}
+
+
+Such models are represented using the \textit{i*} framework \cite{yu97a} which include the key concepts of NFR~\cite{mylopoulos92.nfr} framework, including softgoals, AND/OR decompositions and contribution links along with goals, resources, and tasks. The i* framework describes dependencies among actors. There are four primary elements to describe the model: \textbf{goal}, \textbf{soft goal}, \textbf{task} and \textbf{resource}. Intentional actor forms the central concept in i*. Organizational actors are viewed as having intentional properties such as goals, beliefs, abilities, and commitments (a concept of distributed intentionality). Actors depend on each other for goals to be achieved, tasks to be performed and resources to be generated. By depending on others, an actor may be able to achieve goals that are difficult or impossible to achieve on its own. On the other hand, an actor becomes vulnerable if the actors it depended on did not deliver. Actors are strategic in the sense that they are concerned about opportunities and vulnerabilities and seek rearrangement of their environments that would better serve their interests by restructuring intentional relationships. 
+
+\noindent\textbf{Challenges: } Committees have trouble with manually reasoning about all the conflicting relationships in models like fig. \ref{fig:csServices} due to its sheer size and numerous interactions(This model has 351 node, 510 edges and over 500 conflicting relationships). Further, automatic methods for reasoning about these models are hard to scale up: as discussed below, reasoning about inference over these models is an NP-hard task. 
+
+\noindent\textbf{Strategy:} To overcome this problem, we propose a technique called SHORT which runs in four phases:
+\begin{itemize}
+    \item{\textbf{SH}: 'S'ample 'H'euristically the possible labelings of the model.}
+    \item{\textbf{O}: 'O'ptimize the label assignments to cover more goals or reduce the sum of the cost of the decisions in the model.}
+    \item{\textbf{R}: R: 'R'ank all decisions according to how well they performed during the optimization process.}
+    \item{\textbf{T}: T: 'T'est how much conclusions are determined by the decisions that occur very early in that ranking.}
+\end{itemize}
+
+We used the above technique on eight large real-world Requirements Engineering models. We were able to that all of these models have under 25\% of their decisions as ``keys'' and 6 of them had less than 12\% decisions as keys. The process of identifying keys was also fast as it could run in near linear time with the largest of models running in less than 18 seconds. Please refer to \cite{mathew2017shorter} for more details and the reproduction package can be found at \url{http://tiny.cc/raise_short}.
+
+\subsection{FASTREAD}
+\noindent\textbf{Problem Domain: } SBSE
+
+\noindent\textbf{Problem: }
+Research in any field starts with learning about the field by reading the literature of that field (and sometimes attending lectures). The process of finding relevant papers to read is often challenging, and it is easy to miss out on important papers. Broad and complete literature reviews are required when (1) researchers are exploring a new area; (2) researchers writing papers for peer review, to ensure reviewers will not reject a paper since it omits important related work; and (3) anyone surveying a field for latest developments. This problem can also be generalized as following: How to maximize relevant information (when there is a lot of noise) while minimizing the search cost to find relevant information?
+   
+\vspace{1.0ex}
+\noindent\textbf{Challenge 1: }
+Literature reviews can be extremely labor intensive and often require months (if not year) to complete. Due to a large number of papers available, the relevant papers have hard to find. A graduate student needs to review thousands of papers before finding few dozen relevant papers. 
+
+\noindent\textbf{Strategy: }
+   Since, reading all the literature available in infeasible, we need to use an active learner. Such active learner incrementally learns from the human feedback and suggests on which paper to review next so that most relevant papers can be found by reviewing a minimal number of papers.
+   
+\vspace{1.0ex}
+\noindent\textbf{Challenge 2: }
+It is important to note that the initial papers chosen to be reviewed can dramatically reduce the variance in the review effort. A wrong choice of initial papers can increase the effort by up to 300\% than the median effort (repeat for 30 runs)---requires three times more effort to retrieve the relevant papers. 
+
+\noindent\textbf{Strategy: }
+Such variances can be alleviated by selecting a good initial set of papers with domain knowledge from the researcher. We found that by ranking the papers with their BM25 scores of a set of keywords (provided as domain knowledge) and reviewing in such order, the effort can be further reduced with negligible variances.
+   
+\vspace{1.0ex}
+\noindent\textbf{Challenge 3: }
+Another challenge is when to stop the reviewing process. Stopping too early will result in many missing relevant papers while stopping too late could waste review effort on irrelevant papers. The desired stopping point would be when 95\% of the relevant papers have been found. However, since we do not know the total number of relevant papers to be found, there is no way to know whether we have found 95\% of it.
+
+\noindent\textbf{Strategy: }
+Stopping criterion for most of the search algorithms is based on either resource constraints or a predefined stopping criterion (historical knowledge). However, this is not suitable for this problem setting. A possible way to determining the stopping criterion is to use a semi-supervised machine learning algorithm (Logistic Regression) learn from the search process (till now) to predict how much more relevant paper will be found.The predicted values from this regressor are used to decide when to stop the process of search.
+   
+\vspace{1.0ex}
+\noindent\textbf{Challenge 4: }
+Actual human reviewers are fallible when labeling the papers. Research shows that it is reasonable to assume the precision and recall of a human reviewer are both 70\%. When such human errors occur, how to correct the errors so that the active learner is not misled?
+
+\noindent\textbf{Strategy: }
+The intuition used to solve the problem is the following: concentrate the effort on correctly classifying the paper which creates the most controversy. Using this intuition, periodically few of the already evaluated papers, whose labels the active learner disagree most on, are re-evaluated.
+
+\subsection{Text classification}
+\noindent\textbf{Problem Domain: } SA
+
+\noindent\textbf{Problem: } Stack Overflow is a popular Q\&A website, where users posts the questions and the community collectively answers these questions. However, as the community evolves, there is chance that duplicate questions can appear---which results in a wasted effort of the community. There is a need to remove the duplicate question or consolidate related questions. The problem focuses on discovering the relationship between any two questions posted on Stack Overflow and classifies them into duplicates, direct link, indirect link, and isolated~\cite{fu2017easy, xu2016predicting}. One way to solve this problem is to build a predictive model which can predict the similarity between two questions. 
+
+\noindent\textbf{Challenge: } The state of the art method for this problem used a Deep Learning method, which was expensive to train~\cite{xu2016predicting}. For example, Xu et al. spent 14 hours to train a deep learning model. Such long training time is not appropriate for the field of software analytics since software analytics requires the methods to have a fast turnaround time~\textcolor{red}{cite the paper which says fast turn around time is required}.
+
+\noindent\textbf{Strategy: }To reduce the training time as well as promote simplicity, hyper-parameter optimization of simple learners, like SVM (Support Vector Machines), is a way to go. Specifically, a Differential Evolution algorithm, which has been an effective tuning algorithm (used in SBSE)~\cite{fu2016tuning},
+to explore the parameter space of SVM. After the search process,
+ SVM with best-found parameters is used to predict classes of Stack Overflow questions. This method can get similar or better results
+than the deep learning method while reducing the training time by up to 80 times. Please refer to \cite{fu2017easy} for more details. Please refer to \cite{fu2017easy} for more details and the reproduction package can be found in~\url{http://tiny.cc/raise_data_EOH}.
+
+\input{img/structure}
+
+\subsection{Workflows in Cloud Environment}
+\textbf{Problem Domain: } SBSE
+
+
+\noindent\textbf{Problem:} Many complex computational tasks, especially in a scientific area, can be divided into several sub-tasks where outputs of some tasks servers the input of another task. A workflow is a tool to
+model such kind of computational tasks.
+
+
+
+Figure \ref{fig:structure} shows five types of widely studied workflows. Workflows are represented as a directed acyclic graph (DAG). Each vertex of the DAGs represents one sub-task. Connections between vertices represent the result communications between different vertices. One computational task is called ``finished'' only when
+all sub-tasks are finished. Also, all executions of sub-tasks should follow the constraints per edges.
+
+Grid computing techniques, invented in the mid-1990s, as well as recently, lots of pay-as-you-go cloud computing services, e.g., Amazon EC2, provide researchers a feasible way to finish such kind of complex workflow in a reasonable time.
+The workflow configuring problem is to figure out the best deployment configurations onto a cloud environment. The deployment configuration
+contains 1) determine which sub-tasks can be deployment into
+one computation node, i.e., the virtual machine in cloud environment; 2) which sub-task should be executed first if two of them are to be executed in the same node; 3) what hardware configuration (CPU, memory, bandwidth, etc.) should be applied in each computation node. Notice that commercial cloud service provider charges users for computing resource. 
+The objective of cloud configuration is to minimize the monetary cost as well as minimize the runtime of computing tasks.
+
+
+\noindent\textbf{Challenges: } 
+Two reasons make workflow configuration on cloud environment challenging: 1)  a number of sub-tasks of workflows can be as large as hundreds, or thousands; also, sub-tasks is under constraints-- file flow between them. 2) available types of
+computing nodes from cloud service provided is huge.
+For example, Amazon AWS provides more than 50 types of virtual machines; these
+virtual machines have different computing ability, as well as unit price (from \$0.02/hr to \$5/hr).
+Given these two reasons,
+the configuration space, or a number of possible deployment ways, is huge.
+Even though modern cloud environment simulator, such as CloudSim, can quick
+access performance of one deployment, evaluate every
+possible deployment configuration is impossible.
+
+\noindent\textbf{Strategy:} 
+Since it is impossible to enumerate all possible configurations, most existed algorithm use either 1) greedy algorithm 2) evolutionary algorithm to figure out best configurations.
+Similar to other search-based software engineering problems,
+these methods require a large number of model evaluations (simulations in workflow configuration problem).
+The RIOT, or randomized instance-order-type, is an algorithm to balance execution time as well as cost
+in a short time.
+The RIOT first groups sub-tasks, making the DAG simpler, and then
+assign each group into one computation node. Within one node,
+priorities of sub-tasks are determined by
+B-rank~\cite{topcuoglu2002performance}, a greedy algorithm. 
+The most tricky part is to determine types of computation nodes so that they can coordinate with each other and reduce the total ideal time (due to file transfer constraints).
+In RIOT,
+we make full use of two hypothesis: 1) similar configurations should have similar performance; 2) (monotonicity) k times computing resource should lead to (1/k)*c less computation time (where c is constant for one workflow).
+With these two hypotheses,
+RIOT first randomly creates some deployment configurations and evaluates them, then guess more configurations based on current evaluated configuration. Such kind of guess can avoid a large number of configuration evaluations. Please refer to \cite{chen2017riot} for more details and the reproduction package is available in \url{http://tiny.cc/raise_gen_workflow}.
+
 
 \section{Conclusions}
- 
+Software engineering problems can be solved both by SA and SBSE techniques, but both these methods have their shortcomings. This paper has argued these shortcomings can be overcome by merging ideas from both these domains, to give rise to a new field of software engineering called Data-Driven Search-based Software Engineering. This sub-area of software engineering boost the techniques used in SA and SBSE but drawing inspiration from the other field. 
+
+The paper proposes concrete strategies which can be used to combine the techniques from SA and SBSE to solve an SE problem. The paper also lists resource which can be used researchers to jump-start their research. One of the aims of the paper is to provide resources and material which can be used as teaching or training resources for a new generation of researchers. 
 
 % \bibliographystyle{ACM-Reference-Format}
 % \bibliography{sample-bibliography}

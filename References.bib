@@ -1,313 +1,713 @@
-%%% ====================================================================
-%%%  BibTeX-file{
-%%%     author          = "Gerry Murray",
-%%%     version         = "1.2",
-%%%     date            = "2 April 2012",
-%%%     filename        = "acmsmall-sample-bibfile.bib",
-%%%     address         = "ACM, NY",
-%%%     email           = "murray at hq.acm.org",
-%%%     codetable       = "ISO/ASCII",
-%%%     keywords        = "ACM Reference Format, bibliography, citation, references",
-%%%     supported       = "yes",
-%%%     docstring       = "This BibTeX database file contains 'bibdata' entries
-%%%                        that 'match' the examples provided in the Specifications Document
-%%%                        AND, also, 'legacy'-type bibs. It should assist authors in
-%%%                        choosing the 'correct' at-bibtype and necessary bib-fields
-%%%                        so as to obtain the appropriate ACM Reference Format output.
-%%%                        It also contains many 'Standard Abbreviations'. "
-%%%  }
-%%% ====================================================================
-
-% Journals
-
-% First the Full Name is given, then the abbreviation used in the AMS Math
-% Reviews, with an indication if it could not be found there.
-% Note the 2nd overwrites the 1st, so swap them if you want the full name.
-
- %{AMS}
- @String{AMSTrans = "American Mathematical Society Translations" }
- @String{AMSTrans = "Amer. Math. Soc. Transl." }
- @String{BullAMS = "Bulletin of the American Mathematical Society" }
- @String{BullAMS = "Bull. Amer. Math. Soc." }
- @String{ProcAMS = "Proceedings of the American Mathematical Society" }
- @String{ProcAMS = "Proc. Amer. Math. Soc." }
- @String{TransAMS = "Transactions of the American Mathematical Society" }
- @String{TransAMS = "Trans. Amer. Math. Soc." }
-
- %ACM
- @String{CACM = "Communications of the {ACM}" }
- @String{CACM = "Commun. {ACM}" }
- @String{CompServ = "Comput. Surveys" }
- @String{JACM = "J. ACM" }
- @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
- @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
- @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
- @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
-
- @String{AmerSocio = "American Journal of Sociology" }
- @String{AmerStatAssoc = "Journal of the American Statistical Association" }
- @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
- @String{ApplMathComp = "Applied Mathematics and Computation" }
- @String{ApplMathComp = "Appl. Math. Comput." }
- @String{AmerMathMonthly = "American Mathematical Monthly" }
- @String{AmerMathMonthly = "Amer. Math. Monthly" }
- @String{BIT = "{BIT}" }
- @String{BritStatPsych = "British Journal of Mathematical and Statistical
-          Psychology" }
- @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
- @String{CanMathBull = "Canadian Mathematical Bulletin" }
- @String{CanMathBull = "Canad. Math. Bull." }
- @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
- @String{CompApplMath = "J. Comput. Appl. Math." }
- @String{CompPhys = "Journal of Computational Physics" }
- @String{CompPhys = "J. Comput. Phys." }
- @String{CompStruct = "Computers and Structures" }
- @String{CompStruct = "Comput. \& Structures" }
- @String{CompJour = "The Computer Journal" }
- @String{CompJour = "Comput. J." }
- @String{CompSysSci = "Journal of Computer and System Sciences" }
- @String{CompSysSci = "J. Comput. System Sci." }
- @String{Computing = "Computing" }
- @String{ContempMath = "Contemporary Mathematics" }
- @String{ContempMath = "Contemp. Math." }
- @String{Crelle = "Crelle's Journal" }
- @String{GiornaleMath = "Giornale di Mathematiche" }
- @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
-
- %IEEE
- @String{Computer = "{IEEE} Computer" }
- @String{IEEETransComp = "{IEEE} Transactions on Computers" }
- @String{IEEETransComp = "{IEEE} Trans. Comput." }
- @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
- @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
- @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
- @String{ProcIEEE = "Proceedings of the {IEEE}" }
- @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
- @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
-     Systems" }
- @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
-
- @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
- @String{IMANumerAna = "{IMA} J. Numer. Anal." }
- @String{InfProcLet = "Information Processing Letters" }
- @String{InfProcLet = "Inform. Process. Lett." }
- @String{InstMathApp = "Journal of the Institute of Mathematics and
-     its Applications" }
- @String{InstMathApp = "J. Inst. Math. Appl." }
- @String{IntControl = "International Journal of Control" }
- @String{IntControl = "Internat. J. Control" }
- @String{IntNumerEng = "International Journal for Numerical Methods in
-     Engineering" }
- @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
- @String{IntSuper = "International Journal of Supercomputing Applications" }
- @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
-%% in AMS MR
- @String{Kibernetika = "Kibernetika" }
- @String{JResNatBurStand = "Journal of Research of the National Bureau
-     of Standards" }
- @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
- @String{LinAlgApp = "Linear Algebra and its Applications" }
- @String{LinAlgApp = "Linear Algebra Appl." }
- @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
- @String{MathAnaAppl = "J. Math. Anal. Appl." }
- @String{MathAnnalen = "Mathematische Annalen" }
- @String{MathAnnalen = "Math. Ann." }
- @String{MathPhys = "Journal of Mathematical Physics" }
- @String{MathPhys = "J. Math. Phys." }
- @String{MathComp = "Mathematics of Computation" }
- @String{MathComp = "Math. Comp." }
- @String{MathScand = "Mathematica Scandinavica" }
- @String{MathScand = "Math. Scand." }
- @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
- @String{TablesAidsComp = "Math. Tables Aids Comput." }
- @String{NumerMath = "Numerische Mathematik" }
- @String{NumerMath = "Numer. Math." }
- @String{PacificMath = "Pacific Journal of Mathematics" }
- @String{PacificMath = "Pacific J. Math." }
- @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
- @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
-%% in AMS MR
- @String{ParComputing = "Parallel Computing" }
- @String{ParComputing = "Parallel Comput." }
- @String{PhilMag = "Philosophical Magazine" }
- @String{PhilMag = "Philos. Mag." }
- @String{ProcNAS = "Proceedings of the National Academy of Sciences
-                    of the USA" }
- @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
- @String{Psychometrika = "Psychometrika" }
- @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
- @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
- @String{QuartApplMath = "Quarterly of Applied Mathematics" }
- @String{QuartApplMath = "Quart. Appl. Math." }
- @String{RevueInstStat = "Review of the International Statisical Institute" }
- @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
-
- %SIAM
- @String{JSIAM = "Journal of the Society for Industrial and Applied
-     Mathematics" }
- @String{JSIAM = "J. Soc. Indust. Appl. Math." }
- @String{JSIAMB = "Journal of the Society for Industrial and Applied
-     Mathematics, Series B, Numerical Analysis" }
- @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
- @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
- @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
- @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
- @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
- @String{SIAMComp = "{SIAM} Journal on Computing" }
- @String{SIAMComp = "{SIAM} J. Comput." }
- @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
- @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
- @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
- @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
- @String{SIAMReview = "{SIAM} Review" }
- @String{SIAMReview = "{SIAM} Rev." }
- @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
-     Computing" }
- @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
-
- @String{SoftPracExp = "Software Practice and Experience" }
- @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
- @String{StatScience = "Statistical Science" }
- @String{StatScience = "Statist. Sci." }
- @String{Techno = "Technometrics" }
- @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
-     Physics" }
- @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
- @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
- @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
- @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
-     Mechanik" }
- @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
- @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
- @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
-
-% Publishers % ================================================= |
-
- @String{Academic = "Academic Press" }
- @String{ACMPress = "{ACM} Press" }
- @String{AdamHilger = "Adam Hilger" }
- @String{AddisonWesley = "Addison-Wesley" }
- @String{AllynBacon = "Allyn and Bacon" }
- @String{AMS = "American Mathematical Society" }
- @String{Birkhauser = "Birkha{\"u}ser" }
- @String{CambridgePress = "Cambridge University Press" }
- @String{Chelsea = "Chelsea" }
- @String{ClaredonPress = "Claredon Press" }
- @String{DoverPub = "Dover Publications" }
- @String{Eyolles = "Eyolles" }
- @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
- @String{Interscience = "Interscience" }
- @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
- @String{JohnWileySons = "John Wiley and Sons" }
- @String{Macmillan = "Macmillan" }
- @String{MathWorks = "The Math Works Inc." }
- @String{McGrawHill = "McGraw-Hill" }
- @String{NatBurStd = "National Bureau of Standards" }
- @String{NorthHolland = "North-Holland" }
- @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
- @String{PergamonPress = "Pergamon Press" }
- @String{PlenumPress = "Plenum Press" }
- @String{PrenticeHall = "Prentice-Hall" }
- @String{SIAMPub = "{SIAM} Publications" }
- @String{Springer = "Springer-Verlag" }
- @String{TexasPress = "University of Texas Press" }
- @String{VanNostrand = "Van Nostrand" }
- @String{WHFreeman = "W. H. Freeman and Co." }
-
-%Entries
-
-@article{gigerenzer2008heuristics,
-  title={Why heuristics work},
-  author={Gigerenzer, Gerd},
-  journal={Perspectives on psychological science},
-  volume={3},
-  number={1},
-  pages={20--29},
-  year={2008},
-  publisher={SAGE Publications Sage CA: Los Angeles, CA}
-}
-
-@book{gigerenzer1999simple,
-  title={Simple heuristics that make us smart},
-  author={Gigerenzer, Gerd and Todd, Peter M and ABC Research Group, the and others},
-  year={1999},
-  publisher={Oxford University Press}
-}
-
-@article{czerlinski1999good,
-  title={How good are simple heuristics?},
-  author={Czerlinski, Jean and Gigerenzer, Gerd and Goldstein, Daniel G},
-  year={1999},
-  publisher={Oxford University Press}
-}
-
-@inproceedings{brighton2006robust,
-  title={Robust Inference with Simple Cognitive Models.},
-  author={Brighton, Henry},
-  booktitle={AAAI spring symposium: Between a rock and a hard place: Cognitive science principles meet AI-hard problems},
-  pages={17--22},
-  year={2006}
-}
-
-@article{martignon2003naive,
-  title={Naive and yet enlightened: From natural frequencies to fast and frugal decision trees},
-  author={Martignon, Laura and Vitouch, Oliver and Takezawa, Masanori and Forster, Malcolm R},
-  journal={Thinking: Psychological perspectives on reasoning, judgment and decision making},
-  pages={189--211},
-  year={2003},
-  publisher={John Wiley \& Sons, Ltd}
-}
-
-@article{tan2016defining,
-  title={Defining and conceptualizing actionable insight: a conceptual framework for decision-centric analytics},
-  author={Tan, Shiang-Yen and Chan, Taizan},
-  journal={arXiv preprint arXiv:1606.03510},
-  year={2016}
-}
-
-@incollection{sawyer2013bi,
-  title={BI’s Impact on Analyses and Decision Making Depends on the Development of Less Complex Applications},
-  author={Sawyer, Robert},
-  booktitle={Principles and Applications of Business Intelligence Research},
-  pages={83--95},
-  year={2013},
-  publisher={IGI Global}
-}
-
-@article{jenny2013simple,
-  title={Simple rules for detecting depression},
-  author={Jenny, Mirjam A and Pachur, Thorsten and Williams, S Lloyd and Becker, Eni and Margraf, J{\"u}rgen},
-  journal={Journal of Applied Research in Memory and Cognition},
-  volume={2},
-  number={3},
-  pages={149--157},
-  year={2013},
+@article{harman2001search,
+  title={Search-based software engineering},
+  author={Harman, Mark and Jones, Bryan F},
+  journal={Information and software Technology},
+  volume={43},
+  number={14},
+  pages={833--839},
+  year={2001},
   publisher={Elsevier}
 }
 
-@inproceedings{laskey2014comparing,
-  title={Comparing fast and frugal trees and Bayesian networks for risk assessment},
-  author={Laskey, K and Martignon, Laura},
-  booktitle={Proceedings of the 9th International Conference on Teaching Statistics, Flagstaff, Arizona},
-  year={2014}
+ @article{ZhangHL13,
+  author = {Yuanyuan Zhang and Mark Harman and Soo Ling Lim},
+  title = {Empirical Evaluation of Search based Requirements Interaction Management},
+  journal = {Information and Software Technology},
+  year = {2013},
+  month = {January}, 
+  volume = {55},
+  number = {1},
+  pages = {126-152}
 }
 
-@article{raab2015power,
-  title={The power of simplicity: a fast-and-frugal heuristics approach to performance science},
-  author={Raab, Markus and Gigerenzer, Gerd},
-  journal={Frontiers in psychology},
-  volume={6},
-  year={2015},
-  publisher={Frontiers Media SA}
+@article{le2012genprog,
+  title={Genprog: A generic method for automatic software repair},
+  author={Le Goues, Claire and Nguyen, ThanhVu and Forrest, Stephanie and Weimer, Westley},
+  journal={IEEE Transactions on Software Engineering},
+  volume={38},
+  number={1},
+  pages={54--72},
+  year={2012},
+  publisher={IEEE}
 }
 
-@article{martignon2008categorization,
-  title={Categorization with limited resources: A family of simple heuristics},
-  author={Martignon, Laura and Katsikopoulos, Konstantinos V and Woike, Jan K},
-  journal={Journal of Mathematical Psychology},
-  volume={52},
+@inproceedings{nair2016accidental,
+  title={An (accidental) exploration of alternatives to evolutionary algorithms for sbse},
+  author={Nair, Vivek and Menzies, Tim and Chen, Jianfeng},
+  booktitle={International Symposium on Search Based Software Engineering},
+  pages={96--111},
+  year={2016},
+  organization={Springer}
+}
+
+@ARTICLE{chen2017sampling, 
+author={J. Chen and V. Nair and R. Krishna and T. Menzies}, 
+journal={IEEE Transactions on Software Engineering}, 
+title={"Sampling" as a Baseline Optimizer for Search-based Software Engineering}, 
+year={2018}, 
+volume={PP}, 
+number={99}, 
+pages={1-1}, 
+keywords={Estimation;Evolutionary computation;Numerical models;Optimization;Sociology;Software;Software engineering;Evolutionary Algorithms;Sampling;Search-based SE}, 
+doi={10.1109/TSE.2018.2790925}, 
+ISSN={0098-5589}, 
+month={},}
+
+@inproceedings{sayyad2013value,
+  title={On the value of user preferences in search-based software engineering: a case study in software product lines},
+  author={Sayyad, Abdel Salam and Menzies, Tim and Ammar, Hany},
+  booktitle={Proceedings of the 2013 International Conference on Software Engineering},
+  pages={492--501},
+  year={2013},
+  organization={IEEE Press}
+}
+
+@article{chen2017beyond,
+title = "Beyond evolutionary algorithms for search-based software engineering",
+journal = "Information and Software Technology",
+year = "2017",
+issn = "0950-5849",
+doi = "https://doi.org/10.1016/j.infsof.2017.08.007",
+url = "http://www.sciencedirect.com/science/article/pii/S0950584917300757",
+author = "Jianfeng Chen and Vivek Nair and Tim Menzies"
+}
+
+@article{nair2017using,
+  title={Using Bad Learners to find Good Configurations},
+  author={Nair, Vivek and Menzies, Tim and Siegmund, Norbert and Apel, Sven},
+  journal={arXiv preprint arXiv:1702.05701},
+  year={2017}
+}
+
+@inproceedings{oh2017finding,
+  title={Finding near-optimal configurations in product lines by random sampling},
+  author={Oh, Jeho and Batory, Don and Myers, Margaret and Siegmund, Norbert},
+  booktitle={Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering},
+  pages={61--71},
+  year={2017},
+  organization={ACM}
+}
+
+@article{guo2017data,
+  title={Data-efficient performance learning for configurable systems},
+  author={Guo, Jianmei and Yang, Dingyu and Siegmund, Norbert and Apel, Sven and Sarkar, Atrisha and Valov, Pavel and Czarnecki, Krzysztof and Wasowski, Andrzej and Yu, Huiqun},
+  journal={Empirical Software Engineering},
+  pages={1--42},
+  year={2017},
+  publisher={Springer}
+}
+
+@article{nair2018finding,
+  title={Finding Faster Configurations using FLASH},
+  author={Nair, Vivek and Yu, Zhe and Menzies, Tim and Siegmund, Norbert and Apel, Sven},
+  journal={arXiv preprint arXiv:1801.02175},
+  year={2018}
+}
+
+@article{boussaid2017survey,
+  title={A survey on search-based model-driven engineering},
+  author={Boussa{\"\i}d, Ilhem and Siarry, Patrick and Ahmed-Nacer, Mohamed},
+  journal={Automated Software Engineering},
+  volume={24},
+  number={2},
+  pages={233--294},
+  year={2017},
+  publisher={Springer}
+}
+
+@article{petke2017genetic,
+  title={Genetic improvement of software: a comprehensive survey},
+  author={Petke, Justyna and Haraldsson, Saemundur and Harman, Mark and White, David and Woodward, John and others},
+  journal={IEEE Transactions on Evolutionary Computation},
+  year={2017},
+  publisher={IEEE}
+}
+
+@article{mariani2017systematic,
+  title={A systematic review on search-based refactoring},
+  author={Mariani, Thain{\'a} and Vergilio, Silvia Regina},
+  journal={Information and Software Technology},
+  volume={83},
+  pages={14--34},
+  year={2017},
+  publisher={Elsevier}
+}
+
+@article{raiha2010survey,
+  title={A survey on search-based software design},
+  author={R{\"a}ih{\"a}, Outi},
+  journal={Computer Science Review},
+  volume={4},
+  number={4},
+  pages={203--249},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{silva2017systematic,
+  title={A systematic review on search based mutation testing},
+  author={Silva, Rodolfo Adamshuk and de Souza, Simone do Rocio Senger and de Souza, Paulo S{\'e}rgio Lopes},
+  journal={Information and Software Technology},
+  volume={81},
+  pages={19--35},
+  year={2017},
+  publisher={Elsevier}
+}
+
+@article{khari2017extensive,
+  title={An extensive evaluation of search-based software testing: a review},
+  author={Khari, Manju and Kumar, Prabhat},
+  journal={Soft Computing},
+  pages={1--14},
+  year={2017},
+  publisher={Springer}
+}
+
+@article{clarke2003reformulating,
+  title={Reformulating software engineering as a search problem},
+  author={Clarke, John and Dolado, Jose Javier and Harman, Mark and Hierons, Rob and Jones, Bryan and Lumkin, Mary and Mitchell, Brian and Mancoridis, Spiros and Rees, Kearton and Roper, Marc and others},
+  journal={IEE Proceedings-software},
+  volume={150},
+  number={3},
+  pages={161--175},
+  year={2003},
+  publisher={IET}
+}
+
+@article{guo2017smtibea,
+  title={SMTIBEA: a hybrid multi-objective optimization algorithm for configuring large constrained software product lines},
+  author={Guo, Jianmei and Liang, Jia Hui and Shi, Kai and Yang, Dingyu and Zhang, Jingsong and Czarnecki, Krzysztof and Ganesh, Vijay and Yu, Huiqun},
+  journal={Software \& Systems Modeling},
+  pages={1--20},
+  year={2017},
+  publisher={Springer}
+}
+
+@inproceedings{harman2007current,
+  title={The current state and future of search based software engineering},
+  author={Harman, Mark},
+  booktitle={2007 Future of Software Engineering},
+  pages={342--357},
+  year={2007},
+  organization={IEEE Computer Society}
+}
+
+@inproceedings{deb2000fast,
+  title={A fast elitist non-dominated sorting genetic algorithm for multi-objective optimization: NSGA-II},
+  author={Deb, Kalyanmoy and Agrawal, Samir and Pratap, Amrit and Meyarivan, Tanaka},
+  booktitle={International Conference on Parallel Problem Solving From Nature},
+  pages={849--858},
+  year={2000},
+  organization={Springer}
+}
+
+@article{zitzler2001spea2,
+  title={SPEA2: Improving the strength Pareto evolutionary algorithm},
+  author={Zitzler, Eckart and Laumanns, Marco and Thiele, Lothar},
+  year={2001}
+}
+
+@incollection{van1987simulated,
+  title={Simulated annealing},
+  author={Van Laarhoven, Peter JM and Aarts, Emile HL},
+  booktitle={Simulated annealing: Theory and applications},
+  pages={7--15},
+  year={1987},
+  publisher={Springer}
+}
+
+@article{rudlof1997stochastic,
+  title={Stochastic hill climbing with learning by vectors of normal distributions},
+  author={Rudlof, Stephan and K{\"o}ppen, Mario},
+  year={1997},
+  publisher={Citeseer}
+}
+
+@article{zhang2007moea,
+  title={MOEA/D: A multiobjective evolutionary algorithm based on decomposition},
+  author={Zhang, Qingfu and Li, Hui},
+  journal={IEEE Transactions on evolutionary computation},
+  volume={11},
   number={6},
-  pages={352--361},
+  pages={712--731},
+  year={2007},
+  publisher={IEEE}
+}
+
+@article{eiben2011parameter,
+  title={Parameter tuning for configuring and analyzing evolutionary algorithms},
+  author={Eiben, Agoston E and Smit, Selmar K},
+  journal={Swarm and Evolutionary Computation},
+  volume={1},
+  number={1},
+  pages={19--31},
+  year={2011},
+  publisher={Elsevier}
+}
+
+@article{fu2016tuning,
+  title={Tuning for software analytics: Is it really necessary?},
+  author={Fu, Wei and Menzies, Tim and Shen, Xipeng},
+  journal={Information and Software Technology},
+  volume={76},
+  pages={135--146},
+  year={2016},
+  publisher={Elsevier}
+}
+
+@article{topcuoglu2002performance,
+  title={Performance-effective and low-complexity task scheduling for heterogeneous computing},
+  author={Topcuoglu, Haluk and Hariri, Salim and Wu, Min-you},
+  journal={IEEE transactions on parallel and distributed systems},
+  volume={13},
+  number={3},
+  pages={260--274},
+  year={2002},
+  publisher={IEEE}
+}
+
+@article{mathew2017shorter,
+  title={Shorter Reasoning About Larger Requirements Models},
+  author={Mathew, George and Menzies, Tim and Ernst, Neil A and Klein, John},
+  journal={arXiv preprint arXiv:1702.05568},
+  year={2017}
+}
+
+@article{yu2016read,
+  title={How to read less: Better machine assisted reading methods for systematic literature reviews},
+  author={Yu, Zhe and Kraft, Nicholas A and Menzies, Tim},
+  journal={arXiv preprint arXiv:1612.03224},
+  year={2016}
+}
+
+@inproceedings{mikolov2013distributed,
+  title={Distributed representations of words and phrases and their compositionality},
+  author={Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S and Dean, Jeff},
+  booktitle={Advances in neural information processing systems},
+  pages={3111--3119},
+  year={2013}
+}
+
+
+@inproceedings{xu2016predicting,
+  title={Predicting semantically linkable knowledge in developer online forums via convolutional neural network},
+  author={Xu, Bowen and Ye, Deheng and Xing, Zhenchang and Xia, Xin and Chen, Guibin and Li, Shanping},
+  booktitle={Proceedings of the 31st IEEE/ACM International Conference on Automated Software Engineering},
+  pages={51--62},
+  year={2016},
+  organization={ACM}
+}
+
+
+@article{fu2016differential,
+  title={Why is Differential Evolution Better than Grid Search for Tuning Defect Predictors?},
+  author={Fu, Wei and Nair, Vivek and Menzies, Tim},
+  journal={arXiv preprint arXiv:1609.02613},
+  year={2016}
+}
+@inproceedings{tantithamthavorn2016automated,
+  title={Automated parameter optimization of classification techniques for defect prediction models},
+  author={Tantithamthavorn, Chakkrit and McIntosh, Shane and Hassan, Ahmed E and Matsumoto, Kenichi},
+  booktitle={Software Engineering (ICSE), 2016 IEEE/ACM 38th International Conference on},
+  pages={321--332},
+  year={2016},
+  organization={IEEE}
+}
+
+@article{chen2017riot,
+  title={RIOT: a Novel Stochastic Method for Rapidly Configuring Cloud-Based Workflows},
+  author={Chen, Jianfeng and Menzies, Tim},
+  journal={arXiv preprint arXiv:1708.08127},
+  year={2017}
+}
+
+@article{bener2015lessons,
+  title={Lessons Learned from software analytics in practice},
+  author={Bener, Ayse and Misirli, A and Caglayan, Bora and Kocaguneli, Ekrem and Calikli, Gul},
+  journal={The art and science of analyzing software data, 1st edn. Elsevier, Waltham},
+  pages={453--489},
+  year={2015}
+}
+
+@article{subramanyam2003empirical,
+  title={Empirical analysis of ck metrics for object-oriented design complexity: Implications for software defects},
+  author={Subramanyam, Ramanath and Krishnan, Mayuram S.},
+  journal={IEEE Transactions on software engineering},
+  volume={29},
+  number={4},
+  pages={297--310},
+  year={2003},
+  publisher={IEEE}
+}
+
+@article{agrawalwrong,
+  title={What is Wrong with Topic Modeling?(and How to Fix it Using Search-based Software Engineering)},
+  author={Agrawal, Amritanshu and Fu, Wei and Menzies, Tim}
+}
+
+@inproceedings{yang2016effort,
+  title={Effort-aware just-in-time defect prediction: simple unsupervised models could be better than supervised models},
+  author={Yang, Yibiao and Zhou, Yuming and Liu, Jinping and Zhao, Yangyang and Lu, Hongmin and Xu, Lei and Xu, Baowen and Leung, Hareton},
+  booktitle={Proceedings of the 2016 24th ACM SIGSOFT International Symposium on Foundations of Software Engineering},
+  pages={157--168},
+  year={2016},
+  organization={ACM}
+}
+
+@inproceedings{menzies2011local,
+  title={Local vs. global models for effort estimation and defect prediction},
+  author={Menzies, Tim and Butcher, Andrew and Marcus, Andrian and Zimmermann, Thomas and Cok, David},
+  booktitle={Automated Software Engineering (ASE), 2011 26th IEEE/ACM International Conference on},
+  pages={343--351},
+  year={2011},
+  organization={IEEE}
+}
+
+@article{agrawal2017better,
+  title={" Better Data" is Better than" Better Data Miners"(Benefits of Tuning SMOTE for Defect Prediction)},
+  author={Agrawal, Amritanshu and Menzies, Tim},
+  journal={arXiv preprint arXiv:1705.03697},
+  year={2017}
+}
+
+@article{bennin2017mahakil,
+  title={MAHAKIL: Diversity based Oversampling Approach to Alleviate the Class Imbalance Issue in Software Defect Prediction},
+  author={Bennin, Kwabena Ebo and Keung, Jacky and Phannachitta, Passakorn and Monden, Akito and Mensah, Solomon},
+  journal={IEEE Transactions on Software Engineering},
+  year={2017},
+  publisher={IEEE}
+}
+
+@article{menzies2013local,
+  title={Local versus global lessons for defect prediction and effort estimation},
+  author={Menzies, Tim and Butcher, Andrew and Cok, David and Marcus, Andrian and Layman, Lucas and Shull, Forrest and Turhan, Burak and Zimmermann, Thomas},
+  journal={IEEE Transactions on software engineering},
+  volume={39},
+  number={6},
+  pages={822--834},
+  year={2013},
+  publisher={IEEE}
+}
+
+@inproceedings{bettenburg2012think,
+  title={Think locally, act globally: Improving defect and effort prediction models},
+  author={Bettenburg, Nicolas and Nagappan, Meiyappan and Hassan, Ahmed E},
+  booktitle={Mining Software Repositories (MSR), 2012 9th IEEE Working Conference on},
+  pages={60--69},
+  year={2012},
+  organization={IEEE}
+}
+
+@incollection{kirsopp2003case,
+  title={Case and feature subset selection in case-based software project effort prediction},
+  author={Kirsopp, Colin and Shepperd, Martin},
+  booktitle={Research and Development in Intelligent Systems XIX},
+  pages={61--74},
+  year={2003},
+  publisher={Springer}
+}
+
+@article{hall2003benchmarking,
+  title={Benchmarking attribute selection techniques for discrete class data mining},
+  author={Hall, Mark A and Holmes, Geoffrey},
+  journal={IEEE Transactions on Knowledge and Data engineering},
+  volume={15},
+  number={6},
+  pages={1437--1447},
+  year={2003},
+  publisher={IEEE}
+}
+
+@article{chen2005finding,
+  title={Finding the right data for software cost modeling},
+  author={Chen, Zhihao and Menzies, Tim and Port, Daniel and Boehm, D},
+  journal={IEEE software},
+  volume={22},
+  number={6},
+  pages={38--46},
+  year={2005},
+  publisher={IEEE}
+}
+
+@article{gao2011choosing,
+  title={Choosing software metrics for defect prediction: an investigation on feature selection techniques},
+  author={Gao, Kehan and Khoshgoftaar, Taghi M and Wang, Huanjing and Seliya, Naeem},
+  journal={Software: Practice and Experience},
+  volume={41},
+  number={5},
+  pages={579--606},
+  year={2011},
+  publisher={Wiley Online Library}
+}
+
+@book{witten2016data,
+  title={Data Mining: Practical machine learning tools and techniques},
+  author={Witten, Ian H and Frank, Eibe and Hall, Mark A and Pal, Christopher J},
+  year={2016},
+  publisher={Morgan Kaufmann}
+}
+
+@inproceedings{malkomes2016bayesian,
+  title={Bayesian optimization for automated model selection},
+  author={Malkomes, Gustavo and Schaff, Charles and Garnett, Roman},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={2900--2908},
+  year={2016}
+}
+
+@article{hall2012systematic,
+  title={A systematic literature review on fault prediction performance in software engineering},
+  author={Hall, Tracy and Beecham, Sarah and Bowes, David and Gray, David and Counsell, Steve},
+  journal={IEEE Transactions on Software Engineering},
+  volume={38},
+  number={6},
+  pages={1276--1304},
+  year={2012},
+  publisher={IEEE}
+}
+
+@article{fu2017easy,
+  title={Easy over Hard: A Case Study on Deep Learning},
+  author={Fu, Wei and Menzies, Tim},
+  journal={arXiv preprint arXiv:1703.00133},
+  year={2017}
+}
+
+@article{boehm1995cost,
+  title={Cost models for future software life cycle processes: COCOMO 2.0},
+  author={Boehm, Barry and Clark, Bradford and Horowitz, Ellis and Westland, Chris and Madachy, Ray and Selby, Richard},
+  journal={Annals of software engineering},
+  volume={1},
+  number={1},
+  pages={57--94},
+  year={1995},
+  publisher={Springer}
+}
+
+@article{krall2015gale,
+  title={Gale: Geometric active learning for search-based software engineering},
+  author={Krall, Joseph and Menzies, Tim and Davies, Misty},
+  journal={IEEE Transactions on Software Engineering},
+  volume={41},
+  number={10},
+  pages={1001--1018},
+  year={2015},
+  publisher={IEEE}
+}
+
+
+@inproceedings{kessentini2013searching,
+  title={Searching models, modeling search: On the synergies of SBSE and MDE},
+  author={Kessentini, Marouane and Langer, Philip and Wimmer, Manuel},
+  booktitle={Proceedings of the 1st International Workshop on Combining Modelling and Search-Based Software Engineering},
+  pages={51--54},
+  year={2013},
+  organization={IEEE Press}
+}
+
+@article{saber2017seeding,
+  title={Is seeding a good strategy in multi-objective feature selection when feature models evolve?},
+  author={Saber, Takfarinas and Brevet, David and Botterweck, Goetz and Ventresque, Anthony},
+  journal={Information and Software Technology},
+  year={2017},
+  publisher={Elsevier}
+}
+
+@inproceedings{henard2015combining,
+  title={Combining multi-objective search and constraint solving for configuring large software product lines},
+  author={Henard, Christopher and Papadakis, Mike and Harman, Mark and Le Traon, Yves},
+  booktitle={Software Engineering (ICSE), 2015 IEEE/ACM 37th IEEE International Conference on},
+  volume={1},
+  pages={517--528},
+  year={2015},
+  organization={IEEE}
+}
+
+@article{lessmann2008benchmarking,
+  title={Benchmarking classification models for software defect prediction: A proposed framework and novel findings},
+  author={Lessmann, Stefan and Baesens, Bart and Mues, Christophe and Pietsch, Swantje},
+  journal={IEEE TSE},
+  volume={34},
+  number={4},
+  pages={485--496},
   year={2008},
+  publisher={IEEE}
+}
+
+@article{menzies2010defect,
+  title={Defect prediction from static code features: current results, limitations, new approaches},
+  author={Menzies, Tim and Milton, Zach and Turhan, Burak and Cukic, Bojan and Jiang, Yue and Bener, Ay{\c{s}}e},
+  journal={Automated Software Engineering},
+  volume={17},
+  number={4},
+  pages={375--407},
+  year={2010},
+  publisher={Springer}
+}
+
+@article{zhang2013software,
+  title={Software analytics in practice},
+  author={Zhang, Dongmei and Han, Shi and Dang, Yingnong and Lou, Jian-Guang and Zhang, Haidong and Xie, Tao},
+  journal={IEEE software},
+  volume={30},
+  number={5},
+  pages={30--37},
+  year={2013},
+  publisher={IEEE}
+}
+
+@inproceedings{sayyad13b,
+  title="Scalable Product Line Configuration: 
+         A Straw to Break the Camel's Back",
+  author="A. Sayyad and J. Ingram  and T. Menzies and H. Ammar",
+  year=2013,
+  booktitle="ASE'13, Palo Alto, CA"
+}
+@inproceedings{sayyad13a,
+ author = {Sayyad, Abdel Salam and Menzies, Tim and Ammar, Hany},
+ title = {On the Value of User Preferences in Search-based 
+          Software Engineering: A Case Study in Software Product Lines},
+ booktitle = {Proceedings of the 2013 International Conference on Software Engineering},
+ series = {ICSE '13},
+ year = {2013},
+ pages = {492--501}
+} 
+
+@inproceedings{harman2014search,
+  title={Search based software engineering for software product line engineering: a survey and directions for future work},
+  author={Harman, Mark and Jia, Yue and Krinke, Jens and Langdon, William B and Petke, Justyna and Zhang, Yuanyuan},
+  booktitle={Proceedings of the 18th International Software Product Line Conference-Volume 1},
+  pages={5--18},
+  year={2014},
+  organization={ACM}
+}
+
+@article{gondra2008applying,
+  title={Applying machine learning to software fault-proneness prediction},
+  author={Gondra, Iker},
+  journal={Journal of Systems and Software},
+  volume={81},
+  number={2},
+  pages={186--195},
+  year={2008},
+  publisher={Elsevier}
+}
+
+@article{elish2008predicting,
+  title={Predicting defect-prone software modules using support vector machines},
+  author={Elish, Karim O and Elish, Mahmoud O},
+  journal={JSS},
+  volume={81},
+  number={5},
+  pages={649--660},
+  year={2008},
+  publisher={Elsevier}
+}
+
+@article{fleck2017model,
+  title={Model Transformation Modularization as a Many-Objective Optimization Problem},
+  author={Fleck, Martin and Troya, Javier and Kessentini, Marouane and Wimmer, Manuel and Alkhazi, Bader},
+  journal={IEEE Transactions on Software Engineering},
+  year={2017},
+  publisher={IEEE}
+}
+
+@inproceedings{xu2015hey,
+  title={Hey, you have given me too many knobs!: understanding and dealing with over-designed configuration in system software},
+  author={Xu, Tianyin and Jin, Long and Fan, Xuepeng and Zhou, Yuanyuan and Pasupathy, Shankar and Talwadker, Rukma},
+  booktitle={Proceedings of the 2015 10th Joint Meeting on Foundations of Software Engineering},
+  pages={307--319},
+  year={2015},
+  organization={ACM}
+}
+
+@article{gennari1989models,
+  title={Models of incremental concept formation},
+  author={Gennari, John H and Langley, Pat and Fisher, Doug},
+  journal={Artificial intelligence},
+  volume={40},
+  number={1-3},
+  pages={11--61},
+  year={1989},
+  publisher={Elsevier}
+}
+
+
+@article{nair2017faster,
+  title={Faster discovery of faster system configurations with spectral learning},
+  author={Nair, Vivek and Menzies, Tim and Siegmund, Norbert and Apel, Sven},
+  journal={arXiv preprint arXiv:1701.08106},
+  year={2017}
+}
+
+@inproceedings{yu97a,
+	Address = {Annapolis, Maryland},
+	Author = {Yu, Eric S K},
+	Booktitle = icre,
+	Date-Added = {2016-09-15 19:03:39 +0000},
+	Date-Modified = {2016-09-15 19:03:39 +0000},
+	Pages = {226--235},
+	Rating = {0},
+	Read = {Yes},
+	Title = {{Towards modelling and reasoning support for early-phase requirements engineering}},
+	Year = {1997}}
+
+@article{mylopoulos92.nfr,
+	Author = {Chung, Lawrence and Mylopoulos, John and Nixon, Brian A},
+	Date-Added = {2016-06-30 15:44:25 +0000},
+	Date-Modified = {2016-06-30 15:44:25 +0000},
+	Doi = {10.1109/32.142871},
+	Journal = {IEEE Transactions on Software Engineering},
+	Pages = {483--497},
+	Rating = {0},
+	Read = {Yes},
+	Title = {{Representing and Using Nonfunctional Requirements: A Process-Oriented Approach}},
+	Volume = {18},
+	Year = {1992}}
+
+@inproceedings{Lamsweerde2001,
+	Address = {Toronto},
+	Author = {van Lamsweerde, Axel},
+	Booktitle = icre,
+	Date-Added = {2016-06-03 19:27:37 +0000},
+	Date-Modified = {2016-06-03 19:32:36 +0000},
+	Pages = {249--263},
+	Rating = {0},
+	Read = {Yes},
+	Title = {{Goal-Oriented Requirements Engineering: A Guided Tour}},
+	Year = {2001}}
+
+
+@article{amyot10,
+	Author = {Amyot, Daniel and Ghanavati, S and Horkoff, Jennifer and Mussbacher, G and Peyton, L and Yu, Eric S K},
+	Date-Added = {2016-09-15 18:59:52 +0000},
+	Date-Modified = {2016-09-15 18:59:52 +0000},
+	Journal = {International Journal of Intelligent Systems},
+	Number = {8},
+	Pages = {841--877},
+	Rating = {0},
+	Read = {Yes},
+	Title = {{Evaluating Goal Models within the Goal-oriented Requirement Language}},
+	Volume = {25},
+	Year = {2010}}
+
+
+@inproceedings{oliveira2016improved,
+  title={Improved Crossover Operators for Genetic Programming for Program Repair},
+  author={Oliveira, Vinicius Paulo L and Souza, Eduardo FD and Le Goues, Claire and Camilo-Junior, Celso G},
+  booktitle={International Symposium on Search Based Software Engineering},
+  pages={112--127},
+  year={2016},
+  organization={Springer}
+}
+
+@article{jin2011surrogate,
+  title={Surrogate-assisted evolutionary computation: Recent advances and future challenges},
+  author={Jin, Yaochu},
+  journal={Swarm and Evolutionary Computation},
+  volume={1},
+  number={2},
+  pages={61--70},
+  year={2011},
   publisher={Elsevier}
 }
