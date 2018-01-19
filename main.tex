@@ -6,6 +6,7 @@
 \usepackage{url}
 
 \usepackage{color}
+\usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{graphicx} 
@@ -21,7 +22,7 @@
 \usepackage{lstlinebgrd}
 \usepackage{amssymb}
 \usepackage{amsmath}
-
+\usepackage{hhline}
 
 \usepackage{lstautogobble}
 \usepackage[framemethod=tikz]{mdframed}
@@ -106,7 +107,7 @@
 \acmISBN{ZZ-YY-24-ZZ/QQ/A}
 
 %Conference
-\acmConference[FSE'18]{Florida}{Nov 2018}{} 
+\acmConference[MSR'18]{Sweden}{May 2018}{} 
 \acmYear{2018}
 \copyrightyear{2018}
 
@@ -178,7 +179,7 @@ This paper introduces ideas and resources for a new field of software engineerin
 
 
 \maketitle
-
+\pagestyle{plain}
 % \input{samplebody-conf}
 \section{Introduction}
 The Mining Software Repositories (MSR) community has benefited enormously from widely shared data sets.  Such data sets document the canonical problems in a field.
@@ -292,19 +293,50 @@ tuned to different value proposition.
 A problem with this kind of trade-off is that it must explore some
 underlying space of options.  In a conventional approach, some
 business process model could be developed, then exercised many
-times. Such a {\em data farming} approach: \be
+times. Such a {\em data farming} approach: 
+\begin{itemize}
 \item
 {\em Plants a seed.} Build a model from domain information. All uncertainties or missing parts of the domain information are modeled as a space of possibilities.
 \item {\em Grows the data.} Execute model and, when the model moves into the space of possibilities, output is created by selecting at random from the possibilities.
 \item {\em Harvests.} Summarize the grown data via data mining.
 \item Optionally, use the harvested summaries to improve the model;
-  then, go to 1. \ee
+  then, go to 1. 
+\end{itemize}
   
   
+  While these two terms have many differences, they relate to a similar concept:
+\begin{enumerate}
+\item Tuning instability refers to uncertainties inside a model;
+\item Value variability refers to uncertainty on how to assess the outputs of a model.
+\end{enumerate}
+Our reading of the software engineering literature is that most papers only explore
+a small subset of Figure 23.1 or Figure 23.2. We think this is a mistake and researchers
+should more to a more general framework where they explore a wide and changing set
+of evaluation criteria. The next section describes one such framework.
+23.2.2.3 Exploring Instability and Variability
+To address the above problems, we adopt two strategies:
+\begin{itemize}
+\item  To address value variability we:
+\begin{itemize}
+    \item Use tools that allow for the customization of the value proposition used to
+    guide the search.
+    \item Then run the models using different value propositions.
+\end{itemize}
+\item To address tuning instability we:
+\begin{itemize}
+    \item Determine the space of known tunings for a model;
+    \item Allow models to range over that space;
+    \item Extensively simulate the models;
+    \item Look for stable conclusions over the entire space of tunings.
+\end{itemize}
+\end{itemize}
+The rest of this chapter offers an example of this kind of analysis
+
   
 \begin{figure}[!b]
 \small
-\begin{tabular}{|p{.95\linewidth}|}\hline
+\begin{tabular}{p{.95\linewidth}}\hline
+\rowcolor{gray!10}
 Let $\{A,B,C,D\}$ denote the
 true negatives,
 false negatives,
@@ -316,17 +348,17 @@ seen in the parts of system that fall
 into $A,B,C,D$. Then:
 \[
 \begin{array}{r@{~}l}
-pd=recall=&D / (B+D)\\
-pf=&C / (A+C)\\
-prec=precision=&D / (D+C)\\
-acc=accuracy=&(A+D) / (A+B+C+D)\\
-support=&(C+D) / (A+B+C+D)\\
+\mathit{pd}=\mathit{recall}=&D / (B+D)\\
+\mathit{pf}=&C / (A+C)\\
+\mathit{prec}=\mathit{precision}=&D / (D+C)\\
+\mathit{acc}=\mathit{accuracy}=&(A+D) / (A+B+C+D)\\
+\mathit{support}=&(C+D) / (A+B+C+D)\\
 \textit{effort}=&(L_c+L_d) / (L_a + L_b + L_c + L_d)\\
-reward=&pd / \textit{effort}
+\mathit{reward}=&\mathit{pd} / \textit{effort}
 \end{array}
 \]\\\hline
 \end{tabular}
-\caption{Some assessment criteria for defect predictors.}\label{fig:criteria}
+\caption{Some assessment criteria widely used in MSR.}\label{fig:criteria}
 \end{figure}
 
 
@@ -334,9 +366,12 @@ reward=&pd / \textit{effort}
 
 \begin{figure}[!t]
 \small
-\begin{tabular}{|p{.95\linewidth}|}\hline
+
+\begin{tabular}{p{.95\linewidth}}\hline 
+\rowcolor{gray!10}
 Some goals relate to aspects of defect prediction:
-\begin{enumerate}
+\begin{enumerate}[leftmargin=0.4cm]
+ 
 \item
 Mission-critical systems are risk averse and may accept very high false alarm rates,
 just as long as they catch any life-threatening possibility. That is, such projects
@@ -355,11 +390,12 @@ Some communities do not care about   low precision,
 just as long as a small fraction the data is returned. Hayes, Dekhytar, \& Sundaram call this fraction
 {\em selectivity} and offer an
 extensive discussion of the merits of this measure~\cite{hayes06}.
-\end{enumerate}\\\hline
+\end{enumerate}
+\\ \hline
 Beyond defect prediction are other goals that combine defect prediction with other economic
 factors:
-\begin{enumerate}
-\setcounter{enumi}{4}
+\begin{enumerate}[leftmargin=0.4cm]
+\setcounter{enumi}{5}
 \item
 Arisholm~\&~Briand~\cite{arisholm06},  Ostrand \& Weyeuker~\cite{ostrand04} and Rahman et al.~\cite{rahman12}
 say that a defect predictor should maximizing {\em reward}; i.e. find the fewest lines of code
@@ -370,7 +406,7 @@ regions of the code that are unfamiliar, to them~\cite{me11f}.
 Such amateur fixes are highly correlated to errors and, hence, to
 avoid such incorrect bug fixes, we have to optimize
 for finding the most number of bugs in regions that {\em the most programmers have worked with before}.
-\item In {\em Better-faster-cheaper}, we seek  project changes that lead
+\item In our  {\em better-faster-cheaper} work, we seek  project changes that lead
 to fewer defects and faster development times using less resources~\cite{elrawas10,me07f,me09a,me09f}.
 \item {\em  Rush-to-market} is another economic-based optimization measure.
 A learner that tries to maximize ``rush-to-market'' is trying to release the product as soon
@@ -389,10 +425,10 @@ least} to adopt; all the while (5)~avoiding {\em any violations} of
 required properties of these
 products.
 \end{enumerate}
-\\\hline
+\\ \hline
 All the above measures relate to the tendency of a predictor to find something. Another style
 of measure would be to check the {\em variability} of that predictor.
-\begin{enumerate}
+\begin{enumerate}[leftmargin=0.4cm]
 \setcounter{enumi}{8}
 \item
 In their study on reproducibility of SE results,
@@ -401,12 +437,14 @@ Using this measure, they defined {\em reproducibility} as $\frac{1}{CV}$~\cite{m
 \end{enumerate}\\\hline
 \end{tabular}
 \caption[Different users value different things.]{Different users value different things.
-Note that some of
+Technical note:  some of
 these goals are defined in terms of
-\fig{criteria}.
+Figure~\ref{fig:criteria}.
 }\label{fig:goals}
 \end{figure}
 
+
+XXX defterming goals actaully part of the modeling process. e.g softwaregoals.
 
 \section{Demystifying SBSE}
 
