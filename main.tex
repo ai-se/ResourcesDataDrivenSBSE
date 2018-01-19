@@ -91,7 +91,7 @@
     showspaces=false,
     showstringspaces=false,
     keywordstyle=\bfseries\sffamily,
-    emph={generate, fitness, recombination_op, elitism, ML.train, model, find_best_model, model_building}, emphstyle=\bfseries\color{blue!50!black},
+    emph={generate, fitness, recombination_op, elitism, ML.train, model, find_best_model, model_building, this_dominates_that, normalize}, emphstyle=\bfseries\color{blue!50!black},
     stringstyle=\color{green!50!black},
     commentstyle=\color{red!50!black}\it,
     numbers=left,
@@ -117,7 +117,7 @@
 \begin{document}
 \title{
 % Research and Teaching Tools for 
-Data-Driven Search-Based Software Engineering}
+Resources for Data-Driven Search-Based Software Engineering}
 % \titlenote{Produces the permission block, and
 %   copyright information}
 % \subtitle{Extended Abstract}
@@ -135,7 +135,7 @@ Data-Driven Search-Based Software Engineering}
 
 
 \begin{abstract}
-This paper introduces ideas and resources for a new field of software engineering research: Data-Driven Search-based software engineering (DSE), which includes insights from Software Analytics (SA) and Search-based Software Engineering (SBSE). The paper argues that these domains within Software Engineering should not work in isolation but exchange ideas among them. Such techniques can be particularly useful for situations which require learning from a lot of data or optimizing problems which need resources. This paper also presents resources and report our experience of tackling various SE problems.  Among the numerous questions that we try to answer are: (1) What are the various topics addressed by DSE?, (2) What are the types of data used by the researchers, (3) What research approaches do researchers use?, and  (4) What are levels of simplifications that can be added to these approaches. The paper briefly sets out to act as a practical guide to develop new data-driven techniques and also serve as a teaching resource.
+This paper introduces ideas and resources for a new field of software engineering research: Data-Driven Search-based software Engineering (DSE), which includes insights from Software Analytics (SA) and Search-based Software Engineering (SBSE). The paper argues that these domains within Software Engineering should not work in isolation but exchange ideas among them. Such techniques can be particularly useful for situations which require learning from a lot of data or optimizing problems which need resources. This paper also presents resources and report our experience of tackling various SE problems.  Among the numerous questions that we try to answer are: (1) What are the various topics addressed by DSE?, (2) What are the types of data used by the researchers, (3) What research approaches do researchers use?, and  (4) What are levels of simplifications that can be added to these approaches. The paper briefly sets out to act as a practical guide to develop new data-driven techniques and also serve as a teaching resource.
 \end{abstract}
 
 %
@@ -181,6 +181,47 @@ This paper introduces ideas and resources for a new field of software engineerin
 
 % \input{samplebody-conf}
 \section{Introduction}
+The Mining Software Repositories (MSR) community has benefited enormously from widely shared data sets.  Such data sets document the canonical problems in a field.
+They serve to cluster together like-minded researchers while also
+  allowing   them to generate reproducible results. Further, they can be used by
+   newcomers to learn state-of-the-set methods in this field. Finally, they enable the mainstay of good science:
+reputable, repeatable,  improvable, and even refutable results.
+
+The data shared by the MSR is highly influential.
+At the time of this writing, they are used by nine of the 50 most cited papers at IEEE Transactions of Software Engineering (the leading journal in this field, according to Google Scholar  goo.gl/ti7vd4),
+including the top-most cited paper (Hall et al.'s systematic literature review on defect prediction~\cite{hall12tse}).
+
+As a field evolves, so too should its canonical problems. One of the reasons for the emergence of the MSR field in 2004 was the existence of a new generation of widely-available data mining
+algorithms that could scale to interestingly large problems.  Now, some 14 years later, a new technology has emerged that could shape the future of this community. There now exists numerous, readily
+available, {\em search-based software engineering} (SBSE) algorithms. This article asks what are the reproducible
+canonical SE problems that can be addressed by SBSE, and what resources can researchers access to explore those problems.
+
+These new algorithms are ripe for exploration and there is much interest in this area.
+A recent workshop  on {\em Data-drive Search-based Software
+Engineering } was well attended by over two dozen senior members of the MSR community.
+It should be noted that some of these algorithms are so simple that, 
+given an algorithmic descriptions, they are very quick to encode,
+For example, the code required for simulated annealing~\cite{van1987simulated} and
+differential evolution~\cite{storn97} is not much longer than its pseudo-code description. 
+
+XXX optimisation
+
+It turns out that SBSE has much to offer MSR, hyper-parameter optimization of data miners or data pre-processers. novel solutions to hard configuration problems. direct application of user criteria to problems. further, MSR has much to offer SBSE particularly in the area of landscape analysis and explanation. SBSE tools walk over a landscape of potential solutions. When MSR tools are used to 
+
+XXX we show that,  syntactically, there is much overlap between design choices in SBSE and SA. Hence we can say that learning and optimization go hand in hand and we should not treat both of these techniques in isolation. Instead, we should exchange ideas between these two domains. We call the marriage of these two fields by Data-Driven Search-based Software Engineering (DSE\footnote{DDSSE might be a more appropriate abbreviation but let us remove redundancy in the name.}). We appeal to the community that it is time to modify our approaches. It is not longer SBSE or SA. Let us tie these two domain and exchange ideas to bring the learning and searching closer---thereby learning from each other. \footnote{The geneses of the ideas presented in this paper happened in the \href{http://shonan.nii.ac.jp/shonan/blog/2016/09/08/data-driven-search-based-software-engineering/}{No.105 Data-Driven Search-Based Software Engineering}, where leading practitioners came together to propose and exchange ideas.}  
+
+The contributions of the paper are:
+\begin{itemize}
+    \item To show that optimization (SBSE) and learning (SA) goes hand in hand,
+    \item Provide resources to seed various research,
+    \item Provide teaching resources, which can be used to create DSE courses, and
+    \item Based on our experience, various strategies which can be used to make these DSE techniques more efficient.
+\end{itemize}
+
+
+\section{A Formal Analysis}
+
+
 Software Analytics (SA) and Search-based Software Engineering (SBSE) are two of the newer fields in Software Engineering (SE) which deals with searching through a lot of data or options to find useful and actionable information. However, these two areas have evolved in isolation from each other. 
 SA focuses on mining data generated during the software processes such as development, testing, etc. and uses various Machine Learning (ML) algorithms to extract information and relationships between different features of the collected data. 
 Hidden in these data is precious and valuable information about the quality of software and services and the dynamics of software development. Mining of Software Repositories is a conference which is focused on software analytics. SBSE, on the other hand, involved formulating a software engineering problems as a search problem and uses meta-heuristic algorithms to balance competing constraints, trade-offs between concerns and requirements. SBSE has opened venues which promotes reformulation of various software engineering problems and has provided numerous inspirations for improving SE.  SBSE uses a data-driven approach to find the optimal (or near optimal) solutions to software engineering problems with the use of a fitness function which is used to differentiate between good (favorable) and bad (unfavorable) solutions. Symposium of Search-based Software Engineering (SSBSE) and Symposium of Search-based Software Testing (SBST) are the two venues which are dedicated to the dissemination of information in this area.
@@ -205,15 +246,266 @@ Let us draw a comparison between these two fields. Please note that SA is very s
 
 \noindent\textit{Design Choice:} The performance of the meta-heuristic algorithm (in SBSE), and machine learning algorithms (in SA) is governed by the parameters used in them. 
 
-So, syntactically, there is much overlap between design choices in SBSE and SA. Hence we can say that learning and optimization go hand in hand and we should not treat both of these techniques in isolation. Instead, we should exchange ideas between these two domains. We call the marriage of these two fields by Data-Driven Search-based Software Engineering (DSE\footnote{DDSSE might be a more appropriate abbreviation but let us remove redundancy in the name.}). We appeal to the community that it is time to modify our approaches. It is not longer SBSE or SA. Let us tie these two domain and exchange ideas to bring the learning and searching closer---thereby learning from each other. \footnote{The geneses of the ideas presented in this paper happened in the \href{http://shonan.nii.ac.jp/shonan/blog/2016/09/08/data-driven-search-based-software-engineering/}{No.105 Data-Driven Search-Based Software Engineering}, where leading practitioners came together to propose and exchange ideas.}  
+\section{Why Does MSR Need SBSE?}
 
-The contributions of the paper are:
+To motivate the rest of this paper, we first answer the basic question: why would anyone in the MSR
+community ever need to explore SBSE?
+
+ To answer this question, we note that
+ software engineering tasks rarely involve a
+single goal. For example, when a software engineer
+is testing a software, she may be interested in
+finding the highest possible number of software
+defects at the same time as minimizing the time
+required for testing. Similarly, when a software
+engineer is planning the development of a software,
+he/she may be interested in minimizing the number of
+defects, the effort required to develop the software
+and the cost of the software. The existence of {\em
+multiple goals} and {\em multi-objective optimizers}
+thus profoundly affects data science for software
+engineering.
+
+So far, the existence of multiple goals/objectives
+has been studied more in search-based software
+engineering than in the MSR community (exceptions: TIMM,diPenta,Minku). We think that will change, very
+soon. In the very near future, we foresee a stronger
+emphasis on multiple goals in data science for
+software engineering.
+
+In software engineering, biases are expressed as the {\em values}
+business users espouse for a system.
+ Barry Boehm~\cite{boehm04}
+advocated assessing
+software development technologies
+ by the {\em value} they give
+to particular stake-holders. Note that this is
+very different to standard practice (which assesses technologies
+via their functionality).
+
+In his description of value-based SE, Boehm favors
+continuous optimization methods to  conduct cost/benefit
+trade-off studies. Translated into the terminology
+of this book, he is advocated data mining methods that are
+tuned to different value proposition.
+
+A problem with this kind of trade-off is that it must explore some
+underlying space of options.  In a conventional approach, some
+business process model could be developed, then exercised many
+times. Such a {\em data farming} approach: \be
+\item
+{\em Plants a seed.} Build a model from domain information. All uncertainties or missing parts of the domain information are modeled as a space of possibilities.
+\item {\em Grows the data.} Execute model and, when the model moves into the space of possibilities, output is created by selecting at random from the possibilities.
+\item {\em Harvests.} Summarize the grown data via data mining.
+\item Optionally, use the harvested summaries to improve the model;
+  then, go to 1. \ee
+  
+  
+  
+\begin{figure}[!b]
+\small
+\begin{tabular}{|p{.95\linewidth}|}\hline
+Let $\{A,B,C,D\}$ denote the
+true negatives,
+false negatives,
+false positives, and
+true positives
+(respectively) found by a software defect detector.
+Also, let $L_A L_b, L_c, L_d$ be the lines of code
+seen in the parts of system that fall
+into $A,B,C,D$. Then:
+\[
+\begin{array}{r@{~}l}
+pd=recall=&D / (B+D)\\
+pf=&C / (A+C)\\
+prec=precision=&D / (D+C)\\
+acc=accuracy=&(A+D) / (A+B+C+D)\\
+support=&(C+D) / (A+B+C+D)\\
+\textit{effort}=&(L_c+L_d) / (L_a + L_b + L_c + L_d)\\
+reward=&pd / \textit{effort}
+\end{array}
+\]\\\hline
+\end{tabular}
+\caption{Some assessment criteria for defect predictors.}\label{fig:criteria}
+\end{figure}
+
+
+
+
+\begin{figure}[!t]
+\small
+\begin{tabular}{|p{.95\linewidth}|}\hline
+Some goals relate to aspects of defect prediction:
+\begin{enumerate}
+\item
+Mission-critical systems are risk averse and may accept very high false alarm rates,
+just as long as they catch any life-threatening possibility. That is, such projects
+do not care about effort- they want to {\em maximize recall} regardless of any impact
+that might have on the false alarm rate.
+\item
+Cost averse managers may accept lower probabilities of
+detection (the recall measure), just as long as they {\em do not waste budgets on false alarms}. This community
+seeks to {\em minimize false alarms} while maintaining {\em some level of adequate recall}.
+\item  Suppose a new hire wants
+ to impress their manager. That
+ new hire might want to ensure that no result presented to  management contains  true negative;
+i.e. they wish to {\em maximize precision}.
+\item
+Some communities do not care about   low precision,
+just as long as a small fraction the data is returned. Hayes, Dekhytar, \& Sundaram call this fraction
+{\em selectivity} and offer an
+extensive discussion of the merits of this measure~\cite{hayes06}.
+\end{enumerate}\\\hline
+Beyond defect prediction are other goals that combine defect prediction with other economic
+factors:
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item
+Arisholm~\&~Briand~\cite{arisholm06},  Ostrand \& Weyeuker~\cite{ostrand04} and Rahman et al.~\cite{rahman12}
+say that a defect predictor should maximizing {\em reward}; i.e. find the fewest lines of code
+that contain the most bugs.
+\item In other work, Lumpe et al. are concerned about
+ {\em amateur  bug fixes}; i.e. those that made by programmers to
+regions of the code that are unfamiliar, to them~\cite{me11f}.
+Such amateur fixes are highly correlated to errors and, hence, to
+avoid such incorrect bug fixes, we have to optimize
+for finding the most number of bugs in regions that {\em the most programmers have worked with before}.
+\item In {\em Better-faster-cheaper}, we seek  project changes that lead
+to fewer defects and faster development times using less resources~\cite{elrawas10,me07f,me09a,me09f}.
+\item {\em  Rush-to-market} is another economic-based optimization measure.
+A learner that tries to maximize ``rush-to-market'' is trying to release the product as soon
+as possible, without too many bugs. Note that ``rush-to-market'' is an appropriate strategy for a company competing
+in a volatile and crowded market place where being first-to-market enables a revenue stream (that can be
+used to subsequently fix any issues with version 1.0)~\cite{huang06}.
+\item
+With Sayyad~\cite{sayyad13a,sayyad13b}, we have explored models of software product
+lines whose value propositions are five-fold:
+(1)~offer feature rich products (i.e. that
+use as {\em many features} as possible);
+(2)~selecting from features with {\em fewest past defects};
+favoring those that we have (3)~{\em used before}; and which
+(4)~{\em cost
+least} to adopt; all the while (5)~avoiding {\em any violations} of
+required properties of these
+products.
+\end{enumerate}
+\\\hline
+All the above measures relate to the tendency of a predictor to find something. Another style
+of measure would be to check the {\em variability} of that predictor.
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item
+In their study on reproducibility of SE results,
+ Anda, Sjoberg and Mockus advocate using the coefficient of variation ($CV=\frac{stddev}{mean}$).
+Using this measure, they defined {\em reproducibility} as $\frac{1}{CV}$~\cite{mockus09}.
+\end{enumerate}\\\hline
+\end{tabular}
+\caption[Different users value different things.]{Different users value different things.
+Note that some of
+these goals are defined in terms of
+\fig{criteria}.
+}\label{fig:goals}
+\end{figure}
+
+
+\section{Demystifying SBSE}
+
+There are many useful and robust freely-available   tools which
+the MSR community can use to quickly build their own SBSE applications (e.g. XXX).
+That said, sometimes it is insightful to look ``under the hood'' of these tools in order to gain more insight about the
+processes involved. 
+For example, this section show two   examples where  seemingly arcane SBSE methods can be easily encoded
+using standard data mining methods. The point of this section is to illustrate the close overlap of the
+MSR and SBSE.
+
+At first glance, MSR and SBSE seem very different:
+\begin{enumerate}
+\item MSR collects data, then reasons about it;
+\item SBSE  collects data,
+focuses on some region of interest in that data,  collects more data around that region, then repeats.
+\item An MSR analysis typically focus on a single performance measure.
+Often these performance measures are used across many publications; e.g.  how many bugs are found after reading just 20\% of the code.
+\item An SBSE analysis focuses on many performance measures reflecting domain-specific criteria (so these measures
+can  vary a lot between different tasks).
+\end{enumerate}
+Note that
+MSR tools have heavily exploited point \#3 by using tools highly optimized for particular goals (e.g. decision
+trees divide data to reduce entropy). Hence the usual case is that
+ these heavily optimized MSR tools run much faster than the more ambitious SBSE tools.
+That said, looking under the hood, there are interesting similarities between MSR and SBSE tools.
+So much so that we can implement better SBSE tools using techniques taken from MSR (and vice versa).
+Further, recent results suggest that seemingly slow SBSE tools can be made to run orders of magnitude faster
+using tricks taken from MSR.
+
+For example, consider {\em domination}. Experienced  researchers know that they
+must assess their learned models on multiple objectives such as:
 \begin{itemize}
-    \item To show that optimization (SBSE) and learning (SA) goes hand in hand,
-    \item Provide resources to seed various research,
-    \item Provide teaching resources, which can be used to create DSE courses, and
-    \item Based on our experience, various strategies which can be used to make these DSE techniques more efficient.
-\end{itemize}
+\item
+{\em Maximize} recall  and {\em  precision}; or
+\item
+{\em Minimize} the  amount of the code to {\em maximize} the number of bugs discovered.
+\end{itemize}i
+As the number of competing objectives increases, it becomes harder to distinguish results since something
+that wins by objective 1,2,3 might lose on objective 4,5,6. Last century, this problem was solved by
+{\em aggregation functions} that added magic weights to each objective, and the winning solution
+was the one that scored most on the sum of weight times objective. The magic weights in these aggregation functions tended
+to heavily biased
+the solution. Another approach, that enables the generation of  a larger range of interesting
+solutions is the {\em indicator domination} predicate. This predicate 
+rewards the idea whose objective
+scores loses by the least magnitude (on average) across all the objectives. The original
+article   describing this process is
+somewhat  
+arcane~\cite{zitzler2001spea2} but the pseudocode for  the calculation is quite straight forward (see Figure~\ref{fig:dom}). Note that this
+domination predicate works well for two objectives and is the recommended predicate for up to five or six objectives~\cite{sayyad13a}.
+
+\begin{figure}[t]
+\small
+\hspace{0.4cm}\begin{lstlisting}[xrightmargin=5.0ex,mathescape,frame=none,numbers=right]
+def this_dominates_that(
+        n,      # number of objectives
+        this,   # list of objective scores 1..n
+        that,   # list of objective scores 1..n
+        w,      # w[i]=  1 if maximizing objective i; else -1
+        e       # 2.7182....
+        ):
+        for i in n:
+            x   = normalize( this[i] )  # convert to 0...1
+            y  = normalize(  that[i] )  # convert to 0...1
+            sum1 -= e ^ ( w[i] * (x - y)/n )
+            sum2 -= e ^ ( w]i] * (y - x)/n ) }
+        return sum1/n < sum2/n 
+
+\end{lstlisting}
+\caption{\small{Psuedocode of the indicator domination function~\cite{zitzler2001spea2}.}
+}
+\label{fig:dom}  
+\end{figure}
+
+XXX need an example here of n objectives
+
+Using  domination, we can turn a standard MSR technique into an SBSE technique, as follows. Firstly,  for data where each row contains multiple objectives, score each row by $N$ which is the number of other rows it dominates. Secondly, run a regression tree learner
+(e.g. CART) to learn a {\em domination tree} that combines independent variables to predict for $N$.  Assuming feature selection (to generate a small
+tree), then the resulting model can be small enough to displayed and debated with users.  
+Such domination trees may not work as well as more intricate SBSE tools (e.g. NSGA-II~\cite{XXX}, DE~\cite{XXX}, MOEAD/D~\cite{XXX})
+since,
+for one thing, they do no mutate and cross-over   best solutions to learn better combinations. However, after the $O(R^2)$ time
+process required to compute $N$ for $R$ rows, they can be generated far faster using CART than (say) a genetic algorithm exploring 
+multiple generations of mutated calculations.  But in terms of the goals of this section of the paper, they are an 
+excellent important example of how MSR tools (e.g. CART) can optimize SBSE tasks (multi-objective optimization).
+
+Another example where SBSE tools can be significantly optimized by MSR tools is  active learning. 
+To motivate the following  we XXXX.
+
+Suppose we are exploring
+a complex multi-objective space where computing the objective scores is very expensive. For example, 
+consider a study  exploring
+ better software
+inspection policies. Now imagine that the inspection process is informed by  The question here might be what are the best hints the tool can offer humans in order to find
+the best bugs. Given numerous hyperparameters controlling the static code analysis tool, a multi-objective optimizer would
+try different settings to (e.g.) different control parameters to a   static code analysis tool /
+
+
 
 
 \section{Background}
@@ -589,7 +881,7 @@ The intuition used to solve the problem is the following: concentrate the effort
 \noindent\textbf{Strategy: }To reduce the training time as well as promote simplicity, hyper-parameter optimization of simple learners, like SVM (Support Vector Machines), is a way to go. Specifically, a Differential Evolution algorithm, which has been an effective tuning algorithm (used in SBSE)~\cite{fu2016tuning},
 to explore the parameter space of SVM. After the search process,
  SVM with best-found parameters is used to predict classes of Stack Overflow questions. This method can get similar or better results
-than the deep learning method while reducing the training time by up to 80 times. Please refer to \cite{fu2017easy} for more details. Please refer to \cite{fu2017easy} for more details and the reproduction package can be found in~\url{http://tiny.cc/raise_data_EOH}.
+than the deep learning method while reducing the training time by up to 80 times. Please refer to \cite{fu2017easy} for more details. Please refer to \cite{fu2017easy} for more details and the reproduction package can be found in~\url{http://tiny.cc/raise_data_easy}.
 
 \input{img/structure}
 
