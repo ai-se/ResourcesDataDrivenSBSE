@@ -1,6 +1,6 @@
 
 [home](http://tiny.cc/sbse) |
-[copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018, Vivek Nair, Leandro Minku, tim&commat;menzies.us, Markus Wagner
+[copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018 
 <br>
 [<img width=900 src="img/banner.png">](http://tiny.cc/sbse)<br> 
 [models](xx) |
