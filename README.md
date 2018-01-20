@@ -26,4 +26,5 @@ References in the _related work_ column come from the paper http://tiny.cc/ddSbs
 
 ## How to Contribute
 
-Please clone this repo, propose some changes, then post a pull request. Remember, the more the merrier!
+Please clone the repo https://github.com/ai-se/ResourcesDataDrivenSBSE, then make
+ some changes, then post a pull request. Remember, the more the merrier!
