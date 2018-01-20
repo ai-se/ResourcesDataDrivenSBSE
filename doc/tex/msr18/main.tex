@@ -181,19 +181,45 @@ This paper introduces ideas and resources for a new field of software engineerin
 \maketitle
 \pagestyle{plain}
 % \input{samplebody-conf}
+
+
+
+\begin{figure*}[!t]
+{\center
+\includegraphics[width=5.5in]{img/page1.png}}
+\caption{Our Github-based repository (http://tiny.cc/sbse) for resources relating to data-drive Search-based SE 
+currently contains 89 artifacts divided into 13 groups. References in the right-hand column come from this paper.
+For each of the above, there exists papers showing published baselines. Each of these baselines can be viewed as challenge problems:
+how many of these baselines can you repeat/ improve/ refute?  }\label{fig:one}
+\end{figure*}
+
 \section{Introduction}
-This paper initiates a new shared resource for the Mining Software
-Repositories (MSR) community.
-Fig1 shows the Github repoistory \href{https://github.com/ai-se/ResourceDataDrivenSBSE}{ai-se/ResourcesDataDrivenSBSE}. In this report we describe the why and
-what of this resource. Our intent is that, as a result
-of this paper, we receive many pull requests that extend
-this repository into a useful resource for   MSR.
+This paper introduces tiny.cc/sbse, a  new shared resource for the Mining Software
+Repositories (MSR) community shown in Figure~\ref{fig:one}.
 
-This repository has taken several years to build. Prior to this collection, we were forced to test out our data-driven SBSE
-prototypes on tiny toy tasks such as the ZDT and DTLZ suite. These toy tasks have some useful
-properties (e.g. the DTLZ tasks can expand to any number of decisions and objectives),
-they proved not to be of interest to reviewers from SE venues. 
+The resource has   taken several years to build. Prior to its
+existence, we tested   our data-driven search-based SE
+prototypes on tiny toy tasks such as the ZDT~\cite{xx} and DTLZ suites~\cite{xx}. These toy tasks have some useful
+properties-- for example, the DTLZ tasks can expand to any number of decisions and objectives.
+However, 
+those models proved not to be of interest to reviewers from SE venues. 
 
+Recently we have much more success in terms of novel research results
+(and publications at SE forums) after 
+expanding that collection
+to include models
+of (e.g.) software product lines, requirements, and
+agile software projects. 
+As such we have found it to be a very useful resource
+which we now offer to the MSR community.
+
+This paper describes that resource,    how to use it,
+and why the general MSR community might find it insightful.
+The resource is a Github repository and our intent is that it
+attracts enough attention that  other researchers  clone, modify, the submit  pull requests back to that site. In this way, we hope it grows
+into a useful resource for MSR.
+
+\section{Why is this Interesting?}
 
 The MSR  community has benefited enormously from widely shared data sets.  Such data sets document the canonical problems in a field.
 They serve to cluster together like-minded researchers while also
@@ -218,14 +244,6 @@ given an algorithmic descriptions, they are very quick to encode,
 For example, the code required for simulated annealing~\cite{van1987simulated} and
 differential evolution~\cite{storn97} is not much longer than its pseudo-code description. 
 
-\begin{figure*}[!t]
-{\center
-\includegraphics[width=5.5in]{img/page1.png}}
-\caption{http://tiny.cc/sbse = our Github-based repository for resources relating to data-drive Search-based SE 
-currently contains 89 artifacts divided into 13 groups. References in the right-hand column come from this paper.
-For each of the above, there exists papers showing published baselines. Each of these baselines can be viewed as challenge problems:
-how many of these baselines can you repeat/ improve/ refute? To contribute, researchers need only modify the repository then submit a pull request. }
-\end{figure*}
 XXX optimisation
 
 It turns out that SBSE has much to offer MSR, hyper-parameter optimization of data miners or data pre-processers. novel solutions to hard configuration problems. direct application of user criteria to problems. further, MSR has much to offer SBSE particularly in the area of landscape analysis and explanation. SBSE tools walk over a landscape of potential solutions. When MSR tools are used to 
