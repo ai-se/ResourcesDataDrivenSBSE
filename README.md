@@ -1,6 +1,6 @@
-# http://tiny.cc/ddSbse
+# Resources for Data-driven SBSE
 
-## Resources for Data-driven SBSE
+## URL:   tiny.cc/ddSbse
 
 Premise:
 
