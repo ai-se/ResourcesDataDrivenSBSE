@@ -7,7 +7,7 @@
 [data](xx) |
 [discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues)
 
- 
+ [![DOI](https://zenodo.org/badge/116411075.svg)](https://zenodo.org/badge/latestdoi/116411075)
 
 Premise:
 
