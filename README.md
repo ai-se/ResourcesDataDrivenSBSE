@@ -1,4 +1,5 @@
 # Resources for Data-driven SBSE
 
-Table 1 as a markdown file
-Screensnap and add it to the latex document
+![](https://github.com/ai-se/ResourceDataDrivenSBSE/raw/master/img/image0.png)
+
+References in the _related work_ column come from the paper http://tiny.cc/ddSbse.
