@@ -1,11 +1,13 @@
 
 [home](http://tiny.cc/sbse) |
+[models](xx) |
+[data](xx) |
+[discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
+[citation](CITATION.md) |
 [copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018 
 <br>
 [<img width=900 src="img/banner.png">](http://tiny.cc/sbse)<br> 
-[models](xx) |
-[data](xx) |
-[discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues)
+
 
  [![DOI](https://zenodo.org/badge/116411075.svg)](https://zenodo.org/badge/latestdoi/116411075)
 
