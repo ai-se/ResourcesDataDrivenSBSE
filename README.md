@@ -14,7 +14,8 @@
 
 <img width=400 align=right src="img/ddsbse17.png">
 The recent seminar 
-![Data-drive search-based SE](http://shonan.nii.ac.jp/shonan/blog/2016/09/08/data-driven-search-based-software-engineering/)
+![http://shonan.nii.ac.jp/shonan/blog/2016/09/08/data-driven-search-based-software-engineering/
+(Data-Driven Search-Based SE)
 concluded that 
 (1) the  mining software repositories can be improved using search-based methods; and that (2) search-based methods can be improved using
   tools from the MSR community. The resources of this
