@@ -16,13 +16,14 @@ Markus Wagner. (2018, January 20). Resources for data-driven Search-based SE/ Ze
     DOI       = {10.5281/zenodo.1156235}, 
     publisher = {Zenodo}, 
     author    = {Vivek Nair,
-                 Jianfeng Chen.
-                 George Mathew,
-                 Zhe Yu,
+                 Jianfeng Chen,
                  Wei Fu,
-                 Leandro Minku,
+                 George Mathew,
                  Tim Menzies,
-                 Markus Wagner}, 
+                 Leandro Minku,
+                 Markus Wagner,
+                 Zhe Yu
+                 }, 
     year      = {2018}, 
     month     = {Jan}
 }
