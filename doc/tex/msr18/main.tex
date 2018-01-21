@@ -118,7 +118,7 @@
 \begin{document}
 \title{
 % Research and Teaching Tools for 
-Resources for Data-Driven \\Search-Based Software Engineering}
+Resources for Data-Driven Search-Based SE}
 % \titlenote{Produces the permission block, and
 %   copyright information}
 % \subtitle{Extended Abstract}
@@ -136,7 +136,23 @@ Resources for Data-Driven \\Search-Based Software Engineering}
 
 
 \begin{abstract}
-This paper introduces ideas and resources for a new field of software engineering research: Data-Driven Search-based software Engineering (DSE), which includes insights from Software Analytics (MSR) and Search-based Software Engineering (SBSE). The paper argues that these domains within Software Engineering should not work in isolation but exchange ideas among them. Such techniques can be particularly useful for situations which require learning from a lot of data or optimizing problems which need resources. This paper also presents resources and report our experience of tackling various SE problems.  Among the numerous questions that we try to answer are: (1) What are the various topics addressed by DSE?, (2) What are the types of data used by the researchers, (3) What research approaches do researchers use?, and  (4) What are levels of simplifications that can be added to these approaches. The paper briefly sets out to act as a practical guide to develop new data-driven techniques and also serve as a teaching resource.
+This paper introduces tiny.cc/sbse, a  new shared resource for the Mining Software
+Repositories (MSR) community.
+The resource contains 89
+artifacts related to data-driven search-based SE.
+These artifacts are divided into 13 groups
+such as requirements engineering, software product lines, software processes, etc.
+Artifacts come with   meta-data about what papers have used 
+the artifacts   in the past.   
+
+
+
+
+This paper describes that resource,    how to use it,
+and why the general MSR community might find it insightful.
+The resource is a Github repository and our intent is that it
+attracts enough attention that  other researchers  clone, modify, the submit  pull requests. In this way, we hope it grows
+into a widely-used MSR resource.
 \end{abstract}
 
 %
@@ -187,24 +203,63 @@ This paper introduces ideas and resources for a new field of software engineerin
 \begin{figure*}[!t]
 {\center
 \includegraphics[width=5.5in]{img/page1.png}}
-\caption{Our Github-based repository (http://tiny.cc/sbse) for resources relating to data-drive Search-based SE 
-currently contains 89 artifacts divided into 13 groups. References in the right-hand column come from this paper.
-For each of the above, there exists papers showing published baselines. Each of these baselines can be viewed as challenge problems:
-how many of these baselines can you repeat/ improve/ refute?  }\label{fig:one}
+\caption{Our Github-based repository  for resources relating to data-driven Search-based SE.
+http://tiny.cc/sbse}\label{fig:one}
 \end{figure*}
 
 \section{Introduction}
-This paper introduces tiny.cc/sbse, a  new shared resource for the Mining Software
-Repositories (MSR) community shown in Figure~\ref{fig:one}.
 
-The resource has   taken several years to build. Prior to its
-existence, we tested   our data-driven search-based SE
-prototypes on tiny toy tasks such as the ZDT~\cite{xx} and DTLZ suites~\cite{xx}. These toy tasks have some useful
-properties-- for example, the DTLZ tasks can expand to any number of decisions and objectives.
-However, 
-those models proved not to be of interest to reviewers from SE venues. 
 
-Recently we have much more success in terms of novel research results
+The MSR  community has benefited enormously from widely shared data sets.  Such data sets document the canonical problems in a field.
+They serve to cluster together like-minded researchers while  
+  allowing   them to generate reproducible results. Also, such data can be used by
+   newcomers to learn state-of-the-set methods in this field. Further, they enable the mainstay of good science:
+reputable, repeatable,  improvable, and even refutable results.
+At the time of this writing,   nine of the 50 most cited papers in the last 5 years at IEEE Transactions of Software Engineering all draw their case studies
+from a small number of similar defect prediction data sets.
+
+
+As a field evolves, so too should its canonical problems. One  reason for the emergence of   MSR  in 2004 was the existence of a new generation of widely-available data mining
+algorithms that could scale to interestingly large problems.  Now, some 14 years later, a new technology has emerged that could reshape the future of this community. There now exists numerous, readily
+available, {\em search-based software engineering} (SBSE) algorithms. Whereas:
+\begin{itemize}
+\item
+An MSR researcher might deploy a
+data miner to learn a model from  dat   that predicts for (say) a single target class;
+\item
+An SBSE researcher might deploy a multi-objective optimizer
+to find what examples score best
+on multiple target variables.
+\end{itemize}
+
+There has been a recent increased in methods that combine MSR and SBSE.
+A recent workshop  on {\em Data-drive Search-based Software
+Engineering} (goo.gl/f8D3EC)   was well attended by over two dozen senior members of the MSR community.
+The workshop concluded that (1) the mining software repositories can be improved using search-based methods; and that (2) search-based methods can be improved using tools from the MSR community. 
+For example:
+\begin{itemize}
+\item
+MSR data mining algorithms can be used to summarize the data, after which SBSE can leap to better solutions, faster~\cite{krall2015gale}.
+\item
+SBSE tools can be used to intelligently select 
+settings for MSR data mining algorithms (e.g.
+such as how many trees should be included in a random
+forest~\cite{fu2016tuning}).
+\end{itemize}
+One result of that workshop was a call for more resources that can be used by researchers and educators to better explore MSR+SBSE.
+In response to that call,  this paper describes http://tiny.cc/sbse,
+a collection of artifacts for exploring
+data-driven search-based SE (see Figure~1). 
+ Each artifact  come with meta-data about what papers have used the artifacts in the past. Hence, each artifact can be viewed as a challenge problem: i.e. can you repeat/ improve/ refute prior results that used this artifact?
+ 
+It has    taken several years to build this resource. Prior to its
+existence, we explored  data-driven search-based SE
+prototypes on tiny toy tasks that proved 
+uninteresting to 
+ reviewers from SE venues. 
+
+Recently we have much more success in terms of novel.
+research results
 (and publications at SE forums) after 
 expanding that collection
 to include models
@@ -213,44 +268,18 @@ agile software projects.
 As such we have found it to be a very useful resource
 which we now offer to the MSR community.
 
-This paper describes that resource,    how to use it,
-and why the general MSR community might find it insightful.
-The resource is a Github repository and our intent is that it
-attracts enough attention that  other researchers  clone, modify, the submit  pull requests back to that site. In this way, we hope it grows
-into a useful resource for MSR.
 
-\section{Why is this Interesting?}
 
-The MSR  community has benefited enormously from widely shared data sets.  Such data sets document the canonical problems in a field.
-They serve to cluster together like-minded researchers while also
-  allowing   them to generate reproducible results. Further, they can be used by
-   newcomers to learn state-of-the-set methods in this field. Finally, they enable the mainstay of good science:
-reputable, repeatable,  improvable, and even refutable results.
 
-The data shared by the MSR is highly influential.
-At the time of this writing, they are used by nine of the 50 most cited papers at IEEE Transactions of Software Engineering (the leading journal in this field, according to Google Scholar  goo.gl/ti7vd4),
-including the top-most cited paper (Hall et al.'s systematic literature review on defect prediction~\cite{hall12tse}).
 
-As a field evolves, so too should its canonical problems. One of the reasons for the emergence of the MSR field in 2004 was the existence of a new generation of widely-available data mining
-algorithms that could scale to interestingly large problems.  Now, some 14 years later, a new technology has emerged that could shape the future of this community. There now exists numerous, readily
-available, {\em search-based software engineering} (SBSE) algorithms. This article asks what are the reproducible
-canonical SE problems that can be addressed by SBSE, and what resources can researchers access to explore those problems.
+% XXX optimisation
 
-These new algorithms are ripe for exploration and there is much interest in this area.
-A recent workshop  on {\em Data-drive Search-based Software
-Engineering } was well attended by over two dozen senior members of the MSR community.
-It should be noted that some of these algorithms are so simple that, 
-given an algorithmic descriptions, they are very quick to encode,
-For example, the code required for simulated annealing~\cite{van1987simulated} and
-differential evolution~\cite{storn97} is not much longer than its pseudo-code description. 
+% It turns out that SBSE has much to offer MSR, hyper-parameter optimization of data miners or data pre-processers. novel solutions to hard configuration problems. direct application of user criteria to problems. further, MSR has much to offer SBSE particularly in the area of landscape analysis and explanation. SBSE tools walk over a landscape of potential solutions. When MSR tools are used to 
 
-XXX optimisation
+% XXX we show that,  syntactically, there is much overlap between design choices in SBSE and MSR. Hence we can say that learning and optimization go hand in hand and we should not treat both of these techniques in isolation. Instead, we should exchange ideas between these two domains. We call the marriage of these two fields by Data-Driven Search-based Software Engineering (DSE\footnote{DDSSE might be a more appropriate abbreviation but let us remove redundancy in the name.}). We appeal to the community that it is time to modify our approaches. It is not longer SBSE or MSR. Let us tie these two domain and exchange ideas to bring the learning and searching closer---thereby learning from each other. \footnote{The geneses of the ideas presented in this paper happened in the \href{http://shonan.nii.ac.jp/shonan/blog/2016/09/08/data-driven-search-based-software-engineering/}{No.105 Data-Driven Search-Based Software Engineering}, where leading practitioners came together to propose and exchange ideas.}  
 
-It turns out that SBSE has much to offer MSR, hyper-parameter optimization of data miners or data pre-processers. novel solutions to hard configuration problems. direct application of user criteria to problems. further, MSR has much to offer SBSE particularly in the area of landscape analysis and explanation. SBSE tools walk over a landscape of potential solutions. When MSR tools are used to 
-
-XXX we show that,  syntactically, there is much overlap between design choices in SBSE and MSR. Hence we can say that learning and optimization go hand in hand and we should not treat both of these techniques in isolation. Instead, we should exchange ideas between these two domains. We call the marriage of these two fields by Data-Driven Search-based Software Engineering (DSE\footnote{DDSSE might be a more appropriate abbreviation but let us remove redundancy in the name.}). We appeal to the community that it is time to modify our approaches. It is not longer SBSE or MSR. Let us tie these two domain and exchange ideas to bring the learning and searching closer---thereby learning from each other. \footnote{The geneses of the ideas presented in this paper happened in the \href{http://shonan.nii.ac.jp/shonan/blog/2016/09/08/data-driven-search-based-software-engineering/}{No.105 Data-Driven Search-Based Software Engineering}, where leading practitioners came together to propose and exchange ideas.}  
-
-The contributions of the paper are:
+The rest of this paper discusses SBSE and its connection to MSR. 
+We offer a ``cheats' guide'' to SBSE with just enough information to help researchers and educators use the artifacts in the resource. Next,  More specifically, the contributions of the paper are:
 \begin{itemize}
     \item To show that optimization (SBSE) and learning (MSR) goes hand in hand,
     \item Provide resources to seed various research,
@@ -259,34 +288,66 @@ The contributions of the paper are:
 \end{itemize}
 
 
-\section{A Formal Analysis}
+\section{What is Different About SBSE?}
+
+The following  attempts to list
+some of the main differences between MSR and SBSE.
+To  misquote George Box, we hope this list is
+ more useful than 
+wrong
+
+ 
 
 
-Software Analytics (MSR) and Search-based Software Engineering (SBSE) are two of the newer fields in Software Engineering (SE) which deals with searching through a lot of data or options to find useful and actionable information. However, these two areas have evolved in isolation from each other. 
-MSR focuses on mining data generated during the software processes such as development, testing, etc. and uses various Machine Learning (ML) algorithms to extract information and relationships between different features of the collected data. 
-Hidden in these data is precious and valuable information about the quality of software and services and the dynamics of software development. Mining of Software Repositories is a conference which is focused on software analytics. SBSE, on the other hand, involved formulating a software engineering problems as a search problem and uses meta-heuristic algorithms to balance competing constraints, trade-offs between concerns and requirements. SBSE has opened venues which promotes reformulation of various software engineering problems and has provided numerous inspirations for improving SE.  SBSE uses a data-driven approach to find the optimal (or near optimal) solutions to software engineering problems with the use of a fitness function which is used to differentiate between good (favorable) and bad (unfavorable) solutions. Symposium of Search-based Software Engineering (SSBSE) and Symposium of Search-based Software Testing (SBST) are the two venues which are dedicated to the dissemination of information in this area.
+In MSR,  data is often collected then processed.
+In SBSE,  data is collected on demand
+from  some generator-- which means an SBSE analysis can easily
+generate new samples of the data in very small specific regions.
 
-In a very loose sense, we can associate \textit{learning} with MSR, since most of the work in this area attempts to learn from massive amounts of data, and \textit{optimization} with SBSE. In this paper, we show how learning and optimization are mutually inclusive---one cannot happen in isolation, which also goes to show that the field of MSR and SBSE should not grow in isolation but rather exchange ideas.  
 
-Let us draw a comparison between these two fields. Please note that MSR is very similar to traditional data mining but on software engineering data or data obtained from software processes. 
+Canonical MSR tools are usually collections of
+data mining algorithms such as the decision
+tree learners of WEKA~\cite{xx} or the mathematical modeling tools of R~\cite{xx}.
+Canonical MSR tools are mulit-objective optimization algorithms which may be either home-grown scripts or parts of large toolkits like jMETAL/DEAP used by JAVA/PYTHON programmers (respectively)~\cite{refs2jmetalDEE}.
 
-\noindent\textbf{Data:} SBSE predominantly uses meta-heuristics algorithms such as NSGA-II~\cite{deb2000fast}, SPEA~\cite{zitzler2001spea2} to navigate the space of possible options. These algorithms rely on fitness functions to differentiate between good and bad solutions. This means there is no universal fitness function, for every problem, there is an associated fitness function. Similarly in MSR, which uses different kinds of data miners to model the given data (or a problem). Different kinds of data miners work best of different kinds of data. This goes to show both techniques of MSR and SBSE needs to be adjusted to fit the needs of the problem or the practitioner. 
+Canonical MSR problems include defect prediction~\cite{lessmann2008benchmarking}   or Stackoverflow text mining~\cite{fu2017easy}. 
+Canonical SBSE problems include configuring a software system~\cite{nair2017faster} or extracting a valid(ish) product from a product line description~\cite{sayyad13b} or minimizing a test suite~\cite{fraserXXX} or selecting screen designs that
+reduce the power consumption  mobile devices
 
-\noindent\textit{Design Choice:} The choice of the fitness function (in SBSE) and data miner (in MSR) depends on the type of data used for that experiments. 
 
-\noindent\textbf{Goals:} In SBSE, the meta-heuristic algorithms used in an experiment depends on the number of goals of the experiment. A single goal or single-objective problem can be solved using algorithms such as \textit{Simulated Annealing}~\cite{van1987simulated} or hill climbing~\cite{rudlof1997stochastic}, whereas for multiple goal or multi-objective problems can be solved using algorithms such as NSGA-II, SPEA, MOEA/D~\cite{zhang2007moea}. In MSR, if the data table has no goal columns, then this is an \textit{unsupervised learning problem} which can be addressed by (say) finding clusters of similar rows using, say, K-means or expectation maximization. An alternate approach, taken by the Apriori association rule learner, is to assume that every column is a goal and to look for what combinations of any values predict for any combination of any other. If a table has one goal, then this is a \textit{supervised learning problem} where the task is to find combinations of values from the other columns that predict for the goal values. Note that for datasets with one discrete goal feature, it is common to call that goal the class of the dataset. If a table has multiple goals, then the ML model (or combination of models) should trade-off in goal space by domination predicates (dominance counts, dominance depth, dominance ranks).
+Results obtained from
+MSR tools are assessed by a small number of standard measures
+including   recall, precision, or false alarm rates (for discrete classes)
+or magnitude of relative error or standardized error~\cite{Shepperd2012}.
+Results obtained from SBSE tools are assessed by a wide-variety of domain-specific objectives-- indeed those objectives are defined before the SBSE
+runs and are used to guide the inference of the SBSE tool.
+What ever the specific objectives, a small number meta-measures are used in many research papers such as the hypervolume or spread (which are ways to characterize how well an SBSE tool explores a space of objectives). 
 
-\noindent\textit{Design Choice:} The meta-heuristic algorithm (SBSE) or the data miner (MSR) used for the experiments must be adjusted based on the number of goals in the experiment.
 
-\noindent\textbf{Computational Overhead:} In SBSE, the size of the search space and the number of constraints in it, govern the computational budget of the experiment. Larger the search space or a highly constrained space means the meta-heuristic algorithms requires long run times or high computational budget. In MSR, the size of the dataset dictates the time required to train the chosen ML algorithm, and hence various engineering decisions need to be taken to handle the size of the data. 
 
-\noindent\textit{Design Choice:} The computational budget required to run both SBSE and MSR techniques are governed by the size of the search space and data respectively.
 
-\noindent\textbf{Parameter Tuning:} In SBSE, the convergence of the meta-heuristic algorithms are governed by the parameters of the meta-heuristic algorithm~\cite{eiben2011parameter}. Similarly, in MSR, the effectiveness of the ML algorithm used is controlled by its various parameters~\cite{fu2016tuning, fu2016differential, tantithamthavorn2016automated}. 
 
-\noindent\textit{Design Choice:} The performance of the meta-heuristic algorithm (in SBSE), and machine learning algorithms (in MSR) is governed by the parameters used in them. 
+%  In  a very loose sense, we can associate \textit{learning} with MSR, since most of the work in this area attempts to learn from massive amounts of data, and \textit{optimization} with SBSE. Note we stress that this is only a loose association since learning and optimization can are mutually inclusive (see examples, below). 
+ 
+%  The rest of this section compares these two fields.
 
-\section{Why Does MSR Need SBSE?}
+% \noindent\textbf{Data:} SBSE predominantly uses meta-heuristics algorithms such as NSGA-II~\cite{deb2000fast}, SPEA~\cite{zitzler2001spea2} to navigate the space of possible options. These algorithms rely on fitness functions to differentiate between good and bad solutions. This means there is no universal fitness function, for every problem, there is an associated fitness function. Similarly in MSR, which uses different kinds of data miners to model the given data (or a problem). Different kinds of data miners work best of different kinds of data. This goes to show both techniques of MSR and SBSE needs to be adjusted to fit the needs of the problem or the practitioner. 
+
+% \noindent\textit{Design Choice:} The choice of the fitness function (in SBSE) and data miner (in MSR) depends on the type of data used for that experiments. 
+
+% \noindent\textbf{Goals:} In SBSE, the meta-heuristic algorithms used in an experiment depends on the number of goals of the experiment. A single goal or single-objective problem can be solved using algorithms such as \textit{Simulated Annealing}~\cite{van1987simulated} or hill climbing~\cite{rudlof1997stochastic}, whereas for multiple goal or multi-objective problems can be solved using algorithms such as NSGA-II, SPEA, MOEA/D~\cite{zhang2007moea}. In MSR, if the data table has no goal columns, then this is an \textit{unsupervised learning problem} which can be addressed by (say) finding clusters of similar rows using, say, K-means or expectation maximization. An alternate approach, taken by the Apriori association rule learner, is to assume that every column is a goal and to look for what combinations of any values predict for any combination of any other. If a table has one goal, then this is a \textit{supervised learning problem} where the task is to find combinations of values from the other columns that predict for the goal values. Note that for datasets with one discrete goal feature, it is common to call that goal the class of the dataset. If a table has multiple goals, then the ML model (or combination of models) should trade-off in goal space by domination predicates (dominance counts, dominance depth, dominance ranks).
+
+% \noindent\textit{Design Choice:} The meta-heuristic algorithm (SBSE) or the data miner (MSR) used for the experiments must be adjusted based on the number of goals in the experiment.
+
+% \noindent\textbf{Computational Overhead:} In SBSE, the size of the search space and the number of constraints in it, govern the computational budget of the experiment. Larger the search space or a highly constrained space means the meta-heuristic algorithms requires long run times or high computational budget. In MSR, the size of the dataset dictates the time required to train the chosen ML algorithm, and hence various engineering decisions need to be taken to handle the size of the data. 
+
+% \noindent\textit{Design Choice:} The computational budget required to run both SBSE and MSR techniques are governed by the size of the search space and data respectively.
+
+% \noindent\textbf{Parameter Tuning:} In SBSE, the convergence of the meta-heuristic algorithms are governed by the parameters of the meta-heuristic algorithm~\cite{eiben2011parameter}. Similarly, in MSR, the effectiveness of the ML algorithm used is controlled by its various parameters~\cite{fu2016tuning, fu2016differential, tantithamthavorn2016automated}. 
+
+% \noindent\textit{Design Choice:} The performance of the meta-heuristic algorithm (in SBSE), and machine learning algorithms (in MSR) is governed by the parameters used in them. 
+
+\section{Synergies between MSR and SBSE}
 
 To motivate the rest of this paper, we first answer the basic question: why would anyone in the MSR
 community ever need to explore SBSE?
