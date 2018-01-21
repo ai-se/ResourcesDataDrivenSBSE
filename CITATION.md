@@ -1,13 +1,13 @@
 # How to cite this work
 
 Vivek Nair,
-Jianfeng Chen.
-George Mathew,
-Zhe Yu, 
+Jianfeng Chen,
 Wei Fu,
-Leandro Minku,
+George Mathew,
 Tim Menzies,
-Markus Wagner. (2018, January 20). Resources for data-driven Search-based SE/ Zenodo. http://doi.org/10.5281/zenodo.1156235
+Leandro Minku,
+Markus Wagner,
+Zhe Yu. (2018, January 20). Resources for data-driven Search-based SE/ Zenodo. http://doi.org/10.5281/zenodo.1156235
 
 
 ```
