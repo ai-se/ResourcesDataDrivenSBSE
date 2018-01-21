@@ -12,7 +12,7 @@
  [![DOI](https://zenodo.org/badge/116411075.svg)](https://zenodo.org/badge/latestdoi/116411075)
 
 
-<a href="img/ddsbse17_big.png"><img width=400 align=right src="img/ddsbse17.png"></a>
+<a href="img/ddsbse17_big.jpg"><img width=400 align=right src="img/ddsbse17.png"></a>
 The recent seminar
 Data-Driven Search-Based SE (https://goo.gl/f8D3EC) concluded that 
 (1) the  mining software repositories can be improved using search-based methods; and that (2) search-based methods can be improved using
