@@ -21,12 +21,19 @@ def f1():
   print(groups(3,"asdas,,"))
 
 class o:
-   def __init__(i, entries): i.__dict__.update(entries)
-   def __repr__(i) : return 'o{' + str(i.__dict__) + '}'
+   def __init__(i, entries) : i.__dict__.update(entries)
+   def __repr__(i)          : return 'o{' + str(i.__dict__) + '}'
+   def __getitem__(i, x)    : return i.__dict__[x]
+
+def sorted(lst):
+  lst.sort()
+  return lst
 
 def lines(file):
+  """return a dictionary, one per line. keys are defined as per line1.
+     if line1 is missing a field, we grab it from the line above"""
   head,last=None,None
-  with open(file) as f:
+  with open(file + ".csv") as f:
     for line in f.readlines():
       cells = [x.strip() for x in line.split(",")]
       if not head:
@@ -40,9 +47,33 @@ def lines(file):
         else:
           print("bad line:",line)
 
-@go
-def lines1():
-  for n,line in enumerate( lines("pubs.csv") ):
-    print(n,line.about)
+def file2dict(file):
+  ds={}
+  for d in lines("pubs"):
+    ds[d.id] = d
+  return ds
 
+def pubs() : return file2dict("pubs")
+def about() : return file2dict("about")
+def what() : return file2dict("what")
+
+def h1(x) : print("\n#", x)
+def h2(x) : print("\n##", x)
+def h3(x) : print("\n#W#", x)
+def pp(x) : print("\n", x)
+def url(a,b): return "[~s](~s)" % (a,b)
+def urlof(x,a): return url( a[x].details, a[x].url )
+
+def writePubs(p,a,w):
+  h1("Pubs")
+  for x in sorted(p.keys()):
+    d = p[x]
+    h2(d.when + d.id) 
+    p( urlof(d.where, a ))
+
+def main():
+  p,a,w = pubs(), about(), what()
+  writePubs(p,a,w)
+
+main()
 
