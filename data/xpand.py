@@ -15,6 +15,35 @@ If a line has a missing field, it takes it from the line above
 (useful for lots of lines with same values).
 
 """
+##########################################################
+head="""
+
+[home](http://tiny.cc/sbse) |
+[models](xx) |
+[data](xx) |
+[discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
+[citation](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/CITATION.md) |
+[copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018
+<br>
+[<img width=900 src="https://github.com/ai-se/ResourcesDataDrivenSBSE/raw/master/img/banner.png">](http://tiny.cc/sbse)<br>
+
+
+ [![DOI](https://zenodo.org/badge/116411075.svg)](https://zenodo.org/badge/latestdoi/116411075)
+
+
+"""
+##########################################################
+tail="""
+
+## License
+
+[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+To the extent possible under law, we waive all copyright and related or neighboring rights to this work.
+
+"""
+##########################################################
+
 import os,re,sys
 sys.dont_write_bytecode = True
 
@@ -54,17 +83,16 @@ def lines(file):
       if not head:
         head = cells
       else:
-        if len(cells) == len(head):
-          if last:
-            cells = [cells[j] if cells[j] else last[j] for j in range(len(head))]
-          yield o( {head[j]:cells[j] for  j in range(len(head))} )
-          last = cells
-        else:
-          print("bad line:",line)
+        assert len(cells) == len(head),'bad line: %s' % line
+        if last:
+          cells = [cells[j] or last[j] for j in range(len(head))]
+        yield o( {head[j]:cells[j] for  j in range(len(head))} )
+        last = cells
 
 def reader(file):
   ds={}
   for d in lines(file):
+    assert d.id not in ds,'repeated key %s' % d.id
     ds[d.id] = d
   return ds
 
@@ -73,14 +101,15 @@ def writer(f,fun,*lst):
   if not os.path.exists(dir):
     os.makedirs(dir)
   with open(dir + '/' + f + '.md','w') as g:
+    g.write(head)
     fun(lambda x:g.write(x), *lst)
-    g.write("\n")
+    g.write(tail)
 
 def ids(d):
   for x in sorted([y for y in d.keys()]):
     yield x,d[x]
 
-# -----------------------------------------------------
+##########################################################
 
 def h1(x)     : return "\n\n# %s"  % x
 def h2(x)     : return "\n\n## %s" % x
@@ -94,7 +123,8 @@ def writePubs(write,p,a,w):
   for _,d in ids(p):
     write( "%s%s" % ( 
       h2(d.when + ": " + d.id),
-      pp( urlof(d.where, a)))) 
+      pp( urlof(d.where, a))
+    ))
 
 #---------------------
 p = reader("pubs")
