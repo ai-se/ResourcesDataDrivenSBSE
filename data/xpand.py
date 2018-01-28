@@ -52,15 +52,12 @@ def file2dict(file):
     ds[d.id] = d
   return ds
 
-def main():
-  def writer(f,fun):
-    dir='../var'
-    if not os.path.exists(dir):
-      os.makedirs(dir)
-    with open(dir + '/' + f + '.md','w') as g:
-      fun(lambda x:g.write(x), p,a,w)
-  p,a,w = pubs(), about(), what()
-  writer('pubs',writePubs)
+def writer(f,fun,*lst):
+  dir='../var'
+  if not os.path.exists(dir):
+    os.makedirs(dir)
+  with open(dir + '/' + f + '.md','w') as g:
+    fun(lambda x:g.write(x), *lst)
 
 # -----------------------------------------------------
 
@@ -82,5 +79,7 @@ def writePubs(write,p,a,w):
     write( h2(d.when + ": " + d.id) )
     write( pp( urlof(d.where, a ) ) )
 
-main()
+#---------------------
+p,a,w = pubs(), about(), what()
+writer('pubs',writePubs,p,a,w)
 
