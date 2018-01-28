@@ -62,7 +62,7 @@ def lines(file):
         else:
           print("bad line:",line)
 
-def file2dict(file):
+def reader(file):
   ds={}
   for d in lines(file):
     ds[d.id] = d
@@ -96,9 +96,9 @@ def writePubs(write,p,a,w):
       pp( urlof(d.where, a)))) 
 
 #---------------------
-p = file2dict("pubs")
-a = file2dict("about")
-w = file2dict("what")
+p = reader("pubs")
+a = reader("about")
+w = reader("what")
 
 writer('pubs',writePubs,p,a,w)
 
