@@ -74,6 +74,7 @@ def writer(f,fun,*lst):
     os.makedirs(dir)
   with open(dir + '/' + f + '.md','w') as g:
     fun(lambda x:g.write(x), *lst)
+    g.write("\n")
 
 def ids(d):
   for x in sorted([y for y in d.keys()]):
