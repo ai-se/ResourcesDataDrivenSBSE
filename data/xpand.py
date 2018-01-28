@@ -1,5 +1,5 @@
 # vim: set filetype=python ts=2 sw=2 sts=2 expandtab: 
-import re,sys
+import os,re,sys
 sys.dont_write_bytecode = True
 
 def go(f): f();return f
@@ -16,7 +16,6 @@ def groups(n,str):
   if m:
     return [s.strip() for s in m.groups()]
 
-# @go
 def f1():
   print(groups(3,"asdas,,"))
 
@@ -53,6 +52,18 @@ def file2dict(file):
     ds[d.id] = d
   return ds
 
+def main():
+  def writer(f,fun):
+    dir='../var'
+    if not os.path.exists(dir):
+      os.makedirs(dir)
+    with open(dir + '/' + f + '.md','w') as g:
+      fun(lambda x:g.write(x), p,a,w)
+  p,a,w = pubs(), about(), what()
+  writer('pubs',writePubs)
+
+# -----------------------------------------------------
+
 def pubs() : return file2dict("pubs")
 def about() : return file2dict("about")
 def what() : return file2dict("what")
@@ -64,19 +75,12 @@ def pp(x)     : return "\n\n%s"    % x
 def url(a,b)  : return "[%s](%s)" % (str(a),str(b))
 def urlof(x,a): return url( a[x].details, a[x].url )
 
-def writePubs(f,p,a,w):
-  f( h1("Pubs") )
+def writePubs(write,p,a,w):
+  write( h1("Pubs") )
   for x in sorted([y for y in p.keys()]):
     d = p[x]
-    f( h2(d.when + ": " + d.id) )
-    f( pp( urlof(d.where, a ) ) )
-
-def main():
-  def writer(f,fun):
-    with open('../var/'+f+'.md','w') as g:
-      fun(lambda x:g.write(x), p,a,w)
-  p,a,w = pubs(), about(), what()
-  writer('pubs',writePubs)
+    write( h2(d.when + ": " + d.id) )
+    write( pp( urlof(d.where, a ) ) )
 
 main()
 
