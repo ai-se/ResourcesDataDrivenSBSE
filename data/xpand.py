@@ -49,7 +49,7 @@ def lines(file):
 
 def file2dict(file):
   ds={}
-  for d in lines("pubs"):
+  for d in lines(file):
     ds[d.id] = d
   return ds
 
@@ -57,23 +57,26 @@ def pubs() : return file2dict("pubs")
 def about() : return file2dict("about")
 def what() : return file2dict("what")
 
-def h1(x) : print("\n#", x)
-def h2(x) : print("\n##", x)
-def h3(x) : print("\n#W#", x)
-def pp(x) : print("\n", x)
-def url(a,b): return "[~s](~s)" % (a,b)
+def h1(x)     : return "\n\n# %s"  % x
+def h2(x)     : return "\n\n## %s" % x
+def h3(x)     : return "\n\n#W# "  % x
+def pp(x)     : return "\n\n%s"    % x
+def url(a,b)  : return "[%s](%s)" % (str(a),str(b))
 def urlof(x,a): return url( a[x].details, a[x].url )
 
-def writePubs(p,a,w):
-  h1("Pubs")
-  for x in sorted(p.keys()):
+def writePubs(f,p,a,w):
+  f( h1("Pubs") )
+  for x in sorted([y for y in p.keys()]):
     d = p[x]
-    h2(d.when + d.id) 
-    p( urlof(d.where, a ))
+    f( h2(d.when + ": " + d.id) )
+    f( pp( urlof(d.where, a ) ) )
 
 def main():
+  def writer(f,fun):
+    with open('../var/'+f+'.md','w') as g:
+      fun(lambda x:g.write(x), p,a,w)
   p,a,w = pubs(), about(), what()
-  writePubs(p,a,w)
+  writer('pubs',writePubs)
 
 main()
 
