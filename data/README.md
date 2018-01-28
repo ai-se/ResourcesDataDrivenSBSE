@@ -17,7 +17,8 @@ explore content).
 - If that content looks good to you, send a pull request and the site organziers will run your update and place it
 on-line directory ../doc.
 
-**IMPORTANT**: Pretty please, **DO NOT DO MOVE**  content into ../doc  yourself (that way, version control madeness lies).
+**IMPORTANT**: Pretty please, **DO NOT DO MOVE**  content into ../doc  yourself (that way, version control merge
+conflict madness lies).
 
-- Send us a pull request and we'll do it.
+- Just send us a pull request and we'll do it.
 - Thanks!
