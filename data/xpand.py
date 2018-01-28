@@ -28,6 +28,12 @@ head="""
 [<img width=900 src="https://github.com/ai-se/ResourcesDataDrivenSBSE/raw/master/img/banner.png">](http://tiny.cc/sbse)<br>
 
 
+
+<em>(This is an auto-generated file. Do not edit.  To modify, please
+use pull requests on [these 
+files](https://github.com/ai-se/ResourcesDataDrivenSBSE/tree/master/data)).</em>
+
+
  [![DOI](https://zenodo.org/badge/116411075.svg)](https://zenodo.org/badge/latestdoi/116411075)
 
 
