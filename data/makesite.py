@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # vim: set filetype=python ts=2 sw=2 sts=2 expandtab: 
 """
 Reads N csv into a set of dictionaries (one per file).
