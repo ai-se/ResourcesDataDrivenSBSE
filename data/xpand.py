@@ -1,4 +1,20 @@
 # vim: set filetype=python ts=2 sw=2 sts=2 expandtab: 
+"""
+Reads N csv into a set of dictionaries (one per file).
+
+Each csv file has a set of named fields in line one.
+Files get converted into dictionary, one per line,
+with index 'id' (so line one of the file needs to name one
+column 'id').
+
+Each line gets converted into a dictionary of field:value
+where 'field' is a label from line one and 'value' comes
+from the current line.
+
+If a line has a missing field, it takes it from the line above
+(useful for lots of lines with same values).
+
+"""
 import os,re,sys
 sys.dont_write_bytecode = True
 
@@ -59,11 +75,11 @@ def writer(f,fun,*lst):
   with open(dir + '/' + f + '.md','w') as g:
     fun(lambda x:g.write(x), *lst)
 
-# -----------------------------------------------------
+def ids(d):
+  for x in sorted([y for y in d.keys()]):
+    yield x,d[x]
 
-def pubs() : return file2dict("pubs")
-def about() : return file2dict("about")
-def what() : return file2dict("what")
+# -----------------------------------------------------
 
 def h1(x)     : return "\n\n# %s"  % x
 def h2(x)     : return "\n\n## %s" % x
@@ -74,12 +90,15 @@ def urlof(x,a): return url( a[x].details, a[x].url )
 
 def writePubs(write,p,a,w):
   write( h1("Pubs") )
-  for x in sorted([y for y in p.keys()]):
-    d = p[x]
-    write( h2(d.when + ": " + d.id) )
-    write( pp( urlof(d.where, a ) ) )
+  for _,d in ids(p):
+    write( "%s%s" % ( 
+      h2(d.when + ": " + d.id),
+      pp( urlof(d.where, a)))) 
 
 #---------------------
-p,a,w = pubs(), about(), what()
+p = file2dict("pubs")
+a = file2dict("about")
+w = file2dict("what")
+
 writer('pubs',writePubs,p,a,w)
 
