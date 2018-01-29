@@ -153,17 +153,18 @@
 
 
 \begin{abstract}
-This paper introduces Data-Driven Search-based Software Engineering (DSE) which combines insights from Software Analytics (SA) and Search-based Software Engineering (SBSE).  We argue that  
+This paper introduces Data-Driven Search-based Software Engineering (DSE) which combines insights from Software Analytics (SA) and Search-based Software Engineering (SBSE). SBSE reformulate the SE problem as an optimization problem and uses a meta-heuristic algorithm to solve those problems. Both the fields, SA and SBSE, are concerned with providing insights for software engineers to improve SE tasks. The similar goals of the two fields are one of the major reasons as to why these two fields should work together. 
+We argue that  
 combining these two fields
 is useful for (a)~situations which require learning from a large data
-source or (b)~when optimizers need to know the lay of the land in order to find better solutions, faster
+source or (b)~when optimizers need to know the lay of the land to find better solutions, faster.
 
 
 This paper also presents a  resource (tiny.cc/sbse) for exploring
 Data-Driven Search-based Software Engineering.  The resource contains 89 artifacts related to data-driven search-based SE,
 divided into 13 groups such as requirements engineering, software product lines, software processes, etc.
 All the materials in this repository
-have been   used in recent SE papers; i.e. for all this material, there exists baseline results against which researchers can use to comparatively assess their own new ideas
+have been   used in recent SE papers; i.e., for all this material, there exist baseline results against which researchers can use to comparatively assess their new ideas
 
 
 Among the numerous questions that we try to answer are: (1) What are the various topics addressed by DSE?, (2) What are the types of data used by the researchers, and, (3) What research approaches do researchers use? The paper briefly sets out to act as a practical guide to develop new data-driven techniques and also to serve as a teaching resource.
@@ -209,7 +210,7 @@ Among the numerous questions that we try to answer are: (1) What are the various
 
 
 \maketitle
-\pagestyle{plain}
+%\pagestyle{plain}
 % \input{samplebody-conf}
 
 
@@ -220,29 +221,30 @@ Among the numerous questions that we try to answer are: (1) What are the various
 
 
 The MSR  community has benefited enormously from widely shared datasets.  Such datasets document the canonical problems in a field.
-They serve to cluster together like-minded researchers while  
-  allowing   them to generate reproducible results. Also, such data can be used by
-   newcomers to learn state-of-the-art methods in this field. Further, they enable the mainstay of good science:
+They serve to cluster together like-minded researchers while allowing them to generate reproducible results. Also, such data can be used by
+   newcomers to learn state of the art methods in this field. Further, they enable the mainstay of good science:
 reputable, repeatable,  improvable, and even refutable results.
-At the time of this writing,   nine of the 50 most cited papers in the last 5 years at IEEE Transactions of Software Engineering \vivek{all draw their case studies
-from a small number of open defect prediction datasets} 
+At the time of this writing,   nine of the 50 most cited papers in the last 5 years at IEEE Transactions of Software Engineering {all draw their case studies
+from a small number of readily available defect prediction datasets} 
 % \TODO{I'm not sure if it is good to say ``a small number of similar datasets''. What about saying that they all draw their case studies from open datasets?}.
 
 
 As a field evolves, so too should its canonical problems. One  reason for the emergence of   MSR  in 2004 was the existence of a new generation of widely-available data mining
-algorithms that could scale to interestingly large problems.  Now, some 14 years later, a new technology has emerged that could reshape the future of this community \TODO{I wouldn't say that SBSE emerged in 2017/18! There is work in this area since the 90s, plus some isolated earlier works.}. There now exists numerous, readily
-available, {\em search-based software engineering} (SBSE) algorithms. Whereas:
+algorithms that could scale to interestingly large problems. In this paper,
+we pause to reflect on what other kinds of algorithms are widely available and could
+be applied to MSR problems.  Specifically, we focus on
+{\em search-based software engineering} (SBSE) algorithms. Whereas:
 \begin{itemize}
 \item
 An MSR researcher might deploy a
 data miner to learn a model from  data   that predicts for (say) a single target class;
 \item
 An SBSE researcher might deploy a multi-objective optimizer
-to find what \llm{solutions} score best
+to find what {solutions} score best
 on multiple target variables.
 \end{itemize}
 
-\llm{In other words, both MSR and SBSE share the common goal of providing insights to improve software engineering. However, MSR formulates software engineering problems as data mining problems, whereas SBSE formulates software engineering problems as (frequently multi-objective) optimization problems.}
+{In other words, both MSR and SBSE share the common goal of providing insights to improve software engineering. However, MSR formulates software engineering problems as data mining problems, whereas SBSE formulates software engineering problems as (frequently multi-objective) optimization problems.}
 
 
 
@@ -300,31 +302,31 @@ on multiple target variables.
 % \end{figure*}
 
 
-\llm{The similar goals of these two areas, as well as the intrinsic relationship between data mining and optimization algorithms, has been recently inspiring an} increase in methods that combine MSR and SBSE.
-A recent \llm{NII Shonan Meeting}  on {\em Data-driven Search-based Software
+{The similar goals of these two areas, as well as the intrinsic relationship between data mining and optimization algorithms, has been recently inspiring an} increase in methods that combine MSR and SBSE.
+A recent {NII Shonan Meeting}  on {\em Data-driven Search-based Software
 Engineering} (goo.gl/f8D3EC)   was well attended by over two dozen senior members of the MSR community.
-The workshop concluded that (1) mining software repositories can be improved using \llm{tools from the SBSE community}; and that (2) search-based methods can be improved using tools from the MSR community. 
+The workshop concluded that (1) mining software repositories could be improved using {tools from the SBSE community}; and that (2) search-based methods can be improved using tools from the MSR community. 
 For example:
 \begin{itemize}
 \item
 MSR data mining algorithms can be used to summarize the data, after which SBSE can leap to better solutions, faster~\cite{krall2015gale}.
 \item
-SBSE \llm{algorithms} can be used to intelligently select 
+SBSE {algorithms} can be used to intelligently select 
 settings for MSR data mining algorithms (e.g.
 such as how many trees should be included in a random
 forest~\cite{fu2016tuning}).
 \end{itemize}
 The workshop also concluded that this community needs more shared  resources 
-to help more  researchers and educators   explore MSR+SBSE.
+to help more researchers and educators explore MSR+SBSE.
 Accordingly, this paper describes  tiny.cc/sbse,
 a collection of artifacts for exploring
 data-driven search-based SE (see Figure~1). 
 All the materials in this repository
-have been   used in recent SE papers; i.e. for all this material, there exists baseline results against which researchers can use to comparatively assess their own new ideas.
+have been used in recent SE papers; i.e., for all this material, there exist baseline results against which researchers can use to comparatively assess their new ideas.
 %\TODO{Re: fig. 1, are we allowed to use Abhaham's nice piece of art?}
 
-It has    taken several years to build this resource. Prior to its
-existence, we explored  data-driven search-based SE
+It has taken several years to build this resource. Prior to its
+existence, we explored data-driven search-based SE
 prototypes on tiny toy tasks that proved 
 uninteresting to 
  reviewers from SE venues. 
@@ -350,11 +352,12 @@ which we now offer to the MSR community.
 
 The rest of this paper discusses SBSE and its connection to MSR. 
 We offer a ``cheats' guide'' to SBSE with just enough information to help researchers and educators use the artifacts in the resource. More specifically, the contributions of the paper are:
-\begin{itemize}
-    \item To show that optimization (SBSE) and learning (MSR) goes hand in hand,
-    \item Provide resources to seed various research,
-    \item Provide teaching resources, which can be used to create DSE courses, and
-    \item Based on our experience, various strategies which can be used to make these DSE techniques more efficient.
+\begin{itemize}[leftmargin=*]
+    \item To show that optimization (SBSE) and learning (MSR) goes hand in hand (Section~\ref{sec:why}),
+    \item Provide resources to seed various research (Section~\ref{sec:scenarios}),
+    \item Provide teaching resources, which can be used to create DSE courses (Section~\ref{sec:scenarios}),
+    \item Based on our experience, various strategies which can be used to make these DSE techniques more efficient (Section~\ref{sec:guide}), and
+    \item List of open research problems to seed further research in this area (Section~\ref{sec:open}). 
 \end{itemize}
 
 
@@ -366,102 +369,93 @@ We offer a ``cheats' guide'' to SBSE with just enough information to help resear
 \end{figure}
 
 \begin{figure*}
-    \centering
-\small
-\colorbox{gray!10}{
-\begin{tabular}{@{}p{3cm}p{6cm}p{8.35cm}@{}}
-\multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{Problems in Search-based Software Engineering}}} \\ 
-\multicolumn{3}{c}{
-		\begin{minipage}[b]{0.33\linewidth}
-			\begin{flushleft}
-				\includegraphics[height=4.5cm]{doc/tex/msr18/img/pareto.png}
-				\vspace{8pt}
-			\end{flushleft}
-		\end{minipage}\hspace{0.1cm}
-		\begin{minipage}[b]{0.63\linewidth}
-		        \textbf{Problem: } SBSE converts a SE problem into an optimization problem, where the goal is to find the maxima or minima of objective functions \llm{$y_i=f_i(x)$, $1 \leq i \leq m$, where  $f_i$ are the objective / evaluation functions, $m$ is the number of objectives,} x is called the \textit{independent variable}, and $y_i$ are the \textit{dependent variables}.\\
-		        %\textbf{Problem Types: } The problems can be either single-~\cite{nair2017faster} or multi-~\cite{chen2017sampling} or many-objective~\cite{mkaouer2014high}.\TODO{We are not telling what the difference between multi- and many- is here. If we need to save space for the figure to fit in one page, we could possibly omit ``many''.}\\
-		        \textbf{Global Maximum/Minimum: } For single objective ($m=1$) problems, algorithms aim at finding a single solution able to optimize the objective function, i.e., a global maximum/minimum. \\%there is one global maxima or minima \TODO{This statement is wrong. Single objective problems can have multiple global optima! The difference is that they have only one function to be optimized. I think what you mean here is that, in single objective problems, we are interested in retrieving a single solution able to maximize or minimize the objective function.}.\\
-		        \textbf{Pareto Front: } For multi-objective ($m>1$) problems, there is no single `best' solution, but a number of `best' solutions. The best solutions are \llm{non-dominated solutions} found using a \textit{dominance} relation.\\
-		        \textbf{Dominance: }The domination criterion  can be defined as: ``A solution $x_1$ is said to dominate\\
-                another solution $x_2$, if $x_1$ is no worse than $x_2$ in all objectives
-                and $x_1$ is strictly better than $x_2$ in at least one objective.'' A solution is called non-dominated if no other solution dominates it.\\
-		        \textbf{Actual \llm{Pareto Front} (PF): } A list of best solutions of a space is called Actual PF ($a\in A$). As this can be unknowable in practice or prohibitively expensive to generate, it is common to take from the union of all optimization outcomes all non-dominated solutions and use it as the (approximated) PF.\\ %This requires knowledge of the whole space---which is not available in real-world setting.\\
-		        \textbf{Predicted PF: } The solutions found by \llm{an optimization} algorithm are called the Predicted PF ($p\in P$).
-				%  Problems tacked in SBSE can be described as finding the best (minimum or maximum) of a function ($y=f(x)$), where x is called the \textit{independent variable}, $f$ is the evaluation function, and $y$ the \textit{dependent variable}. $y$ can either be single objective or multi-objective. In a multi-objective setting, there no single `best' solution instead there is number of `best' solution. This can also be stated as solutions which are better (or \textit{dominates}) all other solution---which is not considered `best' solutions, and no better than other `best' solution as defined by domination criterion. The domination criterion  can be defined as: ``A solution $x_1$ is said to dominate
-    %             another solution $x_2$, if $x_1$ is no worse than $x_2$ in all objectives
-    %             and $x_1$ is strictly better than $x_2$ in at least one objective.'' The list of these `best' solutions are called the \textit{Pareto Front}. The figure represents a solution space of a (synthetic) multi-objective problem with two objectives: $\mathit{Objective}_1$ and $\mathit{Objective}_2$. This best point can be called as the \textit{Utopia Point} and the worst is called the \textit{Nadir Point}. The points $A_i$ represents the \textit{Actual Pareto Front} ($A$). The goal of the multi-objective optimizer is to find set of solutions which are closest to the actual Pareto frontier. The solutions found by the optimizers are called the \textit{Predicted Pareto Front} ($P$). \vspace{0.1cm}
-		\end{minipage}
-		
-} \\ 
-\multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{Components of Meta-heuristic Algorithms (search-based optimization algorithms such as NSGA-II~\cite{deb2000fast}, SPEA2~\cite{zitzler2001spea2}, MOEA/D~\cite{zhang2007moea}, AGE~\cite{wagner2015age})}}} \\
-\multicolumn{3}{c}{
-\begin{minipage}[b]{\linewidth}
-\vspace{0.1cm}
-% \TODO{I'm not sure how useful it is to explain the components here if we don't show the pseudocode of an algorithm, as the persons who don't know the components will not know the pseudocode either, and will thus be unable to understand. Perhaps we can eliminate the plot from the previous section of this figure and add a figure with a general meta-heuristic pseudocode here?}
-\begin{wrapfigure}{r}{0.4\textwidth}
-\includegraphics[height=4.8cm]{doc/tex/msr18/img/sbse_code.png}
-\end{wrapfigure}
-\noindent\textbf{Data Collection or Model building: } SBSE process can either rely on a model, which represent a software process~\cite{boehm1995cost} or can be directly applied to any software engineering problem including problems which require evaluating a solution by running a specific benchmark~\cite{krall2015gale}. 
-
-\noindent\textbf{Representation: } \llm{This defines how solutions $x$ are represented internally by the algorithm.
-Examples of representations are Boolean or numerical vectors, but more complex representations are also possible. The space of all values that can be represented is the} \textit{Decision Space}.
-% The representation of these solutions is significant to generate the landscape of the problem. 
-
-\noindent\textbf{Population: } A set of solutions maintained by the algorithm using the representation.
-
-\noindent\textbf{Initialization: } The process of search \llm{typically} starts by creating random solutions (valid or invalid)~\cite{saber2017seeding, chen2017beyond, chen2017sampling, henard2015combining}.
-
-\noindent\textbf{Fitness Function: } A fitness function maps the solution (which is represented using numerics) to a numeric scale (also called as \textit{Objective Space}) which is used to distinguish between good and not so good solutions. This measure is a domain-specific measure (single objective) or measures (multi-objective) which is useful for the practitioners.
-Simply put fitness function is a transformation function which converts a point in the decision space to the objective space. 
-
-\noindent\textbf{Operators: } \llm{These are operators that (1) generate new solutions based on one (e.g., mutation operator) or more (e.g., crossover or recombination operators) existing solutions, and (2) operators that select solutions to pass to the aforementioned operators or to survive for the next iteration of the algorithm. The operators (2) typically apply some pressure towards selecting better solutions either deterministically (e.g., elitism operator) or stochastically.} 
-% \TODO{If space allows, we can mention survival of the fittest.} % They can be used along with an}\TODO{I haven't finished this change yet. I have to come back later.} 
-\textit{elitism operator} simulates the `survival of the fittest' strategy i.e., eliminates not so good solutions thereby preserving the good solutions in the population. 
-
-\noindent\textbf{Generations: } \vivek{A meta-heuristic algorithm iteratively improves the population (set of solutions) iteratively. Each step of this process, which includes generation of new solutions using recombination of the existing population and selecting solutions using the elitism operator, is called a generation.  Over successive generations, the population `evolves' toward an optimal solution.}
-\end{minipage}\hspace{0.1cm}
-% \begin{minipage}[b]{0.4\linewidth}
-% 				\includegraphics[height=4.7cm]{doc/tex/msr18/img/sbse_code.png}
-% 				\vspace{1cm}
-% \end{minipage}
-}
- \\
-\multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{Performance Measures (Refer to \cite{wang2016practical,chand2015manyemo} for more detail)}}} \\ 
-% \multicolumn{2}{c}{\textbf{SA}} & \textbf{SBSE} \\ \midrule
-\multicolumn{3}{c}{
-
-\begin{minipage}[b]{0.33\linewidth}
-\includegraphics[height=2.8cm]{doc/tex/msr18/img/gd.png}
-\includegraphics[height=2.8cm]{doc/tex/msr18/img/igd.png}\\
-\includegraphics[height=2.8cm]{doc/tex/msr18/img/hv.png}
-\includegraphics[height=2.8cm]{doc/tex/msr18/img/spread.png}
-
-\end{minipage}	
-
-\begin{minipage}[b]{0.67\linewidth}
-\vspace{0.1cm}
-\TODO{I understand the reason why we are only discussing multi-objectives here, but the target audience of this figure may not know. It's worth mentioning sth about single objectives here.}
-\noindent\textbf{Generational Distance: } Generational distance is the measure of convergence---how close is the predicted Pareto front is to the actual Pareto front. It is defined to measure (using Euclidean distance) how far are the solutions that exist in $P$ from the nearest solutions in $A$. In ideal case, the GD is 0, which means the predicted PF is a subset of the actual PF. Note that it ignores how well the solutions are actually spread out.
-
-\noindent\textbf{Spread: } Spread is a measure of diversity---how well the solutions in P are spread. An ideal case is when the solutions in P is spread evenly across the Predicted Pareto Front. 
-
-\noindent\textbf{Inverted Generational Distance: } Inverted Generational distance measures both convergence as well as diversity of the solutions---measures the shortest distance from each solution in the Actual PF to the closest solution in Predicted PF. Like Generational distance, the distance is measured in Euclidean space. In an ideal case, IGD is 0, which means the predicted PF is same as the actual PF.
-
-\noindent\textbf{Hypervolume: } Hypervolume measures both convergence as well as diversity of the solutions---hypervolume is the union of the cuboids w.r.t. to a reference point. Note that the hypervolume implicitly defines an arbitrary aim of optimization. Also, it is not efficiently computable when the number of dimensions is large, however, approximations exist.
-
-\noindent \textbf{Approximation: } Additive/multiplicative Approximation is an alternative measure which can be computed in linear time (w.r.t. to the number of objectives). It is the multi-objective extension of the concept of approximation encountered in theoretical computer science. 
-% The intuition is that the search process aims at finding a set of solutions with a small approximation ratio, so why not simply compute the approximation ratio (as?
-
-\end{minipage}	
-}\\
-\end{tabular}}
-\caption{A \llm{brief} tutorial on Search-based Software Engineering.}
-\label{fig:sbse_crash}
+        \centering
+        \small
+        \colorbox{gray!10}{
+            \begin{tabular}{@{}p{3cm}p{6cm}p{8.35cm}@{}}
+                \multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{Problems in Search-based Software Engineering}}} \\ 
+                \multicolumn{3}{c}{
+                		\begin{minipage}[b]{0.33\linewidth}
+                			\begin{flushleft}
+                				\includegraphics[height=4.5cm]{doc/tex/msr18/img/pareto.png}
+                				\vspace{8pt}
+                			\end{flushleft}
+                		\end{minipage}\hspace{0.1cm}
+                		\begin{minipage}[b]{0.63\linewidth}
+                		        \textbf{Problem: } SBSE converts a SE problem into an optimization problem, where the goal is to find the maxima or minima of objective functions {$y_i=f_i(x)$, $1 \leq i \leq m$, where  $f_i$ are the objective / evaluation functions, $m$ is the number of objectives,} x is called the \textit{independent variable}, and $y_i$ are the \textit{dependent variables}.\\
+                		        \textbf{Global Maximum/Minimum: } For single objective ($m=1$) problems, algorithms aim at finding a single solution able to optimize the objective function, i.e., a global maximum/minimum. \\
+                		        \textbf{Pareto Front: } For multi-objective ($m>1$) problems, there is no single `best' solution, but a number of `best' solutions. The best solutions are {non-dominated solutions} found using a \textit{dominance} relation.\\
+                		        \textbf{Dominance: }The domination criterion  can be defined as: ``A solution $x_1$ is said to dominate\\
+                                another solution $x_2$, if $x_1$ is no worse than $x_2$ in all objectives
+                                and $x_1$ is strictly better than $x_2$ in at least one objective.'' A solution is called non-dominated if no other solution dominates it.\\
+                		        \textbf{Actual {Pareto Front} (PF): } A list of best solutions of a space is called Actual PF ($a\in A$). As this can be unknowable in practice or prohibitively expensive to generate, it is common to take from the union of all optimization outcomes all non-dominated solutions and use it as the (approximated) PF.\\ 
+                		        \textbf{Predicted PF: } The solutions found by {an optimization} algorithm are called the Predicted PF ($p\in P$).
+                		\end{minipage}
+                } \\ 
+                \multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{Components of Meta-heuristic Algorithms (search-based optimization algorithms such as NSGA-II~\cite{deb2000fast}, SPEA2~\cite{zitzler2001spea2}, MOEA/D~\cite{zhang2007moea}, AGE~\cite{wagner2015age})}}} \\
+                \multicolumn{3}{c}{
+                \begin{minipage}[b]{\linewidth}
+                \vspace{0.1cm}
+                % \TODO{I'm not sure how useful it is to explain the components here if we don't show the pseudocode of an algorithm, as the persons who don't know the components will not know the pseudocode either, and will thus be unable to understand. Perhaps we can eliminate the plot from the previous section of this figure and add a figure with a general meta-heuristic pseudocode here?}
+                \begin{wrapfigure}{r}{0.4\textwidth}
+                \includegraphics[height=4.8cm]{doc/tex/msr18/img/sbse_code.png}
+                \end{wrapfigure}
+                \textbf{Data Collection or Model building: } SBSE process can either rely on a model, which represent a software process~\cite{boehm1995cost} or can be directly applied to any software engineering problem including problems which require evaluating a solution by running a specific benchmark~\cite{krall2015gale}. 
+                
+                \textbf{Representation: } {This defines how solutions $x$ are represented internally by the algorithm.
+                Examples of representations are Boolean or numerical vectors, but more complex representations are also possible. The space of all values that can be represented is the} \textit{Decision Space}.
+                % The representation of these solutions is significant to generate the landscape of the problem. 
+                
+                \textbf{Population: } A set of solutions maintained by the algorithm using the representation.
+                
+                \textbf{Initialization: } The process of search {typically} starts by creating random solutions (valid or invalid)~\cite{saber2017seeding, chen2017beyond, chen2017sampling, henard2015combining}.
+                
+                \textbf{Fitness Function: } A fitness function maps the solution (which is represented using numerics) to a numeric scale (also called as \textit{Objective Space}) which is used to distinguish between good and not so good solutions. This measure is a domain-specific measure (single objective) or measures (multi-objective) which is useful for the practitioners.
+                Simply put fitness function is a transformation function which converts a point in the decision space to the objective space. 
+                
+                \textbf{Operators: } {These are operators that (1) generate new solutions based on one (e.g., mutation operator) or more (e.g., crossover or recombination operators) existing solutions, and (2) operators that select solutions to pass to the aforementioned operators or to survive for the next iteration of the algorithm. The operators (2) typically apply some pressure towards selecting better solutions either deterministically (e.g., elitism operator) or stochastically.} 
+                % \TODO{If space allows, we can mention survival of the fittest.} % They can be used along with an}\TODO{I haven't finished this change yet. I have to come back later.} 
+                \textit{elitism operator} simulates the `survival of the fittest' strategy, i.e., eliminates not so good solutions thereby preserving the good solutions in the population. 
+                
+                \textbf{Generations: } {A meta-heuristic algorithm iteratively improves the population (set of solutions) iteratively. Each step of this process, which includes generation of new solutions using recombination of the existing population and selecting solutions using the elitism operator, is called a generation.  Over successive generations, the population `evolves' toward an optimal solution.}
+                \end{minipage}\hspace{0.1cm}
+                }
+                 \\
+                \multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{Performance Measures (Refer to \cite{wang2016practical,chand2015manyemo} for more detail)}}} \\ 
+                % \multicolumn{2}{c}{\textbf{SA}} & \textbf{SBSE} \\ \midrule
+                \multicolumn{3}{c}{
+                        \begin{minipage}[b]{0.33\linewidth}
+                                \includegraphics[height=2.8cm]{doc/tex/msr18/img/gd.png}
+                                \includegraphics[height=2.8cm]{doc/tex/msr18/img/igd.png}\\
+                                \includegraphics[height=2.8cm]{doc/tex/msr18/img/hv.png}
+                                \includegraphics[height=2.8cm]{doc/tex/msr18/img/spread.png}
+                                \vspace{0.5cm}
+                        \end{minipage}
+                        \begin{minipage}[b]{0.67\linewidth}
+                            \vspace{0.1cm}
+                            For single objective problems, measures such as \textit{absolute residual} or \textit{rank-difference} can be very useful and cannot be used for multi-objective problems. The following are the measures used for such problems.\\
+                            \textbf{Generational Distance: } Generational distance is the measure of convergence---how close is the predicted Pareto front is to the actual Pareto front. It is defined to measure (using Euclidean distance) how far are the solutions that exist in $P$ from the nearest solutions in $A$. In an ideal case, the GD is 0, which means the predicted PF is a subset of the actual PF. Note that it ignores how well the solutions are spread out.
+                            
+                            \textbf{Spread: } Spread is a measure of diversity---how well the solutions in P are spread. An ideal case is when the solutions in P is spread evenly across the Predicted Pareto Front. 
+                            
+                            \textbf{Inverted Generational Distance: } Inverted Generational distance measures both convergence as well as the diversity of the solutions---measures the shortest distance from each solution in the Actual PF to the closest solution in Predicted PF. Like Generational distance, the distance is measured in Euclidean space. In an ideal case, IGD is 0, which means the predicted PF is same as the actual PF.
+                            
+                            \textbf{Hypervolume: } Hypervolume measures both convergence as well as the diversity of the solutions---hypervolume is the union of the cuboids w.r.t. to a reference point. Note that the hypervolume implicitly defines an arbitrary aim of optimization. Also, it is not efficiently computable when the number of dimensions is large, however, approximations exist.
+                            
+                            \textbf{Approximation: } Additive/multiplicative Approximation is an alternative measure which can be computed in linear time (w.r.t. to the number of objectives). It is the multi-objective extension of the concept of approximation encountered in theoretical computer science. 
+                            % The intuition is that the search process aims at finding a set of solutions with a small approximation ratio, so why not simply compute the approximation ratio (as?
+                    
+                        \end{minipage}	
+                }
+            \end{tabular}
+        }
+        \caption{A {brief} tutorial on Search-based Software Engineering.}
+        \label{fig:sbse_crash}
 \end{figure*}
 
-\begin{figure*}
+\begin{figure*}[t]
     \centering
+    \small
     \begin{tabular}{@{}p{3cm}p{6cm}p{8.35cm}@{}}
                 
                 % \multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{}}} \\ 
@@ -478,10 +472,10 @@ Simply put fitness function is a transformation function which converts a point 
                 \textbf{Conclusions} often 
                 generated via
                 &
-                A single  execution of a data miner
-                (perhaps with some data pre-processing).\TODO{This is arguable, given the popularity of ensembles.} 
+                A single  execution of a data miner or an ensemble, 
+                perhaps after some data pre-processing. 
                 &
-                An evolutionary process  where execution $i+1$ is guided
+                An evolutionary process  where, many times, execution $i+1$ is guided
                 by the results of execution $i$.
                 \\ 
                  
@@ -490,7 +484,7 @@ Simply put fitness function is a transformation function which converts a point 
                 Data mining algorithms like  the decision
                 tree learners of WEKA~\cite{hall2009weka} or the mathematical modeling tools of R~\cite{rmanual18} or Scikit-learn~\cite{scikit-learn}.
                 &
-                \llm{Search-based} optimization algorithms which may be either home-grown scripts or parts of large toolkits such as jMETAL\cite{refs2jmetalDEE}, Opt4j~\cite{opt4jpaper}, DEAP~\cite{DEAP_JMLR2012}.
+                {Search-based} optimization algorithms which may be either home-grown scripts or parts of large toolkits such as jMETAL\cite{refs2jmetalDEE}, Opt4j~\cite{opt4jpaper}, DEAP~\cite{DEAP_JMLR2012}.
                 \\ 
                 \textbf{Canonical   problems}
                 &
@@ -514,7 +508,69 @@ Simply put fitness function is a transformation function which converts a point 
     \label{fig:diff}
 \end{figure*}
 
+ \begin{figure}[b]
+\small
 
+\begin{tabular}{p{.95\linewidth}}\hline 
+\rowcolor{gray!10}
+Some goals relate to aspects of defect prediction:
+\begin{enumerate}[leftmargin=0.4cm]
+ 
+\item
+Mission-critical systems are risk averse and may accept very high false alarm rates,
+just as long as they catch any life-threatening possibility. That is, such projects
+do not care about effort- they want to {\em maximize recall} regardless of any impact
+that might have on the false alarm rate.
+\item  Suppose a new hire wants
+ to impress their manager. That
+ new hire might want to ensure that no result presented to  management contains  true negative;
+i.e. they wish to {\em maximize precision}.
+\item
+Some communities do not care about   low precision,
+just as long as a small fraction the data is returned. Hayes, Dekhytar, \& Sundaram call this fraction
+{\em selectivity} and offer an
+extensive discussion of the merits of this measure~\cite{hayes06}.
+\end{enumerate}
+\\ \hline
+\rowcolor{gray!10}
+Beyond defect prediction are other goals that combine defect prediction with other economic
+factors:
+\begin{enumerate}[leftmargin=0.4cm]
+\setcounter{enumi}{3}
+\item
+Arisholm~\&~Briand~\cite{arisholm06},  Ostrand \& Weyeuker~\cite{ostrand04} and Rahman et al.~\cite{rahman12}
+say that a defect predictor should maximizing {\em reward}; i.e. find the fewest lines of code
+that contain the most bugs.
+\item In other work, Lumpe et al. are concerned about
+ {\em amateur  bug fixes}
+%  ; i.e. those that made by programmers to regions of the code that are unfamiliar, to them
+~\cite{me11f}.
+Such amateur fixes are highly correlated to errors and, hence, to
+avoid such incorrect bug fixes, we have to optimize
+for finding the most number of bugs in regions that {\em the most programmers have worked with before}.
+\item In {\em better-faster-cheaper} setting, one seeks  project changes that lead
+to fewer defects and faster development times using fewer resources~\cite{elrawas10,me07f,me09a,me09f}.
+\item
+Sayyad~\cite{sayyad13a,sayyad13b} explored models of software product
+lines whose value propositions are defined by five objectives.
+\end{enumerate}
+\\ \hline
+\rowcolor{gray!10}
+All the above measures relate to the tendency of a predictor to find something. Another measure could be {\em variability} of predictor.
+\begin{enumerate}[leftmargin=0.4cm]
+\setcounter{enumi}{7}
+\item
+In their study on reproducibility of SE results,
+ Anda, Sjoberg and Mockus advocate using the coefficient of variation ($CV=\frac{stddev}{mean}$).
+Using this measure, they defined {\em reproducibility} as $\frac{1}{CV}$~\cite{mockus09}.
+\end{enumerate}\\\hline
+\end{tabular}
+\caption[Different users value different things.]{Different users value different things.
+% Technical note:  some of
+% these goals are defined in terms of
+% Figure~\ref{fig:criteria}.
+}\label{fig:goals}
+\end{figure}
 
 %  In  a very loose sense, we can associate \textit{learning} with MSR, since most of the work in this area attempts to learn from massive amounts of data, and \textit{optimization} with SBSE. Note we stress that this is only a loose association since learning and optimization can are mutually inclusive (see examples, below). 
  
@@ -563,85 +619,15 @@ It uses an optimizer  to improve a data  miner.
 \end{itemize}
 
 
-\begin{figure}[!t]
-\small
-
-\begin{tabular}{p{.95\linewidth}}\hline 
-\rowcolor{gray!10}
-Some goals relate to aspects of defect prediction:
-\begin{enumerate}[leftmargin=0.4cm]
- 
-\item
-Mission-critical systems are risk averse and may accept very high false alarm rates,
-just as long as they catch any life-threatening possibility. That is, such projects
-do not care about effort- they want to {\em maximize recall} regardless of any impact
-that might have on the false alarm rate.
-\item  Suppose a new hire wants
- to impress their manager. That
- new hire might want to ensure that no result presented to  management contains  true negative;
-i.e. they wish to {\em maximize precision}.
-\item
-Some communities do not care about   low precision,
-just as long as a small fraction the data is returned. Hayes, Dekhytar, \& Sundaram call this fraction
-{\em selectivity} and offer an
-extensive discussion of the merits of this measure~\cite{hayes06}.
-\end{enumerate}
- \\ \hline
-\rowcolor{gray!10}
-Beyond defect prediction are other goals that combine defect prediction with other economic
-factors:
-\begin{enumerate}[leftmargin=0.4cm]
-\setcounter{enumi}{3}
-\item
-Arisholm~\&~Briand~\cite{arisholm06},  Ostrand \& Weyeuker~\cite{ostrand04} and Rahman et al.~\cite{rahman12}
-say that a defect predictor should maximizing {\em reward}; i.e. find the fewest lines of code
-that contain the most bugs.
-\item In other work, Lumpe et al. are concerned about
- {\em amateur  bug fixes}; i.e. those that made by programmers to
-regions of the code that are unfamiliar, to them~\cite{me11f}.
-Such amateur fixes are highly correlated to errors and, hence, to
-avoid such incorrect bug fixes, we have to optimize
-for finding the most number of bugs in regions that {\em the most programmers have worked with before}.
-\item In our  {\em better-faster-cheaper} work, we seek  project changes that lead
-to fewer defects and faster development times using less resources~\cite{elrawas10,me07f,me09a,me09f}.
-\item
-With Sayyad~\cite{sayyad13a,sayyad13b}, we have explored models of software product
-lines whose value propositions are five-fold:
-(1)~offer feature rich products (i.e. that
-use as {\em many features} as possible);
-(2)~selecting from features with {\em fewest past defects};
-favoring those that we have (3)~{\em used before}; and which
-(4)~{\em cost
-least} to adopt; all the while (5)~avoiding {\em any violations} of
-required properties of these
-products.
-\end{enumerate}
-\\ \hline
-\rowcolor{gray!10}
-All the above measures relate to the tendency of a predictor to find something. Another style
-of measure would be to check the {\em variability} of that predictor.
-\begin{enumerate}[leftmargin=0.4cm]
-\setcounter{enumi}{7}
-\item
-In their study on reproducibility of SE results,
- Anda, Sjoberg and Mockus advocate using the coefficient of variation ($CV=\frac{stddev}{mean}$).
-Using this measure, they defined {\em reproducibility} as $\frac{1}{CV}$~\cite{mockus09}.
-\end{enumerate}\\\hline
-\end{tabular}
-\caption[Different users value different things.]{Different users value different things.
-% Technical note:  some of
-% these goals are defined in terms of
-% Figure~\ref{fig:criteria}.
-}\label{fig:goals}
-\end{figure}
 
 
-\section{  Why? (Synergies of MSR + SBSE)}
+
+\section{  Why? (Synergies of MSR + SBSE)} \label{sec:why}
 
 
-If MSR was completely different to SBSE (as suggested by Figure~\ref{fig:sbse_crash}), 
-then there would be no point
-to this paper. This section argues combining both methods is insightful and useful.
+% If MSR was completely different to SBSE (as suggested by Figure~\ref{fig:sbse_crash}), 
+% then there would be no point
+% to this paper. This section argues combining both methods is insightful and useful.
 
 % A recent study by Chen et al.~\cite{xxChenSampleXXX}  illustrates the benefits
 % of combining MSR+SBSE. In that study, Chen was applying SBSE 
@@ -659,6 +645,9 @@ to this paper. This section argues combining both methods is insightful and usef
 % On the other hand,  a statistical comparison showed that the exhaustive approach
 % found as good, or better, solutions that the state-of-the-art SBSE
 % methods $\frac{44}{48}=92$\% in comparisons.
+
+
+
 
 
 % This experiment suggests the following exciting possibility. 
@@ -741,6 +730,10 @@ Note that all the above used case study material from tiny.cc/sbse.
 % Summarized from 
 % \fig{boxplot}. Color patterns are the same as \fig{boxplot}. Decimal in each cell is the effect size.  Generating and evaluating all the models in this figure took 52 hours of CPU.}\label{fig:sum1}
 % \end{figure}
+ 
+
+ 
+ 
  Yet another, subtler, benefit of combining MSR+SBSE relates to the exploration of competing
  objectives.
  We note that  
@@ -769,6 +762,8 @@ seen in the parts of system that fall
 into $A,B,C,D$. Given these definitions then
 
 
+
+
 {\small\[
 \begin{array}{r@{~}l}
 \mathit{pd}=\mathit{recall}=&D / (B+D)\\
@@ -795,13 +790,13 @@ criteria. SBSE systems accept as input some function that assesses candidates on
 criteria (and that function is used to   guide the inference of the SBSE tool).
 Several recent results illustrate the value of using a wider range of evaluation criteria
 to assess our models:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item
 Sarro et al.~\cite{sarro2016multi}  used SBSE tools that assessed software effort estimation tools
 not only by their predictive accuracy, but also by the confidence of those predictions.
-That multi-objective methods out-performed the prior state-of-the-art in effort estimation. 
-\llm{A former work had also used multi-objective methods to boost the predictive performance of ensembles for
-software effort estimation \cite{minku2013}.}
+These multi-objective methods out-performed the prior state of the art in effort estimation. 
+{Prior work also used multi-objective methods to boost the predictive performance of ensembles for
+software effort estimation~\cite{minku2013}.}
 \item
 Agrawal et al.~\cite{agrawalwrong} used SBSE tools to tune text mining tools for Stackoverflow.
 Standard text mining tools can suffer from ``order effects'' in which changing the order
@@ -810,6 +805,7 @@ To fix this, Agrawal et al. tuned the background priors
 of their Latent Dirichlet allocation (LDA) algorithm to maximize for the stability
 of the learned clusters.  Classifiers based on these stabilized clusters performed better than those based on the clusters learned by standard LDA.
 \end{itemize}
+
 
 
 
@@ -1000,7 +996,7 @@ of the learned clusters.  Classifiers based on these stabilized clusters perform
 
 % \noindent\textbf{Data Collection or Model building: } SBSE process can either rely on a model, which represent a software process~\cite{boehm1995cost} or can be directly applied to any software engineering problem including problems which requires evaluating a solution by running a specific benchmark~\cite{krall2015gale}. This is very similar to model-driven engineering (MDE), and there are several works drawing parallels of these two fields~\cite{boussaid2017survey, kessentini2013searching}. Along with the data collection, it is also essential to determine the performance metric which needs to be optimized (the goal of optimization).
 
-% \noindent\textbf{Representation: } \TODO{I suggest first telling what representation is, and then mentioning about initialization and giving examples. I think I may have written some comments on that in the previous version of the paper. Please have a look.} The process of search starts by creating random solutions (valid or invalid) of certain problems. In some cases, practitioners have also tried to seed the initial population for faster convergence of the search process~\cite{saber2017seeding, chen2017beyond, chen2017sampling, henard2015combining}. The representation of these solutions is significant to generate the landscape of the problem (details in Section~\ref{sec:help}). \llm{Examples of representations are Boolean or numerical vectors, but more complex representations are also possible.} This representation can also be called as the \textit{Decision Space} \TODO{This statement is incorrect. Representation is not a synonym of decision space, even though the two are intertwined!}.
+% \noindent\textbf{Representation: } \TODO{I suggest first telling what representation is, and then mentioning about initialization and giving examples. I think I may have written some comments on that in the previous version of the paper. Please have a look.} The process of search starts by creating random solutions (valid or invalid) of certain problems. In some cases, practitioners have also tried to seed the initial population for faster convergence of the search process~\cite{saber2017seeding, chen2017beyond, chen2017sampling, henard2015combining}. The representation of these solutions is significant to generate the landscape of the problem (details in Section~\ref{sec:help}). {Examples of representations are Boolean or numerical vectors, but more complex representations are also possible.} This representation can also be called as the \textit{Decision Space} \TODO{This statement is incorrect. Representation is not a synonym of decision space, even though the two are intertwined!}.
 
 % \noindent\textbf{Fitness Function: } A fitness function maps the solution (which is represented using numerics) to a numeric scale (also called as \textit{Objective Space}) which is used to distinguish between good and not so good solutions. This measure is a domain-specific measure (single objective) or measures (multi-objective) which is useful for the practitioners. Examples of various fitness used in SBSE are (i) difference between the lowest
 % and the highest number of transformation elements~\cite{fleck2017model} or (ii) number of test cases passed~\cite{oliveira2016improved}. The fitness function determines the fitness landscape of the problem---which characterizes the problem and defines the `hardness' of the problem. Fitness landscape should not be too flat, which means the meta-heuristic algorithms cannot find the best possible direction to explore. Simply put fitness function is a transformation function which converts the point in the decision space to an objective space. 
@@ -1194,23 +1190,24 @@ of the learned clusters.  Classifiers based on these stabilized clusters perform
 % \cite{mathew2017shorter}
 
 
-\begin{table*}[]
+\begin{table*}[t]
 \centering
 \small
-\caption{Different problems and associated strategies explored in this paper. The characteristic of the decision space (C/D) represents whether there are continuous or discrete in nature. The column Links represent the URL from where the problems can be download (prefix http://tiny.cc/ to the Link)---currently blinded for review}
+\caption{Different problems and associated strategies explored in this paper. The characteristic of the decision space (C/D) represents whether there are continuous or discrete in nature. The column Links represent the URL from where the problems can be download (prefix http://tiny.cc/ to the Link)---currently blinded for review.}
 \label{tbl:only1}
 \begin{tabular}{@{}cp{3cm}cp{0.7cm}rp{3cm}lr@{}}
 \toprule
 \textbf{Domain} & \textbf{Problem} & \textbf{Decision Space} & \textbf{C/D} & \textbf{Projects} & \textbf{Description} & \textbf{Links} & \textbf{Related Work} \\ \midrule
- & Defect Prediction & Numeric & D & 10 & CK Metric & \censor{\href{http://tiny.cc/raise_data_defect}{raise\_data\_defect}} & \cite{fu2016tuning} \\
- & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \multicolumn{1}{c}{\cellcolor[HTML]{EFEFEF}} & \cellcolor[HTML]{EFEFEF}1 & \cellcolor[HTML]{EFEFEF}Citamap & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_data_pits}{raise\_data\_pits}} & \cellcolor[HTML]{EFEFEF} \\
- & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \multicolumn{1}{c}{\cellcolor[HTML]{EFEFEF}} & \cellcolor[HTML]{EFEFEF}6 & \cellcolor[HTML]{EFEFEF}Pits & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_data_pits}{raise\_data\_pits}} & \cellcolor[HTML]{EFEFEF} \\
-\multirow{-4}{*}{MSR} & \multirow{-3}{*}{\cellcolor[HTML]{EFEFEF}Text Classification} & \multirow{-3}{*}{\cellcolor[HTML]{EFEFEF}Text} & \multicolumn{1}{c}{\multirow{-3}{*}{\cellcolor[HTML]{EFEFEF}-}} & \cellcolor[HTML]{EFEFEF}1 & \cellcolor[HTML]{EFEFEF}StackOverflow & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/SOProcess}{SOProcess}} & \multirow{-3}{*}{\cellcolor[HTML]{EFEFEF}\cite{agrawalwrong}} \\ \midrule
+ & \cellcolor[HTML]{EFEFEF}Defect Prediction & \cellcolor[HTML]{EFEFEF}Numeric & \cellcolor[HTML]{EFEFEF}D & \cellcolor[HTML]{EFEFEF}10 & \cellcolor[HTML]{EFEFEF}CK Metric & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_data_defect}{raise\_data\_defect}} & \cellcolor[HTML]{EFEFEF}\cite{fu2016tuning} \\
+ &  &  & \multicolumn{1}{c}{} & 1 &Citemap & \censor{\href{http://tiny.cc/raise_data_pits}{raise\_data\_pits}} &  \\
+ &  &  & \multicolumn{1}{c}{} & 6 & Pits & \censor{\href{http://tiny.cc/raise_data_pits}{raise\_data\_pits}} &  \\
+\multirow{-4}{*}{MSR} & \multirow{-3}{*}{Text Classification} & \multirow{-3}{*}{Text} & \multicolumn{1}{c}{\multirow{-3}{*}{-}} & 1 & StackOverflow & \censor{\href{http://tiny.cc/SOProcess}{SOProcess}} & \multirow{-3}{*}{\cite{agrawalwrong}} \\
+ & \cellcolor[HTML]{EFEFEF}\begin{tabular}[c]{@{}l@{}}Performance\\Optimization\end{tabular} & \cellcolor[HTML]{EFEFEF}Mixed & \cellcolor[HTML]{EFEFEF}D & \cellcolor[HTML]{EFEFEF}22 & \cellcolor[HTML]{EFEFEF}Performance Configuration optimization & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_data_perf}{raise\_data\_perf}} & \cellcolor[HTML]{EFEFEF}\cite{nair2017faster, nair2017using, nair2018finding} \\
+\midrule
  & Software Product Lines & Boolean & D & 5 & Product Lines & \censor{\href{http://tiny.cc/raise_data_SPL}{raise\_data\_SPL}} & \cite{chen2017sampling} \\
  & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF}7 & \cellcolor[HTML]{EFEFEF}DTLZ & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_dtlz_zdt}{raise\_dtlz\_zdt}} & \cellcolor[HTML]{EFEFEF} \\
  & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}General Optimization} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}Numeric} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}C} & \cellcolor[HTML]{EFEFEF}6 & \cellcolor[HTML]{EFEFEF}ZDT & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_dtlz_zdt}{raise\_dtlz\_zdt}} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}\cite{nair2016accidental}} \\
  & Workflow & Numeric & D & 20 & Workflow & \censor{\href{http://tiny.cc/raise_gen_workflow}{raise\_gen\_workflow}} & \cite{chen2017riot} \\
- & \cellcolor[HTML]{EFEFEF}\begin{tabular}[c]{@{}l@{}}Performance\\Optimization\end{tabular} & \cellcolor[HTML]{EFEFEF}Mixed & \cellcolor[HTML]{EFEFEF}D & \cellcolor[HTML]{EFEFEF}22 & \cellcolor[HTML]{EFEFEF}Performance Configuration optimization & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_data_perf}{raise\_data\_perf}} & \cellcolor[HTML]{EFEFEF}\cite{nair2017faster, nair2017using, nair2018finding} \\
  & Text Discovery & Text & - & 4 & Reading Faster & \censor{\href{http://tiny.cc/raise_data_fastread}{raise\_data\_fastread}} & \cite{yu2016read} \\
  & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF}5 & \cellcolor[HTML]{EFEFEF}Xomo & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} \\
  & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}Software Processes} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}Numeric} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}C} & \cellcolor[HTML]{EFEFEF}4 & \cellcolor[HTML]{EFEFEF}POM3 & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_pom_xomo}{raise\_pom\_xomo}}} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}\cite{nair2016accidental, chen2017beyond}} \\
@@ -1228,7 +1225,7 @@ to start exploring data-driven search-based SE.
 Accordingly, in this section, we describe sample
 tasks that might be used for that exploration.
 Note that:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item
 Table~\ref{tbl:only1} summarizes the material presented in this section. 
 \item All these examples were used in recent SE
@@ -1238,9 +1235,9 @@ assess  their own new ideas.
 Support material for that exploration (data, models, scripts),
 is available from tiny.cc/sbse.
 
-\TODO{We have only one problem from MSR domain. If possible, should we add some more MSR ones?}
+% \TODO{We have only one problem from MSR domain. If possible, should we add some more MSR ones?}
 
-\TODO{I wonder if this section could be better linked to the sbse brief tutorial, e.g., by explicitly mentioning terms from there more often, etc. This would better demonstrate the value of the tutorial that we have there.}
+% \TODO{I wonder if this section could be better linked to the sbse brief tutorial, e.g., by explicitly mentioning terms from there more often, etc. This would better demonstrate the value of the tutorial that we have there.}
 
 \end{itemize}
 Note that we make no assumption that the following list of materials
@@ -1251,19 +1248,20 @@ covers the spectrum of problems that could be solved by combining MSR with SBSE.
     
     \noindent\textbf{Problem:} With fast-paced development cycle, traditional code-reuse techniques have been infeasible. Now, software companies are moving a software product line model to reduce cost and increase reliability. Companies concentrate on building software out of core components, and quickly use these components with specializations for certain customers. This allows the companies to have a fast turn around time. In a more concrete sense, a software product line (SPL) is a collection of related software products, which share some core functionality~\cite{harman2014search}. From one product line, many products can be generated. 
     
-    \begin{figure}[!t]
- \includegraphics[width=\linewidth]{img/ft.png}
-\caption{Feature model for mobile phone product line. To form a mobile phone, ``Calls'' and ``Screen'' are the mandatory features(shown as \textit{solid $\bullet$}), while the ``GPS'' and ``Media'' features are optimal(shown as \textit{hollow $\circ$}). The ``Screen'' feature can be ``Basic``, ``Color'' or ``High resolution'' (the \textit{alternative} relationship). The ``Media'' feature contains ``camera'', ``MP3'', or both (the \textit{Or} relationship).}
-\label{fig:mobile}
+\begin{figure}[!t]
+    \small
+    \includegraphics[width=\linewidth]{img/ft.png}
+    \caption{Feature model for mobile phone product line. To form a mobile phone, ``Calls'' and ``Screen'' are the mandatory features(shown as \textit{solid $\bullet$}), while the ``GPS'' and ``Media'' features are optimal(shown as \textit{hollow $\circ$}). The ``Screen'' feature can be ``Basic``, ``Color'' or ``High resolution'' (the \textit{alternative} relationship). The ``Media'' feature contains ``camera'', ``MP3'', or both (the \textit{Or} relationship).}
+    \label{fig:mobile}
 \end{figure}
 
 
 Figure \ref{fig:mobile} shows a feature model for a mobile phone
 product line. All features are organized as a tree. The relationship
 between two features might be ``mandatory'', ``optional'',
-``alternative'', or ``or''. Also, there exist some cross-tree constraints, which means the preferred features are not in the same sub-tree. These cross-tree constraints complicate the process of exploring feature models\footnote{Without cross-tree constraints, one can generate products in linear time using a top-down traversal of the feature model.}. 
+``alternative'', or ``or''. Also, there exist some cross-tree constraints, which means the preferred features are not in the same sub-tree. These cross-tree constraints complicate the process of exploring feature models.\footnote{Without cross-tree constraints, one can generate products in linear time using a top-down traversal of the feature model.} The products are \textit{represented} as a binary string, where the length of the string is equal to the number of features. A valid product is one which satisfies all the relationship defined in the feature model.
 Researchers who explore these kinds of models~\cite{sayyad13a, sayyad13b, harman2014search, henard2015combining}
-define a ``good'' product as the one that satisfies five objectives:
+define a ``good'' product (\textit{fitness function}) as the one that satisfies five objectives:
 (1) find the valid products (products not violating any cross-tree constraint or tree structure), (2) with more features, (3) less known defects, (4) less total cost, and (5) most features used in prior applications.
 
 \noindent\textbf{Challenges: } Finding a valid product in real-world software product lines can be very difficult due to the sheer scale of these product lines. Some software product line models comprise up to tens of thousands
@@ -1273,14 +1271,15 @@ algorithm can be infeasible.
 
 \noindent\textbf{Strategy:} Since exploring all the possible solutions is expensive and often infeasible, the SWAY, or ``Sampling WAY'', clusters the individual products based on their features. Please note, clustering does not require evaluations---to find the fitness of each product. SWAY uses a domain-specific distance function to cluster the points. A domain-specific distance function was required because (1) clusters should have similar products---similar fitness values, and (2) the decision space is a boolean space. This is in line with the observation of Zhang et al.~\cite{zhang2013software}, who reports that MSR practitioners understand the data using domain knowledge. Once the products are clustered, a product is selected (at random) from each cluster. Based on the fitness values of the `representative product,' the not so promising clusters are eliminated. This step is similar to the \textit{elitism} operator of meta-heuristic algorithms. This process continues recursively till a certain budget is reached. Please refer to \cite{nair2016accidental, chen2017beyond, chen2017sampling} for more details. The reproduction package of SWAY and associated material can be found in \censor{\url{http://tiny.cc/raise_spl}}.
 
-
-\subsection{Performance Configuration Optimization}
-\noindent\textbf{Problem Domain: } SBSE
+    \subsection{Performance Configuration Optimization}
+\noindent\textbf{Problem Domain: } MSR
 
 \noindent\textbf{Problem: } Modern software systems come with a lot of knobs or configuration options, which can be tweaked to modify the functional or non-functional (e.g., throughput or runtime) requirements. Finding the best or optimal configuration to run a particular workload is essential since there is a significant difference between the best and the worst configurations. Many researchers report that modern software systems come with a daunting number of configuration options~\cite{xu2015hey}. The size of the configuration space increases exponentially with the number of configuration options. The long runtimes or cost required to run benchmarks make this problem more challenging.
 
 \noindent\textbf{Challenges: } Most prior work in this area used a machine learning method to accurately model the
-configuration space \TODO{Have meta-heuristics been used in previous work here? Is this ML method a surrogate for the meta-heuristics? The use of meta-heuristics is not very clear here. It may make it sound like this was originally an MSR problem rather than a SBSE problem.}. The model is built sequentially, where new configurations are sampled randomly, and the quality
+configuration space. 
+% \TODO{Have meta-heuristics been used in previous work here? Is this ML method a surrogate for the meta-heuristics? The use of meta-heuristics is not very clear here. It may make it sound like this was originally an MSR problem rather than a SBSE problem.}. 
+The model is built sequentially, where new configurations are sampled randomly, and the quality
 or accuracy of the model is measured using a holdout set. The size of the holdout set in some cases could be up to 20\% of the configuration space~\cite{nair2017using} and need to be evaluated (i.e., measured) before even the machine learning model is fully built. This strategy makes these methods not suitable in a practical setting since the generated holdout set can be (very) expensive. On the other hand, there are software systems for which an accurate model cannot be built. 
 
 \noindent\textbf{Strategy: } The problem of finding the (near) optimal configuration is expensive and often infeasible using the current techniques. A useful strategy could be to build a machine learning model which can differentiate between the good and not so good solutions. Flash, a Sequential Model-based Optimization (SMBO), is a useful
@@ -1289,29 +1288,26 @@ efficient because of its ability to incorporate prior belief as
 already measured solutions (or configurations), to help direct
 further sampling. Here, the prior represents the already
 known areas of the search (or performance optimization) problem. The prior can be used to estimate the rest of the
-points (or unevaluated configurations). Once we have evaluated
-one (or many) points based on the prior, we can define
-the posterior. The posterior captures our updated belief in
+points (or unevaluated configurations). Once one (or many) points are evaluated based on the prior,
+the posterior can be defined. The posterior captures the updated belief in
 the objective function. This step is performed by using a
 machine learning model, also called surrogate model. 
 The concept of Flash can be simply stated as:
 \begin{itemize}
-\item Given what we know about the problem,
-\item what should we do next?
+\item Given what one knows about the problem,
+\item what can be done next?
 \end{itemize}
-The ``given what we know about the problem'' part is
-achieved by using a machine learning model whereas ``what
-should we do next'' is performed by an acquisition function.
+The ``given what one knows about the problem'' part is
+achieved by using a machine learning model whereas ``what can be done next'' is performed by an acquisition function.
 Such acquisition function automatically adjusts the exploration
 (``should we sample in uncertain parts of the search
 space'') and exploitation (``should we stick to what is already
-known'') behavior of the method. Please refer to  \cite{nair2018finding} and  \cite{nair2017using,nair2017faster} to similar strategies. The reproduction package is available in \censor{\url{http://tiny.cc/flashrepo/}}.
+known'') behavior of the method. Please refer to  \cite{nair2018finding} and  \cite{nair2017using,nair2017faster, jamshidi2016uncertainty} to similar strategies. The reproduction package is available in \censor{\url{http://tiny.cc/flashrepo/}}.
 
-
-\subsection{Requirements Models}
+    \subsection{Requirements Models}
     \textbf{Problem Domain: } SBSE
     
-    \noindent\textbf{Problem:} The process of building and analyzing complex requirements engineering models can help stakeholders better understand the ramifications of their decisions~\cite{Lamsweerde2001,amyot10}. But models can sometimes overwhelm stakeholders. For example, consider a committee reviewing a goal model (see fig. \ref{fig:csServices}) that describes the information needs of a computer science department~\cite{Horkoff2016}. Although the model is entangled, on manual and careful examination, we observe that much of the model depends on a few ``key'' decisions such that once their values are assigned, it becomes very simple to reason over the remaining decisions. It is beneficial to look for these ``keys'' in requirements models since, if they exist, we can achieve ``shorter'' reasoning about large RE models, where ``shorter'' is measured as follows:
+    \noindent\textbf{Problem:} The process of building and analyzing complex requirements engineering models can help stakeholders better understand the ramifications of their decisions~\cite{Lamsweerde2001,amyot10}. But models can sometimes overwhelm stakeholders. For example, consider a committee reviewing a goal model (see fig. \ref{fig:csServices}) that describes the information needs of a computer science department~\cite{Horkoff2016}. Although the model is entangled, on manual and careful examination, it can be  observed that much of the model depends on a few ``key'' decisions such that once their values are assigned, it becomes very simple to reason over the remaining decisions. It is beneficial to look for these ``keys'' in requirements models since, if they exist, one can achieve ``shorter'' reasoning about large RE models, where ``shorter'' is measured as follows:
     \begin{itemize}
      \item{Large models can be processed in a very short time.}
      \item{Runtimes for automatic reasoning about RE models are shorter so stakeholders can get faster feedback on their models.}
@@ -1332,7 +1328,7 @@ Such models are represented using the \textit{i*} framework \cite{yu97a} which i
 
 \noindent\textbf{Challenges: } Committees have trouble with manually reasoning about all the conflicting relationships in models like fig. \ref{fig:csServices} due to its sheer size and numerous interactions (this model has 351 node, 510 edges and over 500 conflicting relationships). Further, automatic methods for reasoning about these models are hard to scale up: as discussed below, reasoning about inference over these models is an NP-hard task. 
 
-\noindent\textbf{Strategy:} To overcome this problem, we propose a technique called SHORT which runs in four phases:
+\noindent\textbf{Strategy:} To overcome this problem, a technique called SHORT was proposed, which runs in four phases:
 \begin{itemize}
     \item{\textbf{SH}: 'S'ample 'H'euristically the possible labelings of the model.}
     \item{\textbf{O}: 'O'ptimize the label assignments to cover more goals or reduce the sum of the cost of the decisions in the model.}
@@ -1340,57 +1336,59 @@ Such models are represented using the \textit{i*} framework \cite{yu97a} which i
     \item{\textbf{T}: T: 'T'est how much conclusions are determined by the decisions that occur very early in that ranking.}
 \end{itemize}
 
-We used the above technique on eight large real-world Requirements Engineering models. We were able to that all of these models have under 25\% of their decisions as ``keys'' and 6 of them had less than 12\% decisions as keys \TODO{Some typos in this sentence.}. The process of identifying keys was also fast as it could run in near linear time with the largest of models running in less than 18 seconds. Please refer to \cite{mathew2017shorter} for more details and the reproduction package can be found at \censor{\url{http://tiny.cc/raise_short}}.
+The above technique was used on eight large real-world Requirements Engineering models. It was shown that only under 25\% of their decisions are ``keys'' and 6 of them had less than 12\% decisions as keys. The process of identifying keys was also fast as it could run in near linear time with the largest of models running in less than 18 seconds. Please refer to \cite{mathew2017shorter} for more details and the reproduction package can be found at \censor{\url{http://tiny.cc/raise_short}}.
 
-% \subsection{FASTREAD}
-% \noindent\textbf{Problem Domain: } SBSE
+\subsection{FASTREAD}
+\noindent\textbf{Problem Domain: } SBSE
 
-% \noindent\textbf{Problem: }
-% Research in any field starts with learning about the field by reading the literature of that field (and sometimes attending lectures). The process of finding relevant papers to read is often challenging, and it is easy to miss out on important papers. Broad and complete literature reviews are required when (1) researchers are exploring a new area; (2) researchers writing papers for peer review, to ensure reviewers will not reject a paper since it omits important related work; and (3) anyone surveying a field for latest developments. This problem can also be generalized as following: How to maximize relevant information (when there is a lot of noise) while minimizing the search cost to find relevant information?
+\noindent\textbf{Problem: }
+ Broad and complete literature reviews.
    
-% \vspace{1.0ex}
-% \noindent\textbf{Challenge 1: }
-% Literature reviews can be extremely labor intensive and often require months (if not year) to complete. Due to a large number of papers available, the relevant papers have hard to find. A graduate student needs to review thousands of papers before finding few dozen relevant papers. 
+\vspace{1.0ex}
+\noindent\textbf{Challenge 1: }
+Literature reviews can be extremely labor intensive and often require months (if not year) to complete. Due to a large number of papers available, the relevant papers have hard to find. A graduate student needs to review thousands of papers before finding few dozen relevant papers.
+How to maximize relevant information (when there is a lot of noise) while minimizing the search cost to find relevant information?
 
-% \noindent\textbf{Strategy: }
-%   Since, reading all the literature available in infeasible, we need to use an active learner. Such active learner incrementally learns from the human feedback and suggests on which paper to review next so that most relevant papers can be found by reviewing a minimal number of papers.
+\noindent\textbf{Strategy: }
+  Reading all   literature  is unfeasible. Active learners incrementally learns from the human feedback and suggests on which paper to review next.
    
-% \vspace{1.0ex}
-% \noindent\textbf{Challenge 2: }
-% It is important to note that the initial papers chosen to be reviewed can dramatically reduce the variance in the review effort. A wrong choice of initial papers can increase the effort by up to 300\% than the median effort (repeat for 30 runs)---requires three times more effort to retrieve the relevant papers. 
+\vspace{1.0ex}
+\noindent\textbf{Challenge 2: }
+A wrong choice of initial papers can increase the review effort by up to 300\% than the median effort (repeat for 30 runs)---requires three times more effort to retrieve the relevant papers. 
 
-% \noindent\textbf{Strategy: }
-% Such variances can be alleviated by selecting a good initial set of papers with domain knowledge from the researcher. We found that by ranking the papers with their BM25 scores of a set of keywords (provided as domain knowledge) and reviewing in such order, the effort can be further reduced with negligible variances.
+\noindent\textbf{Strategy: }
+Reduce  variances  by selecting a good initial set of papers with domain knowledge from the researcher. We found that by ranking the papers with some  keywords (provided as domain knowledge) and reviewing in such order, the effort can be   reduced with negligible variances.
    
-% \vspace{1.0ex}
-% \noindent\textbf{Challenge 3: }
-% Another challenge is when to stop the reviewing process. Stopping too early will result in many missing relevant papers while stopping too late could waste review effort on irrelevant papers. The desired stopping point would be when 95\% of the relevant papers have been found. However, since we do not know the total number of relevant papers to be found, there is no way to know whether we have found 95\% of it.
+\vspace{1.0ex}
+\noindent\textbf{Challenge 3: }
+When to stop?. If too early then   many   relevant papers will be missed.
+If too late, then much time will be wasted on irrelevant papers. 
 
-% \noindent\textbf{Strategy: }
-% Stopping criterion for most of the search algorithms is based on either resource constraints or a predefined stopping criterion (historical knowledge). However, this is not suitable for this problem setting. A possible way to determining the stopping criterion is to use a semi-supervised machine learning algorithm (Logistic Regression) learn from the search process (till now) to predict how much more relevant paper will be found.The predicted values from this regressor are used to decide when to stop the process of search.
-   
-% \vspace{1.0ex}
-% \noindent\textbf{Challenge 4: }
-% Actual human reviewers are fallible when labeling the papers. Research shows that it is reasonable to assume the precision and recall of a human reviewer are both 70\%. When such human errors occur, how to correct the errors so that the active learner is not misled?
+\noindent\textbf{Strategy: }
+Use a semi-supervised machine learning algorithm (Logistic Regression) to learn from the search process (till now) to predict how much more relevant paper will be found. 
 
-% \noindent\textbf{Strategy: }
-% The intuition used to solve the problem is the following: concentrate the effort on correctly classifying the paper which creates the most controversy. Using this intuition, periodically few of the already evaluated papers, whose labels the active learner disagree most on, are re-evaluated.
+\vspace{1.0ex}
+\noindent\textbf{Challenge 4: }
+Research shows that it is reasonable to assume the precision and recall of a human reviewer are both 70\%. When such human errors occur, how to correct the errors so that the active learner is not misled?
 
-\subsection{Text classification}
+\noindent\textbf{Strategy: }
+Concentrate the effort on correctly classifying the paper which creates the most controversy. Using this intuition, periodically few of the already evaluated papers, whose labels the active learner disagree most on, are re-evaluated.
+
+    \subsection{Text classification}
 \noindent\textbf{Problem Domain: } MSR
 
 \noindent\textbf{Problem: } Stack Overflow is a popular Q\&A website, where users posts the questions and the community collectively answers these questions. However, as the community evolves, there is chance that duplicate questions can appear---which results in a wasted effort of the community. There is a need to remove the duplicate question or consolidate related questions. The problem focuses on discovering the relationship between any two questions posted on Stack Overflow and classifies them into duplicates, direct link, indirect link, and isolated~\cite{fu2017easy, xu2016predicting}. One way to solve this problem is to build a predictive model which can predict the similarity between two questions. 
 
-\noindent\textbf{Challenge: } The state-of-the-art method for this problem used Deep Learning, which was expensive to train~\cite{xu2016predicting}. For example, Xu et al. spent 14 hours to train a deep learning model. Such long training time is not appropriate for the field of software analytics since software analytics requires the methods to have a fast turnaround time~\textcolor{red}{cite the paper which says fast turn around time is required}.
+\noindent\textbf{Challenge: } The state of the art method for this problem used Deep Learning, which was expensive to train~\cite{xu2016predicting}. For example, Xu et al. spent 14 hours to train a deep learning model. Such long training time is not appropriate for the field of software analytics since software analytics requires the methods to have a fast turnaround time~\cite{zhang2013software}.
 
-\noindent\textbf{Strategy: }To reduce the training time as well as promote simplicity, hyper-parameter optimization of simple learners, like SVM (Support Vector Machines), is a way to go. Specifically, a \llm{meta-heuristic algorithm called} Differential Evolution, which has been an effective tuning algorithm (used in SBSE)~\cite{fu2016tuning},
+\noindent\textbf{Strategy: }To reduce the training time as well as promote simplicity, hyper-parameter optimization of simple learners, like SVM (Support Vector Machines), is a way to go. Specifically, a {meta-heuristic algorithm called} Differential Evolution, which has been an effective tuning algorithm (used in SBSE)~\cite{fu2016tuning},
 was used to explore the parameter space of SVM. After the search process,
  SVM with best-found parameters is used to predict classes of Stack Overflow questions. This method can get similar or better results
 than the deep learning method while reducing the training time by up to 80 times. Please refer to \cite{fu2017easy} for more details. Please refer to \cite{fu2017easy} for more details and the reproduction package can be found in~\censor{\url{http://tiny.cc/raise_data_easy}}.
 
 \input{img/structure}
 
-\subsection{Workflows in Cloud Environment}
+    \subsection{Workflows in Cloud Environment}
 \textbf{Problem Domain: } SBSE
 
 
@@ -1431,19 +1429,18 @@ assign each group into one computation node. Within one node,
 priorities of sub-tasks are determined by
 B-rank~\cite{topcuoglu2002performance}, a greedy algorithm. 
 The most tricky part is to determine types of computation nodes so that they can coordinate with each other and reduce the total ideal time (due to file transfer constraints).
-In RIOT,
-we make full use of two hypothesis: 1) similar configurations should have similar performance; 2) (monotonicity) k times computing resource should lead to (1/k)*c less computation time (where c is constant for one workflow).
+RIOT makes full use of two hypothesis: (1) similar configurations should have similar performance and (2) (monotonicity) k times computing resource should lead to (1/k)*c less computation time (where c is constant for one workflow).
 With these two hypotheses,
 RIOT first randomly creates some deployment configurations and evaluates them, then guess more configurations based on current evaluated configuration. Such kind of guess can avoid a large number of configuration evaluations. Please refer to \cite{chen2017riot} for more details and the reproduction package is available in \censor{\url{http://tiny.cc/raise_gen_workflow}}.
 
 
-\section{Practical Guidelines}
+\section{Practical Guidelines} \label{sec:guide}
 
 % \TODO{I've only just noticed that Sharelatex enables people to write comments. Anyway, my comments are all inline in the text now!}
 
-\TODO{The practical guidelines are mostly about learning SBSE. Should we explain that these are practical guidelines for those who are familiar with MSR but not with SBSE to be able to work on DSE? If they were guidelines for DSE, then we would need to include MSR guidelines here too.}
+% \TODO{The practical guidelines are mostly about learning SBSE. Should we explain that these are practical guidelines for those who are familiar with MSR but not with SBSE to be able to work on DSE? If they were guidelines for DSE, then we would need to include MSR guidelines here too.}
 
-Based on our experiences this section lists practical guidelines for the use of Data-Driven Search-based Software Engineering. 
+Based on our experiences this section lists practical guidelines for those who are familiar with MSR (but not with SBSE) to be able to work on Data-Driven Search-based Software Engineering. 
 % \TODO{In addition to Tim's comment, there is also the use of the acronym DSE. We've introduced the acronym, but we are not really using it much. That said, as this is the first paper on Data-Driven Search-based Software Engineering, it may be good to keep repeating the whole name (?)}
 Though one would expect exceptions or probably simpler techniques, given the current techniques listed in this paper (Section~\ref{sec:scenarios}), we believe that it is essential to provide practical guidance that will be valid in most cases and enable practitioners to use these techniques to solve their problems. 
 We recommend that practitioners follow these guidelines and possibly use them as a teaching resource.
@@ -1456,17 +1453,17 @@ As to learning more about area, the popular venues are:
 \item \href{http://gecco-2018.sigevo.org/index.html/HomePage}{GECCO}: The Genetic and Evolutionary Computation Conference (which has a special SE track);
 \item \href{http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235}{IEEE Transactions on Evolutionary Computation}
 \item SSBSE: the annual symposium on search-based SE;
-\item Recent papers   as FSE, ICSE, ASE, etc: goo.gl/Lvb42Z;
-\item Google Scholar: see  goo.gl/x44u77
+\item Recent papers   as FSE, ICSE, ASE, etc: \url{goo.gl/Lvb42Z};
+\item Google Scholar: see  \url{goo.gl/x44u77}
 \end{itemize}
-  \noindent\textbf{Debugging: } It is always recommended to use small and simple \llm{optimization problems} for the purposes of debugging. For example, small synthetic \llm{problems} like ZDT, DTLZ~\cite{deb2005scalable}, and WFG~\cite{huband2006review} are very useful to evaluate a meta-heuristic algorithm. For further details about other test problems, please refer to \cite{huband2006review}.  
+  \noindent\textbf{Debugging: } It is always recommended to use small and simple {optimization problems} for the purposes of debugging. For example, small synthetic {problems} like ZDT, DTLZ~\cite{deb2005scalable}, and WFG~\cite{huband2006review} are very useful to evaluate a meta-heuristic algorithm. For further details about other test problems, please refer to \cite{huband2006review}.  
   
-  That said, it is {\em not} recommended that you try publishing results based on these small \llm{problems}. In our experience, SE reviewers are more interested in results from the resources listed in Table~\ref{tbl:only1}, rather than results from   synthetic \llm{problems} like ZDT, DTLZ, and WFG. Rather, it is better to publish results on interesting
-  problems taken from the SE literature, such as those shown in \S\ref{sec:scenarios}.
+  That said, it is {\em not} recommended that you try publishing results based on these small {problems}. In our experience, SE reviewers are more interested in results from the resources listed in Table~\ref{tbl:only1}, rather than results from   synthetic {problems} like ZDT, DTLZ, and WFG. Rather, it is better to publish results on interesting
+  problems taken from the SE literature, such as those shown in Section \ref{sec:scenarios}.
   
   Another aspect of debugging is to notice the gradual improvement of results in terms of the performance metrics. In most cases, the performance metric for generation $n$ would be worse than generation $n+\delta$, where $\delta$ is a positive integer. In an unstable meta-heuristic algorithm, the performance metrics fluctuate a lot between generations. 
 %   \TODO{I don't think we've defined the term generations in the paper. Non-SBSE people may not understand it. We need to add sth in the tutorial. Or, when we write the pseudocode in the tutorial, we could simply use the term iterations.}. 
-  \llm{It is also common to observe a fitness curve over generations where the fitness initially improves more quickly and then starts to converge. However, a typical undesired result is premature convergence, which occurs when the algorithm converges too quickly to poor local optimal solutions.}
+  {It is also common to observe a fitness curve over generations where the fitness initially improves more quickly and then starts to converge. However, a typical undesired result is premature convergence, which occurs when the algorithm converges too quickly to poor local optimal solutions.}
 
   \noindent\textbf{Normalization: } When working with multi-objective problems, it is important to normalize the objective space to eliminate scaling issues. For example, Ishibuchi et al.~\cite{ishibuchi2017effect} showed that WFG4-9 test problems~\cite{huband2006review}, the range
 of the Pareto front on the $i^{th}$ objective is $[0, 2i]$. This means
@@ -1475,9 +1472,9 @@ the first objective. It is difficult for meta-heuristic algorithm without normal
 to find a set of uniformly distributed solutions over the entire Pareto front for such a many-objective test
 problem. 
 
-\noindent\textbf{Choosing Algorithm and its parameters: } \vivek{Choosing the meta-heuristic algorithm to solve a particular problem can be often challenging. Although, the chosen algorithm is generally a preference of the researcher, it is commonly agreed to use algorithms such as NSGA-II or SPEA2 for problems with <3 objectives whereas NSGA-III and MOEA/D is preferred for problems with >3 objectives.}
+\noindent\textbf{Choosing Algorithm and its parameters: } {Choosing the meta-heuristic algorithm to solve a particular problem can be often challenging. Although, the chosen algorithm is generally a preference of the researcher, it is commonly agreed to use algorithms such as NSGA-II or SPEA2 for problems with $<3$ objectives whereas NSGA-III and MOEA/D is preferred for problems with $>3$ objectives.}
 
-\vivek{Choosing the correct parameters of an meta-heuristic algorithms is essential for its performance. There are various rules of thumb, which are proposed by various researchers such as population size is the most significant parameter and that the crossover probability and mutation rate have insignificant effects on the GA performance~\cite{alajmi2014selecting}. However, we recommend to use a simple tuner to find the best parameter for the meta-heuristic algorithms. Tuners could be something as simple as Differential Evolution or Grid Search. }
+{Choosing the correct parameters of an meta-heuristic algorithms is essential for its performance. There are various rules of thumb, which are proposed by various researchers such as population size is the most significant parameter and that the crossover probability and mutation rate have insignificant effects on the GA performance~\cite{alajmi2014selecting}. However, we recommend to use a simple tuner to find the best parameter for the meta-heuristic algorithms. Tuners could be something as simple as Differential Evolution or Grid Search. }
 
 % \TODO{Should we mention somewhere that well-established methods such as NSGA-II and SPEA2 are typically ok for 2, or at most 3 objectives, and that other algorithms are more suitable for more than 3 objectives? I think it's quite common for beginners not to realize that.}
 
@@ -1489,8 +1486,8 @@ problem.
     \item  one ``dumb'' baseline method (random search or SWAY).
 \end{itemize}
 
-While comparing a new meta-heuristic algorithm or a DSE technique, it is always important to baseline it with the simplest baseline such as a random search. Bergestra et al.~\cite{bergstra2012random} demonstrated that random search which uses same computational budget finds better solutions by effectively searching a larger, less promising configuration space. Another alternative could be to generate numerous random solutions and reject less promising solutions using domain-specific heuristics. Chen et al.~\cite{chen2017sampling}, showed that SWAY---over sampling and subsequent pruning less promising solutions, is competitive with state-of-the-art solutions. Baselines like random search or SWAY can help researchers and industrial practitioners by achieving fast early results while providing `hints' for subsequent experimentation.
-Another important aspect is to compare the performance of the new technique with the current state-of-the-art techniques. Well established techniques in the SBSE literature are NSGA-II and SPEA2~\cite{chen2017beyond}. Please note that the state-of-the-art techniques differ among the various sub-domains.
+While comparing a new meta-heuristic algorithm or a DSE technique, it is always important to baseline it with the simplest baseline such as a random search. Bergestra et al.~\cite{bergstra2012random} demonstrated that random search which uses same computational budget finds better solutions by effectively searching a larger, less promising configuration space. Another alternative could be to generate numerous random solutions and reject less promising solutions using domain-specific heuristics. Chen et al.~\cite{chen2017sampling}, showed that SWAY---over sampling and subsequent pruning less promising solutions, is competitive with state of the art solutions. Baselines like random search or SWAY can help researchers and industrial practitioners by achieving fast early results while providing `hints' for subsequent experimentation.
+Another important aspect is to compare the performance of the new technique with the current state of the art techniques. Well established techniques in the SBSE literature are NSGA-II and SPEA2~\cite{chen2017beyond}. Please note that the state of the art techniques differ among the various sub-domains.
 
   \noindent\textbf{Reporting results: }
 Meta-heuristic algorithms in SBSE are an intelligent modification of a randomized algorithm. Like randomized algorithms, the meta-heuristic algorithms may be strongly affected by chance. Running a randomized
@@ -1518,7 +1515,7 @@ Note that once registered, then every new release (on Github) will be backed up 
      
 
 
-\section{Open Research Issues}
+\section{Open Research Issues} \label{sec:open}
 We hope this article inspires a larger group of researchers to work
 on open, and compelling problems
 in data-driven search-based SE. There are very many such problems, including the few listed below.
@@ -1546,10 +1543,10 @@ enhanced data-driven SBSE.
 Standard
 genetic algorithms must evaluate 1000s to 1,000,000s of examples-- which makes it hard for engineers or business users to debug or audit the results of that analysis. On the 
 other hand, tools like FLASH (described in the last bullet)
-and SWAY (see \S\ref{spl}) only evaluated $O(log(N))$ of the candidates-- which in practice can be just a few dozen examples. This number is small enough to ask humans
+and SWAY (see Section \ref{spl}) only evaluated $O(log(N))$ of the candidates-- which in practice can be just a few dozen examples. This number is small enough to ask humans
 to watch the reasoning and, sometimes, catch the SBSE
 tool making mistakes as it compares alternatives.  This style of human in the loop reasoning could be used for many tasks such as:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item Debugging or auditing the reasoning.
 \item Enhancing the reasoning; i.e. can human intelligence, applied judiciously,  boost artificial intelligence?
 \item Checking for missing attributes: when human experts say two identical examples are different, we can infer that there are extra attributes, not currently being modeled, that are important in this domain.
@@ -1569,7 +1566,7 @@ These techniques can be readily applied to SBSE to further reduce the cost of fi
 Many of the aforementioned methods can be used to tune approaches. However, many of them experience difficulties once the underlying function is noisy or the algorithm stochastic (and thus the optimizer gets somewhat misleading feedback), once many parameters are to be tuned, or once the approach is to be tuned for large corpora of instances where the objectives vary significantly. Luckily, in recent years, a number of automated parameter optimization methods have been developed and published as software packages. General purpose approaches include ParamILS~\cite{hutter2007paramils}, SMAC~\cite{hutter2011smac}, GGA~\cite{ansotegui2009gga}), and the iterated f-race procedure called irace~\cite{birattari2002irace}. %\footnote{\url{http://iridia.ulb.ac.be/irace}}. %\cite{BYBS10}. 
 %The aim of these is to allow a wide range of parameters to be efficiently tested in a systematic way. For example, irace's procedure begins with a large set of possible parameter configurations, and tests these on a succession of examples. As soon as there is sufficiently strong statistical evidence that a particular parameter setting is sub-optimal, then it is removed from consideration (the particular statistical test used in the f-race is the Friedman test). In practice, a large number of parameter settings will typically be eliminated after just a few iterations, making this an efficient process. Furthermore, this allows a fair comparison between methods, by allocating each method an evaluation budget.
 %\td{SA: Other configurators (e.g. ...), at least as prominent as irace, may deserve a brief mentioning/citation here as well, as well as input-specific configurators such as Hydra and ISAC.} 
-Of course, even such algorithm optimizers can be optimized further. One word of warning: as algorithm tuning is already computationally expensive, the tuning of algorithm tuners is even more so. While Dang et al.~\cite{dang2017iraceconfig} recently used surrogate functions to speed up the optimizer tuning, more research is needed to the optimization of optimizers more widely applicable. Lastly, an alternative to the tuning of algorithms is that of selecting an algorithm from a portfolio or determining an algorithm configuration, when an instance is given. This typically involves the training of machine learning models on performance data of algorithms in combination with instances given as feature data. \llm{In software engineering, this has been recently used as a DSE approach for the Software Project Scheduling Problem \cite{Shen2018,wu2016}.} The field of per-instance configuration has received much attention recently, and we refer the interested reader to a recent updated survey article~\cite{kotthoff2016survey}. 
+Of course, even such algorithm optimizers can be optimized further. One word of warning: as algorithm tuning is already computationally expensive, the tuning of algorithm tuners is even more so. While Dang et al.~\cite{dang2017iraceconfig} recently used surrogate functions to speed up the optimizer tuning, more research is needed to the optimization of optimizers more widely applicable. Lastly, an alternative to the tuning of algorithms is that of selecting an algorithm from a portfolio or determining an algorithm configuration, when an instance is given. This typically involves the training of machine learning models on performance data of algorithms in combination with instances given as feature data. {In software engineering, this has been recently used as a DSE approach for the Software Project Scheduling Problem \cite{Shen2018,wu2016}.} The field of per-instance configuration has received much attention recently, and we refer the interested reader to a recent updated survey article~\cite{kotthoff2016survey}. 
 
 
 \section{Conclusions}
@@ -1582,7 +1579,7 @@ This paper proposes concrete strategies which can be used to combine the techniq
 
 \section*{Acknowledgements}
 This work was inspired by the recent
- NII Shonan Meeting on Data-Driven Search-based Software Engineering(goo.gl/f8D3EC), December 11-14, 2017.
+ NII Shonan Meeting on Data-Driven Search-based Software Engineering (goo.gl/f8D3EC), December 11-14, 2017.
 We thank the organizers of that workshop 
 (Markus Wagner,  
  Leandro Minku,  
