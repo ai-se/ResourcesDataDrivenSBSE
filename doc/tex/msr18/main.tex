@@ -234,7 +234,7 @@ algorithms that could scale to interestingly large problems. In this paper,
 we pause to reflect on what other kinds of algorithms are widely available and could
 be applied to MSR problems.  Specifically, we focus on
 {\em search-based software engineering} (SBSE) algorithms. Whereas:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item
 An MSR researcher might deploy a
 data miner to learn a model from  data   that predicts for (say) a single target class;
@@ -307,7 +307,7 @@ A recent {NII Shonan Meeting}  on {\em Data-driven Search-based Software
 Engineering} (goo.gl/f8D3EC)   was well attended by over two dozen senior members of the MSR community.
 The workshop concluded that (1) mining software repositories could be improved using {tools from the SBSE community}; and that (2) search-based methods can be improved using tools from the MSR community. 
 For example:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item
 MSR data mining algorithms can be used to summarize the data, after which SBSE can leap to better solutions, faster~\cite{krall2015gale}.
 \item
@@ -459,10 +459,11 @@ We offer a ``cheats' guide'' to SBSE with just enough information to help resear
     \begin{tabular}{@{}p{3cm}p{6cm}p{8.35cm}@{}}
                 
                 % \multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{}}} \\ 
-                \rowcolor{gray}\textcolor{white}{\textbf{Features}} & \hspace{2cm}\textcolor{white}{\textbf{MSR}} & \hspace{3cm}\textcolor{white}{\textbf{SBSE}} \\ 
-                 \rowcolor{gray!30} \textbf{Primary inference} & Induction, summarization, visualization & Optimization \\
+                \toprule
+                \textbf{Features} & \hspace{2cm}\textbf{MSR} & \hspace{3cm}\textbf{SBSE} \\ \midrule
+                \rowcolor[HTML]{EFEFEF} \textbf{Primary inference} & Induction, summarization, visualization & Optimization \\
                 \textbf{Inference speed} & Very fast, scalable & Becoming faster, more scalable\\
-                 \rowcolor{gray!30}\textbf{Data} often collected &
+                \rowcolor[HTML]{EFEFEF}\textbf{Data} often collected &
                  Once,  then processed.
                 &
                 On-demand
@@ -479,7 +480,7 @@ We offer a ``cheats' guide'' to SBSE with just enough information to help resear
                 by the results of execution $i$.
                 \\ 
                  
-                 \rowcolor{gray!30}\textbf{Canonical   tools} are usually
+                \rowcolor[HTML]{EFEFEF}\textbf{Canonical   tools} are usually
                 &
                 Data mining algorithms like  the decision
                 tree learners of WEKA~\cite{hall2009weka} or the mathematical modeling tools of R~\cite{rmanual18} or Scikit-learn~\cite{scikit-learn}.
@@ -495,7 +496,7 @@ We offer a ``cheats' guide'' to SBSE with just enough information to help resear
                 % reduce the power consumption  mobile devices
                 \\ 
                 
-                 \rowcolor{gray!30} \textbf{Results}   assessed by
+                \rowcolor[HTML]{EFEFEF} \textbf{Results}   assessed by
                 &
                 A small number of standard measures
                 including   recall, precision, or false alarm rates (for discrete classes)
@@ -608,7 +609,7 @@ and SBSE.
  
 As to defining {\em data-driven search-based SE},
 we say it is some system that:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item To solve  some SE problem:
 \begin{itemize}
 \item
@@ -689,7 +690,7 @@ Not only is   MSR useful for   SBSE, but so too:
 The standard example here is parameter tuning. Most data mining algorithms come with tuning
 parameters that have to be set via expert judgment. Much recent work shows that for
 MSR problems such as defect prediction and text mining, SBSE can automatically find settings that are far superior to the default settings. For example:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
  \item
    When performing defect prediction, various groups report that SBSE methods can find new settings that dramatically improve the performance of the learned model~\cite{fu2016tuning,tantithamthavorn2016automated, Tantithamthavorn2018}.
 
@@ -1293,7 +1294,7 @@ the posterior can be defined. The posterior captures the updated belief in
 the objective function. This step is performed by using a
 machine learning model, also called surrogate model. 
 The concept of Flash can be simply stated as:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item Given what one knows about the problem,
 \item what can be done next?
 \end{itemize}
@@ -1307,8 +1308,8 @@ known'') behavior of the method. Please refer to  \cite{nair2018finding} and  \c
     \subsection{Requirements Models}
     \textbf{Problem Domain: } SBSE
     
-    \noindent\textbf{Problem:} The process of building and analyzing complex requirements engineering models can help stakeholders better understand the ramifications of their decisions~\cite{Lamsweerde2001,amyot10}. But models can sometimes overwhelm stakeholders. For example, consider a committee reviewing a goal model (see fig. \ref{fig:csServices}) that describes the information needs of a computer science department~\cite{Horkoff2016}. Although the model is entangled, on manual and careful examination, it can be  observed that much of the model depends on a few ``key'' decisions such that once their values are assigned, it becomes very simple to reason over the remaining decisions. It is beneficial to look for these ``keys'' in requirements models since, if they exist, one can achieve ``shorter'' reasoning about large RE models, where ``shorter'' is measured as follows:
-    \begin{itemize}
+    \noindent\textbf{Problem:} The process of building and analyzing complex requirements engineering models can help stakeholders better understand the ramifications of their decisions~\cite{Lamsweerde2001,amyot10}. But models can sometimes overwhelm stakeholders. For example, consider a committee reviewing a goal model (see fig. \ref{fig:csServices}) that describes the information needs of a computer science department~\cite{Horkoff2016}. Although the model is entangled, on manual and careful examination, it can be  observed that much of the model depends on a few ``key'' decisions such that once their values are assigned, it becomes very simple to reason over the remaining decisions. It is beneficial to look for these ``keys'' in requirements models since, if they exist, one can achieve ``shorter'' reasoning about RE models, where ``shorter'' is measured as follows:
+    \begin{itemize}[leftmargin=*]
      \item{Large models can be processed in a very short time.}
      \item{Runtimes for automatic reasoning about RE models are shorter so stakeholders can get faster feedback on their models.}
      \item{The time required for manual reasoning about models is shorter since stakeholders need only debate a small percent of the issues (just the key decisions).}
@@ -1329,7 +1330,7 @@ Such models are represented using the \textit{i*} framework \cite{yu97a} which i
 \noindent\textbf{Challenges: } Committees have trouble with manually reasoning about all the conflicting relationships in models like fig. \ref{fig:csServices} due to its sheer size and numerous interactions (this model has 351 node, 510 edges and over 500 conflicting relationships). Further, automatic methods for reasoning about these models are hard to scale up: as discussed below, reasoning about inference over these models is an NP-hard task. 
 
 \noindent\textbf{Strategy:} To overcome this problem, a technique called SHORT was proposed, which runs in four phases:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
     \item{\textbf{SH}: 'S'ample 'H'euristically the possible labelings of the model.}
     \item{\textbf{O}: 'O'ptimize the label assignments to cover more goals or reduce the sum of the cost of the decisions in the model.}
     \item{\textbf{R}: R: 'R'ank all decisions according to how well they performed during the optimization process.}
@@ -1338,11 +1339,14 @@ Such models are represented using the \textit{i*} framework \cite{yu97a} which i
 
 The above technique was used on eight large real-world Requirements Engineering models. It was shown that only under 25\% of their decisions are ``keys'' and 6 of them had less than 12\% decisions as keys. The process of identifying keys was also fast as it could run in near linear time with the largest of models running in less than 18 seconds. Please refer to \cite{mathew2017shorter} for more details and the reproduction package can be found at \censor{\url{http://tiny.cc/raise_short}}.
 
-\subsection{FASTREAD}
+\subsection{Faster Literature Reviews}
 \noindent\textbf{Problem Domain: } SBSE
 
 \noindent\textbf{Problem: }
  Broad and complete literature reviews.
+ 
+ Data sets and reproduction packages for all the following are available at \censor{https://doi.org/10.5281/zenodo.837298} (for Challenge~1) and 
+\censor{https://doi.org/10.5281/zenodo.1147678} (for Challenges 2,3,4). Please refer to \cite{yu2016finding, YuM17} for more details
    
 \vspace{1.0ex}
 \noindent\textbf{Challenge 1: }
@@ -1350,14 +1354,14 @@ Literature reviews can be extremely labor intensive and often require months (if
 How to maximize relevant information (when there is a lot of noise) while minimizing the search cost to find relevant information?
 
 \noindent\textbf{Strategy: }
-  Reading all   literature  is unfeasible. Active learners incrementally learns from the human feedback and suggests on which paper to review next.
+  Reading all   literature  is unfeasible. Active learners incrementally learns from the human feedback and suggests on which paper to review next~\cite{YuM17a}.
    
 \vspace{1.0ex}
 \noindent\textbf{Challenge 2: }
-A wrong choice of initial papers can increase the review effort by up to 300\% than the median effort (repeat for 30 runs)---requires three times more effort to retrieve the relevant papers. 
+A wrong choice of initial papers can increase the review effort by up to 300\% than the median effort (repeat for 30 runs)---requires three times more effort to find   relevant papers. 
 
 \noindent\textbf{Strategy: }
-Reduce  variances  by selecting a good initial set of papers with domain knowledge from the researcher. We found that by ranking the papers with some  keywords (provided as domain knowledge) and reviewing in such order, the effort can be   reduced with negligible variances.
+Reduce  variances  by selecting a good initial set of papers with domain knowledge from the researcher. We found that by ranking the papers with some  keywords (provided as domain knowledge) and reviewing in such order, the effort can be   reduced with negligible variances~\cite{YuM17}.
    
 \vspace{1.0ex}
 \noindent\textbf{Challenge 3: }
@@ -1365,19 +1369,21 @@ When to stop?. If too early then   many   relevant papers will be missed.
 If too late, then much time will be wasted on irrelevant papers. 
 
 \noindent\textbf{Strategy: }
-Use a semi-supervised machine learning algorithm (Logistic Regression) to learn from the search process (till now) to predict how much more relevant paper will be found. 
+Use a semi-supervised machine learning algorithm (Logistic Regression) to learn from the search process (till now) to predict how much more relevant paper will be found~\cite{YuM17}. 
 
 \vspace{1.0ex}
 \noindent\textbf{Challenge 4: }
 Research shows that it is reasonable to assume the precision and recall of a human reviewer are both 70\%. When such human errors occur, how to correct the errors so that the active learner is not misled?
 
 \noindent\textbf{Strategy: }
-Concentrate the effort on correctly classifying the paper which creates the most controversy. Using this intuition, periodically few of the already evaluated papers, whose labels the active learner disagree most on, are re-evaluated.
+Concentrate the effort on correctly classifying the paper which creates the most controversy. Using this intuition, periodically few of the already evaluated papers, whose labels the active learner disagree most on, are re-evaluated~\cite{YuM17}.
+
+
 
     \subsection{Text classification}
 \noindent\textbf{Problem Domain: } MSR
 
-\noindent\textbf{Problem: } Stack Overflow is a popular Q\&A website, where users posts the questions and the community collectively answers these questions. However, as the community evolves, there is chance that duplicate questions can appear---which results in a wasted effort of the community. There is a need to remove the duplicate question or consolidate related questions. The problem focuses on discovering the relationship between any two questions posted on Stack Overflow and classifies them into duplicates, direct link, indirect link, and isolated~\cite{fu2017easy, xu2016predicting}. One way to solve this problem is to build a predictive model which can predict the similarity between two questions. 
+\noindent\textbf{Problem: } Stack Overflow is a popular Q\&A website, where users posts the questions and the community collectively answers these questions. However, as the community evolves, there is chance that duplicate questions can appear---which results in a wasted effort of the community. There is a need to remove the duplicate question or consolidate related questions. The problem focuses on discovering the relationship between any two questions posted on Stack Overflow and classifies them into duplicates, direct link, indirect link, and isolated~\cite{fu2017easy, xu2016predicting}. One way to solve this problem is to build a predictive model to predict the similarity between two questions. 
 
 \noindent\textbf{Challenge: } The state of the art method for this problem used Deep Learning, which was expensive to train~\cite{xu2016predicting}. For example, Xu et al. spent 14 hours to train a deep learning model. Such long training time is not appropriate for the field of software analytics since software analytics requires the methods to have a fast turnaround time~\cite{zhang2013software}.
 
@@ -1402,13 +1408,13 @@ all sub-tasks are finished. Also, all executions of sub-tasks should follow the 
 
 Grid computing techniques, invented in the mid-1990s, as well as recently lots of pay-as-you-go cloud computing services, e.g., Amazon EC2, provide researchers a feasible way to finish such kind of complex workflow in a reasonable time.
 The workflow configuring problem is to figure out the best deployment configurations onto a cloud environment. The deployment configuration
-contains 1) determine which sub-tasks can be deployment into
-one computation node, i.e., the virtual machine in cloud environment; 2) which sub-task should be executed first if two of them are to be executed in the same node; 3) what hardware configuration (CPU, memory, bandwidth, etc.) should be applied in each computation node. Commercial cloud service provider charges users for computing resource. 
+contains (1) determine which sub-tasks can be deployment into
+one computation node, i.e., the virtual machine in cloud environment; (2) which sub-task should be executed first if two of them are to be executed in the same node; (3) what hardware configuration (CPU, memory, bandwidth, etc.) should be applied in each computation node. Commercial cloud service provider charges users for computing resource. 
 The objective of cloud configuration is to minimize the monetary cost as well as minimize the runtime of computing tasks.
 
 
 \noindent\textbf{Challenges: } 
-Two reasons make workflow configuration on cloud environment challenging: 1)  a number of sub-tasks of workflows can be as large as hundreds, or thousands; also, sub-tasks is under constraints-- file flow between them. 2) available types of
+Two reasons make workflow configuration on cloud environment challenging: (1)  a number of sub-tasks of workflows can be as large as hundreds, or thousands; also, sub-tasks is under constraints-- file flow between them. (2) available types of
 computing nodes from cloud service provided is huge.
 For example, Amazon AWS provides more than 50 types of virtual machines; these
 virtual machines have different computing ability, as well as unit price (from \$0.02/hr to \$5/hr).
@@ -1419,7 +1425,7 @@ access performance of one deployment, evaluate every
 possible deployment configuration is impossible.
 
 \noindent\textbf{Strategy:} 
-Since it is impossible to enumerate all possible configurations, most existed algorithm use either 1) greedy algorithm 2) evolutionary algorithm to figure out best configurations.
+Since it is impossible to enumerate all possible configurations, most existed algorithm use either (1) greedy algorithm (2) evolutionary algorithm to figure out best configurations.
 Similar to other search-based software engineering problems,
 these methods require a large number of model evaluations (simulations in workflow configuration problem).
 The RIOT, or randomized instance-order-type, is an algorithm to balance execution time as well as cost
@@ -1446,12 +1452,12 @@ Though one would expect exceptions or probably simpler techniques, given the cur
 We recommend that practitioners follow these guidelines and possibly use them as a teaching resource.
 
  
-\noindent\textbf{Learning: } To learn SBSE, coding up a Simulated Annealer~\cite{van1987simulated} and Differential Evolution (DE)~\cite{storn97} is a good starting point.  These algorithms work really well for single-objective problems. For multi-objective problems, one should code up binary domination and indicator domination~\cite{zitzler2001spea2}. Note that the indicator domination is recommended for N>2 objectives and that indicator domination along with DE is a simple way to get a wide spread of solutions on the PF. 
+\noindent\textbf{Learning: } To learn SBSE, coding up a Simulated Annealer~\cite{van1987simulated} and Differential Evolution (DE)~\cite{storn97} is a good starting point.  These algorithms work really well for single-objective problems. For multi-objective problems, one should code up binary domination and indicator domination~\cite{zitzler2001spea2}. Note that the indicator domination is recommended for N>2 objectives and that indicator domination along with DE can find a wide spread of solutions on the PF. 
 
 As to learning more about area, the popular venues are: 
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item \href{http://gecco-2018.sigevo.org/index.html/HomePage}{GECCO}: The Genetic and Evolutionary Computation Conference (which has a special SE track);
-\item \href{http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235}{IEEE Transactions on Evolutionary Computation}
+\item TSE: \href{http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235}{IEEE Transactions on Evolutionary Computation};
 \item SSBSE: the annual symposium on search-based SE;
 \item Recent papers   as FSE, ICSE, ASE, etc: \url{goo.gl/Lvb42Z};
 \item Google Scholar: see  \url{goo.gl/x44u77}
@@ -1472,14 +1478,14 @@ the first objective. It is difficult for meta-heuristic algorithm without normal
 to find a set of uniformly distributed solutions over the entire Pareto front for such a many-objective test
 problem. 
 
-\noindent\textbf{Choosing Algorithm and its parameters: } {Choosing the meta-heuristic algorithm to solve a particular problem can be often challenging. Although, the chosen algorithm is generally a preference of the researcher, it is commonly agreed to use algorithms such as NSGA-II or SPEA2 for problems with $<3$ objectives whereas NSGA-III and MOEA/D is preferred for problems with $>3$ objectives.}
+\noindent\textbf{Choosing Algorithm and its parameters: } {Choosing the meta-heuristic algorithm to solve a particular problem can be often challenging. Although, the chosen algorithm is generally a preference of the researcher, it is commonly agreed to use NSGA-II or SPEA2 for problems with $<3$ objectives whereas NSGA-III and MOEA/D is preferred for problems with $>3$ objectives.}
 
 {Choosing the correct parameters of an meta-heuristic algorithms is essential for its performance. There are various rules of thumb, which are proposed by various researchers such as population size is the most significant parameter and that the crossover probability and mutation rate have insignificant effects on the GA performance~\cite{alajmi2014selecting}. However, we recommend to use a simple tuner to find the best parameter for the meta-heuristic algorithms. Tuners could be something as simple as Differential Evolution or Grid Search. }
 
 % \TODO{Should we mention somewhere that well-established methods such as NSGA-II and SPEA2 are typically ok for 2, or at most 3 objectives, and that other algorithms are more suitable for more than 3 objectives? I think it's quite common for beginners not to realize that.}
 
  \noindent\textbf{Experimentation: } We recommend an experimentation technique called (you+two+next+dumb),  defined as 
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item ``you'' is your new method;
     \item ``two''  well-established methods (often NSGA-II and SPEA2),
     \item a ``next''  generation method e.g. MOEA/D~\cite{zhang2007moea}, NSGA-III~\cite{deb2014evolutionary},
@@ -1504,7 +1510,7 @@ In the experiments with DSE, there are many uncontrollable sources of variation 
 one research group to another for the results of any study, no
 matter how well run, to be extrapolated to other domains. 
 
-Along with increasing the confidence of a certain observation, it also increases the speed of research. For example, recently in FSE'17 Fu et al.~\cite{fu2017revisiting} described the effects of \textit{arxiv.org} or the open science effect. Fu et al. described how making the paper, and the replication packages results in 5 different techniques (each superior to its predecessor).\footnote{Please see \url{http://tiny.cc/unsup}  for more details on arxiv.org effect} 
+Along with increasing the confidence of a certain observation, it also increases the speed of research. For example, recently in FSE'17, Fu et al.~\cite{fu2017revisiting} described the effects of \textit{arxiv.org} or the open science effect. Fu et al. described how making the paper, and the replication packages results in 5 different techniques (each superior to its predecessor).\footnote{Please see \url{http://tiny.cc/unsup}  for more details on arxiv.org effect} 
 
 Hence, it is essential to make replication packages available. 
 In our experience, we have found that replication packages hosted on personal web pages tend to disappear or end up with dead links after a few years.
@@ -1533,8 +1539,8 @@ results. Verrappa and Leiter warn that:
 ``... for industrial problems, these algorithms generate
 (many) solutions which make the task of understanding
 them and selecting one amongst them difficult
-and time-consuming.''~\cite{veerappa2011understanding}. Currently, there has been only a few efforts to comprehend the results of an SBSE technique. Nair et al.~\cite{nair2017flash}, described FLASH, which
-combines   how a \textit{domination tree} along with a Bayesian-based method to better, and more succinctly,
+and time-consuming.''~\cite{veerappa2011understanding}. Currently, there has been only a few efforts to comprehend the results of an SBSE technique. Nair et al.~\cite{nair2017flash}
+uses a \textit{domination tree} along with a Bayesian-based method to better, and more succinctly,
 explain the search space. 
 
  \noindent\textbf{Human in the loop: } Once we have explanation running, then the next step would be explore
@@ -1549,7 +1555,7 @@ tool making mistakes as it compares alternatives.  This style of human in the lo
 \begin{itemize}[leftmargin=*]
 \item Debugging or auditing the reasoning.
 \item Enhancing the reasoning; i.e. can human intelligence, applied judiciously,  boost artificial intelligence?
-\item Checking for missing attributes: when human experts say two identical examples are different, we can infer that there are extra attributes, not currently being modeled, that are important in this domain.
+\item Checking for missing attributes: when human experts say two identical examples are different, we can infer that there are extra attributes, not currently being modeled, that are important.
 \item Increasing human  confidence in the reasoning by tuning a seemingly complex black-box process into something
 humans can monitor and understand.
 \end{itemize}
@@ -1570,7 +1576,7 @@ Of course, even such algorithm optimizers can be optimized further. One word of 
 
 
 \section{Conclusions}
-Software engineering problems can be solved both by MSR and SBSE techniques, but both these methods have their shortcomings. This paper has argued these shortcomings can be overcome by merging ideas from both these domains, to give rise to a new field of software engineering called Data-Driven Search-based Software Engineering. This sub-area of software engineering boosts the techniques used in MSR and SBSE but drawing inspiration from the other field. 
+SE problems can be solved both by MSR and SBSE techniques, but both these methods have their shortcomings. This paper has argued these shortcomings can be overcome by merging ideas from both these domains, to give rise to a new field of software engineering called Data-Driven Search-based Software Engineering. This sub-area of software engineering boosts the techniques used in MSR and SBSE but drawing inspiration from the other field. 
 
 This paper proposes concrete strategies which can be used to combine the techniques from MSR and SBSE to solve an SE problem. It also lists resource which can be used researchers to jump-start their research. One of the aims of the paper is to provide resources and material which can be used as teaching or training resources for a new generation of researchers. 
 
