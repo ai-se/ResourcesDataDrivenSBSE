@@ -153,21 +153,26 @@
 
 
 \begin{abstract}
-This paper introduces Data-Driven Search-based Software Engineering (DSE) which combines insights from Software Analytics (SA) and Search-based Software Engineering (SBSE). SBSE reformulate the SE problem as an optimization problem and uses a meta-heuristic algorithm to solve those problems. Both the fields, SA and SBSE, are concerned with providing insights for software engineers to improve SE tasks. The similar goals of the two fields are one of the major reasons as to why these two fields should work together. 
-We argue that  
-combining these two fields
-is useful for (a)~situations which require learning from a large data
+This paper introduces Data-Driven Search-based Software Engineering (DSE), which combines insights from Mining Software Repositories (MSR) and Search-based Software Engineering (SBSE). While MSR formulates software engineering problems as data mining problems, SBSE reformulates SE problems as optimization problems and use meta-heuristic algorithms to solve them. Both MSR and SBSE share the common goal of providing insights to improve software engineering. The algorithms used in these two areas also have intrinsic relationships.  
+We therefore argue that combining these two fields
+is useful for situations (a)~which require learning from a large data
 source or (b)~when optimizers need to know the lay of the land to find better solutions, faster.
 
+This paper aims to answer the following three questions: (1) What are the various topics addressed by DSE? (2) What types of data are used by the researchers in this area? (3) What research approaches do researchers use? The paper briefly sets out to act as a practical guide to develop new DSE techniques and also to serve as a teaching resource.
 
-This paper also presents a  resource (tiny.cc/sbse) for exploring
-Data-Driven Search-based Software Engineering.  The resource contains 89 artifacts related to data-driven search-based SE,
-divided into 13 groups such as requirements engineering, software product lines, software processes, etc.
+This paper also presents a  resource (tiny.cc/data-se) for exploring DSE.  The resource contains 89 artifacts which are related to DSE,
+divided into 13 groups such as requirements engineering, software product lines, software processes.
 All the materials in this repository
-have been   used in recent SE papers; i.e., for all this material, there exist baseline results against which researchers can use to comparatively assess their new ideas
+have been   used in recent software engineering papers; i.e., for all this material, there exist baseline results against which researchers can comparatively assess their new ideas.
+
+%This paper introduces Data-Driven Search-based Software Engineering (DSE) which combines insights from Mining Software Repositories (MSR) and Search-based Software Engineering (SBSE). SBSE reformulates the SE problem as an optimization problem and uses a meta-heuristic algorithm to solve those problems. Both the fields, MSR and SBSE, are concerned with providing insights for software engineers to improve SE tasks. The similar goals of the two fields are one of the major reasons why these two fields should work together. 
+%We argue that  combining these two fields is useful for situations (a)~which require learning from a large data source or (b)~when optimizers need to know the lay of the land to find better solutions, faster.
 
 
-Among the numerous questions that we try to answer are: (1) What are the various topics addressed by DSE?, (2) What are the types of data used by the researchers, and, (3) What research approaches do researchers use? The paper briefly sets out to act as a practical guide to develop new data-driven techniques and also to serve as a teaching resource.
+%This paper also presents a  resource (tiny.cc/d-se) for exploring Data-Driven Search-based Software Engineering.  The resource contains 89 artifacts which are related to Data-driven Search-based Software Engineering, divided into 13 groups such as requirements engineering, software product lines, software processes, etc. All the materials in this repository have been   used in recent SE papers; i.e., for all this material, there exist baseline results against which researchers can use to comparatively assess their new ideas.
+
+
+%This paper tries to answer the following three questions:: (1) What are the various topics addressed by DSE?, (2) What types of data are used by the researchers, and, (3) What research approaches do researchers use? The paper briefly sets out to act as a practical guide to develop new data-driven techniques and also to serve as a teaching resource.
 \end{abstract}
 
 %
@@ -222,10 +227,10 @@ Among the numerous questions that we try to answer are: (1) What are the various
 
 The MSR  community has benefited enormously from widely shared datasets.  Such datasets document the canonical problems in a field.
 They serve to cluster together like-minded researchers while allowing them to generate reproducible results. Also, such data can be used by
-   newcomers to learn state of the art methods in this field. Further, they enable the mainstay of good science:
+   newcomers to learn the state of the art methods in this field. Further, they enable the mainstay of good science:
 reputable, repeatable,  improvable, and even refutable results.
 At the time of this writing,   nine of the 50 most cited papers in the last 5 years at IEEE Transactions of Software Engineering {all draw their case studies
-from a small number of readily available defect prediction datasets} 
+from a small number of readily available defect prediction datasets.} 
 % \TODO{I'm not sure if it is good to say ``a small number of similar datasets''. What about saying that they all draw their case studies from open datasets?}.
 
 
@@ -318,7 +323,7 @@ forest~\cite{fu2016tuning}).
 \end{itemize}
 The workshop also concluded that this community needs more shared  resources 
 to help more researchers and educators explore MSR+SBSE.
-Accordingly, this paper describes  tiny.cc/sbse,
+Accordingly, this paper describes  tiny.cc/data-se,
 a collection of artifacts for exploring
 data-driven search-based SE (see Figure~1). 
 All the materials in this repository
@@ -365,7 +370,7 @@ We offer a ``cheats' guide'' to SBSE with just enough information to help resear
  
 {\center
 \fbox{ \includegraphics[width=3in]{img/page1.png}}}
-\caption{http://tiny.cc/sbse}\label{fig:one}
+\caption{http://tiny.cc/data-se}\label{fig:one}
 \end{figure}
 
 \begin{figure*}
@@ -373,7 +378,7 @@ We offer a ``cheats' guide'' to SBSE with just enough information to help resear
         \small
         \colorbox{gray!10}{
             \begin{tabular}{@{}p{3cm}p{6cm}p{8.35cm}@{}}
-                \multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{Problems in Search-based Software Engineering}}} \\ 
+                \multicolumn{3}{c}{\cellcolor{gray}\textcolor{white}{\textbf{Problems in Search-based Software Engineering}}} \\ 
                 \multicolumn{3}{c}{
                 		\begin{minipage}[b]{0.33\linewidth}
                 			\begin{flushleft}
@@ -392,7 +397,7 @@ We offer a ``cheats' guide'' to SBSE with just enough information to help resear
                 		        \textbf{Predicted PF: } The solutions found by {an optimization} algorithm are called the Predicted PF ($p\in P$).
                 		\end{minipage}
                 } \\ 
-                \multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{Components of Meta-heuristic Algorithms (search-based optimization algorithms such as NSGA-II~\cite{deb2000fast}, SPEA2~\cite{zitzler2001spea2}, MOEA/D~\cite{zhang2007moea}, AGE~\cite{wagner2015age})}}} \\
+                \multicolumn{3}{c}{\cellcolor{gray}\textcolor{white}{\textbf{Components of Meta-heuristic Algorithms (search-based optimization algorithms such as NSGA-II~\cite{deb2000fast}, SPEA2~\cite{zitzler2001spea2}, MOEA/D~\cite{zhang2007moea}, AGE~\cite{wagner2015age})}}} \\
                 \multicolumn{3}{c}{
                 \begin{minipage}[b]{\linewidth}
                 \vspace{0.1cm}
@@ -415,13 +420,13 @@ We offer a ``cheats' guide'' to SBSE with just enough information to help resear
                 
                 \textbf{Operators: } {These are operators that (1) generate new solutions based on one (e.g., mutation operator) or more (e.g., crossover or recombination operators) existing solutions, and (2) operators that select solutions to pass to the aforementioned operators or to survive for the next iteration of the algorithm. The operators (2) typically apply some pressure towards selecting better solutions either deterministically (e.g., elitism operator) or stochastically.} 
                 % \TODO{If space allows, we can mention survival of the fittest.} % They can be used along with an}\TODO{I haven't finished this change yet. I have to come back later.} 
-                \textit{elitism operator} simulates the `survival of the fittest' strategy, i.e., eliminates not so good solutions thereby preserving the good solutions in the population. 
+                \textit{Elitism operator} simulates the `survival of the fittest' strategy, i.e., eliminates not so good solutions thereby preserving the good solutions in the population. 
                 
                 \textbf{Generations: } {A meta-heuristic algorithm iteratively improves the population (set of solutions) iteratively. Each step of this process, which includes generation of new solutions using recombination of the existing population and selecting solutions using the elitism operator, is called a generation.  Over successive generations, the population `evolves' toward an optimal solution.}
                 \end{minipage}\hspace{0.1cm}
                 }
                  \\
-                \multicolumn{3}{c}{\rowcolor{gray}\textcolor{white}{\textbf{Performance Measures (Refer to \cite{wang2016practical,chand2015manyemo} for more detail)}}} \\ 
+                \multicolumn{3}{c}{\cellcolor{gray}\textcolor{white}{\textbf{Performance Measures (Refer to \cite{wang2016practical,chand2015manyemo} for more detail)}}} \\ 
                 % \multicolumn{2}{c}{\textbf{SA}} & \textbf{SBSE} \\ \midrule
                 \multicolumn{3}{c}{
                         \begin{minipage}[b]{0.33\linewidth}
@@ -610,7 +615,7 @@ and SBSE.
 As to defining {\em data-driven search-based SE},
 we say it is some system that:
 \begin{itemize}[leftmargin=*]
-\item To solve  some SE problem:
+\item To solve  an SE problem:
 \begin{itemize}
 \item
 It inserts  a data miner into an optimizer; or
@@ -632,7 +637,7 @@ It uses an optimizer  to improve a data  miner.
 
 % A recent study by Chen et al.~\cite{xxChenSampleXXX}  illustrates the benefits
 % of combining MSR+SBSE. In that study, Chen was applying SBSE 
-% to many of the models in tiny.cc/sbse to 
+% to many of the models in tiny.cc/d-se to 
 % to optimize   decisions about software processes options, generating product lines,
 % and configuring the LINUX kernel. Reviewers of that work requested that his SBSE
 % results be compared to some baseline exhaustive search. According, Chen
@@ -674,11 +679,11 @@ find which parts of a model have maximum variance in their predictions
 (since sampling
 in such high-variance regions serves to most constrain the model).  
 
-The problem with GPMs is that they do not scale beyond a dozen variables (or feaatures)~\cite{wang2016bayesian}. CART, on the other hand, is a data mining algorithm that scales efficiently
+The problem with GPMs is that they do not scale beyond a dozen variables (or features)~\cite{wang2016bayesian}. CART, on the other hand, is a data mining algorithm that scales efficiently
 to hundreds of variables. So Nair et al. recently explored  
  active learning  for multi-objective optimization by replacing GPM with one CART tree per objective~\cite{nair2018finding}.
  The resulting system was applied to a wide range of software configuration problems
- found in tiny.cc/sbse.
+ found in tiny.cc/data-se.
  Compared to GPMs, the resulting system ran orders of magnitude faster, found solutions
  as good or better, and  scaled to much larger problems~\cite{nair2018finding}. 
 
@@ -699,7 +704,7 @@ distance calculations using
   \[d(x,y)=\left(\sum_i(x_i-y_i)^n\right)^{1/n}\] the Euclidean distance of $n=2$ usually works far worse than another distance measure using $n=3$~\cite{agrawal2017better}.
  
 \end{itemize} 
-Note that all the above used case study material from tiny.cc/sbse.
+Note that all the above used case study material from tiny.cc/data-se.
 
 % \definecolor{co1}{RGB}{249,239,230}
 % \definecolor{co2}{RGB}{255,192,202}
@@ -1209,10 +1214,11 @@ of the learned clusters.  Classifiers based on these stabilized clusters perform
  & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF}7 & \cellcolor[HTML]{EFEFEF}DTLZ & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_dtlz_zdt}{raise\_dtlz\_zdt}} & \cellcolor[HTML]{EFEFEF} \\
  & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}General Optimization} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}Numeric} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}C} & \cellcolor[HTML]{EFEFEF}6 & \cellcolor[HTML]{EFEFEF}ZDT & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_dtlz_zdt}{raise\_dtlz\_zdt}} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}\cite{nair2016accidental}} \\
  & Workflow & Numeric & D & 20 & Workflow & \censor{\href{http://tiny.cc/raise_gen_workflow}{raise\_gen\_workflow}} & \cite{chen2017riot} \\
- & Text Discovery & Text & - & 4 & Reading Faster & \censor{\href{http://tiny.cc/raise_data_fastread}{raise\_data\_fastread}} & \cite{yu2016read} \\
- & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF}5 & \cellcolor[HTML]{EFEFEF}Xomo & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} \\
- & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}Software Processes} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}Numeric} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}C} & \cellcolor[HTML]{EFEFEF}4 & \cellcolor[HTML]{EFEFEF}POM3 & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_pom_xomo}{raise\_pom\_xomo}}} & \multirow{-2}{*}{\cellcolor[HTML]{EFEFEF}\cite{nair2016accidental, chen2017beyond}} \\
-\multirow{-9}{*}{SBSE} & \begin{tabular}[c]{@{}l@{}}Requirement\\ Engineering\end{tabular} & Numeric & D & 8 & \begin{tabular}[c]{@{}l@{}}Requirement\\ Engineering\end{tabular} & \censor{\href{http://tiny.cc/raise_short}{raise\_short}} & \cite{mathew2017shorter} \\ \bottomrule
+ & \cellcolor[HTML]{EFEFEF}Text Discovery &\cellcolor[HTML]{EFEFEF} Text & \cellcolor[HTML]{EFEFEF}- & \cellcolor[HTML]{EFEFEF}4 & \cellcolor[HTML]{EFEFEF}Reading Faster & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_data_fastread}{raise\_data\_fastread}} & \cellcolor[HTML]{EFEFEF}\cite{yu2016read} \\
+ &  &  &  & 5 & Xomo &  &  \\
+ & \multirow{-2}{*}{Software Processes} & \multirow{-2}{*}{Numeric} & \multirow{-2}{*}{C} & 4 & POM3 & \multirow{-2}{*}{\censor{\href{http://tiny.cc/raise_pom_xomo}{raise\_pom\_xomo}}} & \multirow{-2}{*}{\cite{nair2016accidental, chen2017beyond}} \\
+\multirow{-9}{*}{SBSE} & \cellcolor[HTML]{EFEFEF}{\begin{tabular}[c]{@{}l@{}}Requirement\\ Engineering\end{tabular}} & \cellcolor[HTML]{EFEFEF}Numeric & \cellcolor[HTML]{EFEFEF}D & \cellcolor[HTML]{EFEFEF}8 &
+\cellcolor[HTML]{EFEFEF}{\begin{tabular}[c]{@{}l@{}}Requirement\\ Engineering\end{tabular}} & \cellcolor[HTML]{EFEFEF}\censor{\href{http://tiny.cc/raise_short}{raise\_short}} & \cellcolor[HTML]{EFEFEF}\cite{mathew2017shorter} \\ \bottomrule
 \end{tabular}
 \end{table*}
 
@@ -1234,7 +1240,7 @@ papers; i.e. for all this material, there exists baseline results against which 
 assess  their own new ideas.
 \item
 Support material for that exploration (data, models, scripts),
-is available from tiny.cc/sbse.
+is available from tiny.cc/data-se.
 
 % \TODO{We have only one problem from MSR domain. If possible, should we add some more MSR ones?}
 
@@ -1242,7 +1248,7 @@ is available from tiny.cc/sbse.
 
 \end{itemize}
 Note that we make no assumption that the following list of materials
-covers the spectrum of problems that could be solved by combining MSR with SBSE. In fact, one of the goals of this paper is to encourage researchers to extend this material by posting their own materials as pull requests to tiny.cc/sbse.
+covers the spectrum of problems that could be solved by combining MSR with SBSE. In fact, one of the goals of this paper is to encourage researchers to extend this material by posting their own materials as pull requests to tiny.cc/data-se.
 
     \subsection{Software Product Lines}\label{spl}
     \textbf{Problem Domain: } SBSE
@@ -1350,11 +1356,11 @@ The above technique was used on eight large real-world Requirements Engineering 
    
 \vspace{1.0ex}
 \noindent\textbf{Challenge 1: }
-Literature reviews can be extremely labor intensive and often require months (if not year) to complete. Due to a large number of papers available, the relevant papers have hard to find. A graduate student needs to review thousands of papers before finding few dozen relevant papers.
-How to maximize relevant information (when there is a lot of noise) while minimizing the search cost to find relevant information?
+Literature reviews can be extremely labor intensive and often require months (if not year) to complete. Due to the large number of papers available, the relevant papers are hard to find. A graduate student needs to review thousands of papers before finding the few dozen relevant ones.
+Therefore the challenge is: how to maximize relevant information (when there is a lot of noise) while minimizing the search cost to find relevant information?
 
 \noindent\textbf{Strategy: }
-  Reading all   literature  is unfeasible. Active learners incrementally learns from the human feedback and suggests on which paper to review next~\cite{YuM17a}.
+  Reading all   literature  is unfeasible. To selectively read the most informative literature, we apply active learners which incrementally learns from the human feedback and suggests on which paper to review next~\cite{YuM17a}.
    
 \vspace{1.0ex}
 \noindent\textbf{Challenge 2: }
@@ -1366,14 +1372,14 @@ Reduce  variances  by selecting a good initial set of papers with domain knowled
 \vspace{1.0ex}
 \noindent\textbf{Challenge 3: }
 When to stop?. If too early then   many   relevant papers will be missed.
-If too late, then much time will be wasted on irrelevant papers. 
+else much time will be wasted on irrelevant papers. 
 
 \noindent\textbf{Strategy: }
 Use a semi-supervised machine learning algorithm (Logistic Regression) to learn from the search process (till now) to predict how much more relevant paper will be found~\cite{YuM17}. 
 
 \vspace{1.0ex}
 \noindent\textbf{Challenge 4: }
-Research shows that it is reasonable to assume the precision and recall of a human reviewer are both 70\%. When such human errors occur, how to correct the errors so that the active learner is not misled?
+Research shows that it is reasonable to assume the precision and recall of a human reviewer are around 70\%. When such human errors occur, how to correct the errors so that the active learner is not misled?
 
 \noindent\textbf{Strategy: }
 Concentrate the effort on correctly classifying the paper which creates the most controversy. Using this intuition, periodically few of the already evaluated papers, whose labels the active learner disagree most on, are re-evaluated~\cite{YuM17}.
@@ -1456,11 +1462,11 @@ We recommend that practitioners follow these guidelines and possibly use them as
 
 As to learning more about area, the popular venues are: 
 \begin{itemize}[leftmargin=*]
-\item \href{http://gecco-2018.sigevo.org/index.html/HomePage}{GECCO}: The Genetic and Evolutionary Computation Conference (which has a special SE track);
-\item TSE: \href{http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235}{IEEE Transactions on Evolutionary Computation};
+\item \href{http://gecco-2018.sigevo.org/index.html/HomePage}{GECCO}: The Genetic and Evolutionary Computation Conference (which has a special SBSE track);
+\item TSE: IEEE Transactions on Evolutionary Computation;
 \item SSBSE: the annual symposium on search-based SE;
 \item Recent papers   as FSE, ICSE, ASE, etc: \url{goo.gl/Lvb42Z};
-\item Google Scholar: see  \url{goo.gl/x44u77}
+\item Google Scholar: see  \url{goo.gl/x44u77}.
 \end{itemize}
   \noindent\textbf{Debugging: } It is always recommended to use small and simple {optimization problems} for the purposes of debugging. For example, small synthetic {problems} like ZDT, DTLZ~\cite{deb2005scalable}, and WFG~\cite{huband2006review} are very useful to evaluate a meta-heuristic algorithm. For further details about other test problems, please refer to \cite{huband2006review}.  
   
@@ -1510,12 +1516,12 @@ In the experiments with DSE, there are many uncontrollable sources of variation 
 one research group to another for the results of any study, no
 matter how well run, to be extrapolated to other domains. 
 
-Along with increasing the confidence of a certain observation, it also increases the speed of research. For example, recently in FSE'17, Fu et al.~\cite{fu2017revisiting} described the effects of \textit{arxiv.org} or the open science effect. Fu et al. described how making the paper, and the replication packages results in 5 different techniques (each superior to its predecessor).\footnote{Please see \url{http://tiny.cc/unsup}  for more details on arxiv.org effect} 
+Along with increasing the confidence of a certain observation, it also increases the speed of research. For example, recently in FSE'17, Fu et al.~\cite{fu2017revisiting} described the effects of \textit{arxiv.org} or the open science effect. Fu et al. described how making the paper, and the replication packages publicly available, results in 5 different techniques (each superior to its predecessor).\footnote{Please see \url{http://tiny.cc/unsup}  for more details on arxiv.org effect} 
 
 Hence, it is essential to make replication packages available. 
 In our experience, we have found that replication packages hosted on personal web pages tend to disappear or end up with dead links after a few years.
 We have found that storing replication packages and artifacts on Github and registering it with Zenodo (\href{https://zenodo.org}{https://zenodo.org}) is an effective strategy. 
-Note that once registered, then every new release (on Github) will be backed up on Zenodo and made available. Also considering posting a link to your package on tiny.cc/sbse, which is a more curated list. 
+Note that once registered, then every new release (on Github) will be backed up on Zenodo and made available. Also considering posting a link to your package on tiny.cc/data-se, which is a more curated list. 
 %We would like to mention that this is not the only repository available, for example, Diomidis Spinellis maintains a list of data sources in \href{https://github.com/dspinellis/awesome-msr}{awesome-msr}, Daniel Rodriguez maintains another list of datasets in software engineering in \href{http://www.cc.uah.es/drg/c/RHH_RAISE12_Repos.html}{RAISE12\_Repos}.
     
      
@@ -1524,10 +1530,10 @@ Note that once registered, then every new release (on Github) will be backed up 
 \section{Open Research Issues} \label{sec:open}
 We hope this article inspires a larger group of researchers to work
 on open, and compelling problems
-in data-driven search-based SE. There are very many such problems, including the few listed below.
+in data-driven search-based SE. There are many such problems, including the few listed below.
 
 
-  \noindent\textbf{Explanation: } SBSE is often instance-based and provide optimal or (near) optimal solutions. This is not ideal since it provides no insight into the problem. However, using SA techniques finding
+  \noindent\textbf{Explanation: } SBSE is often instance-based and provide optimal or (near) optimal solutions. This is not ideal since it provides no insight into the problem. However, using MSR techniques finding
 building blocks of good solutions may shed light on the relationship
 different parameters that affect the quality of a solution. This is an important shortcoming of SBSE which have not been addressed by this community. Valerdi
 notes that, without automated tools, it can take days for human
@@ -1576,7 +1582,7 @@ Of course, even such algorithm optimizers can be optimized further. One word of 
 
 
 \section{Conclusions}
-SE problems can be solved both by MSR and SBSE techniques, but both these methods have their shortcomings. This paper has argued these shortcomings can be overcome by merging ideas from both these domains, to give rise to a new field of software engineering called Data-Driven Search-based Software Engineering. This sub-area of software engineering boosts the techniques used in MSR and SBSE but drawing inspiration from the other field. 
+SE problems can be solved both by MSR and SBSE techniques, but both these methods have their shortcomings. This paper has argued these shortcomings can be overcome by merging ideas from both these domains, to give rise to a new field of software engineering called Data-Driven Search-based Software Engineering. This sub-area of software engineering boosts the techniques used in MSR and SBSE by drawing inspiration from the other field. 
 
 This paper proposes concrete strategies which can be used to combine the techniques from MSR and SBSE to solve an SE problem. It also lists resource which can be used researchers to jump-start their research. One of the aims of the paper is to provide resources and material which can be used as teaching or training resources for a new generation of researchers. 
 
