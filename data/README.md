@@ -9,6 +9,8 @@ To preview the content:
     brew install grip
     # or sudo apt-get install grip
     grip ../var/pubs.md
+    
+If you have problems installing grip, please look at [this](http://brewinstall.org/Install-grip-on-Mac-with-Brew/).
 
 The content is written to ../var. 
 
