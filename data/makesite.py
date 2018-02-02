@@ -44,7 +44,7 @@ To the extent possible under law, we waive all copyright and related or neighbor
 """
 ##########################################################
 
-import os,re,sys
+import glob,os,re,sys
 sys.dont_write_bytecode = True
 
 def go(f): f();return f
@@ -75,19 +75,26 @@ def sorted(lst):
 
 def lines(file):
   """return a dictionary, one per line. keys are defined as per line1.
+     if there are many fiiles matching file*.csv, read them
+     all.
      if line1 is missing a field, we grab it from the line above"""
+  def value(j):
+    key,val= head[j],cells[j]
+    return val.split(' ') if key[0].isupper() else val
   head,last=None,None
-  with open(file + ".csv") as f:
-    for line in f.readlines():
-      cells = [x.strip() for x in line.split(",")]
-      if not head:
-        head = cells
-      else:
-        assert len(cells) == len(head),'bad line: %s' % line
-        if last:
-          cells = [cells[j] or last[j] for j in range(len(head))]
-        yield o( {head[j]:cells[j] for  j in range(len(head))} )
-        last = cells
+  for filename in glob.glob(file + '*.csv'):
+    with open(filename) as f:
+      for line in f.readlines():
+        cells = [x.strip() for x in line.split(",")]
+        if  not head:
+          head = cells
+        else:
+          if cells[0] != "id":
+            assert len(cells) == len(head),'bad line: %s' % line
+            if last:
+              cells = [cells[j] or last[j] for j in range(len(head))]
+            yield o( {head[j]: value(j) for  j in range(len(head))} )
+            last = cells
 
 def reader(file):
   ds={}
@@ -131,5 +138,8 @@ p = reader("pubs")
 a = reader("about")
 w = reader("what")
 
-writer('pubs',writePubs,p,a,w)
+if __name__ == "__main__":
+  writer('pubs',writePubs,p,a,w)
+  print(glob.glob('about*.csv'))
+  print(a)
 
