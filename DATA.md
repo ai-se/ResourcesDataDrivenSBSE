@@ -1,6 +1,6 @@
 [home](http://tiny.cc/sbse) |
-[models](xx) |
-[data](xx) |
+[tools](TOOLS.md) |
+[data](DATA.md) |
 [discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
 [citation](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/CITATION.md) |
 [copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018
