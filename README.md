@@ -2,6 +2,7 @@
 [home](README.md) |
 [tools](TOOLS.md) |
 [data](DATA.md) |
+[contrib](CONTRIB.md) |
 [discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
 [citation](CITATION.md) |
 [copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018 
