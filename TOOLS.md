@@ -1,5 +1,3 @@
-
-
 [home](http://tiny.cc/sbse) |
 [tools](TOOLS.md) |
 [data](DATA.md) |
