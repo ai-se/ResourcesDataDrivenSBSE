@@ -1,6 +1,6 @@
 
 
-[home](github.com/ai-se/ResourcesDataDrivenSBSE) |
+[home](README.md) |
 [tools](TOOLS.md) |
 [data](DATA.md) |
 [discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
