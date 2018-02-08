@@ -1,12 +1,9 @@
-[home](http://tiny.cc/sbse) |
-=======
-
-
 [home](README.md) |
 [tools](TOOLS.md) |
 [data](DATA.md) |
+[contrib](CONTRIB.md) |
 [discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
-[citation](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/CITATION.md) |
+[citation](CITATION.md) |
 [copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018
 <br>
 [<img width=900 src="https://github.com/ai-se/ResourcesDataDrivenSBSE/raw/master/img/banner.png">](http://tiny.cc/sbse)<br>
