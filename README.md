@@ -1,5 +1,5 @@
 
-[home](http://tiny.cc/sbse) |
+[home](github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/README.md) |
 [tools](TOOLS.md) |
 [data](DATA.md) |
 [discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
