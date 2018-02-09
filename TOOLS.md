@@ -13,20 +13,19 @@
 
 
 
-id|name |Ref|Package
----|---|---|---
-fastread|FASTREAD|zhe1 zhe2|https://github.com/fastread/src
-DE|Differential Evolution|wfu1 amrit1 amrit2|https://github.com/ai-se/Smotuned_FFT/blob/master/src/DE.py
-Flash|Flash|vivek1|https://github.com/FlashRepo
-Short|Short|george1|
-LDADE|Latent Dirichlet Allocation Differential Evolution|amrit1|https://github.com/ai-se/Pits_lda/blob/master/src/06-17/DE_VEM.py
-LDA|Laten Dirichlet Allocation|amrit1|http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html
-SMOTUNED|Synthetic Minority Oversampling Technique Differential Evolution|amrit2|https://github.com/ai-se/Smote_tune
-SMOTE|Synthetic Minority Oversampling Technique|amrit2|http://contrib.scikit-learn.org/imbalanced-learn/stable/generated/imblearn.over_sampling.SMOTE.html
-sway|SWAY|JC1|https://doi.org/10.5281/zenodo.495498
-riot|RIOT|JC2|
-EvoSuite|EvoSuite|fraser1|https://github.com/EvoSuite/evosuite
-jMetal|jMetal||http://jmetal.sourceforge.net/
+| id       | name                                                             | Package                                                                                                       |
+|----------|------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| fastread | FASTREAD                                                         | [Link](https://github.com/fastread/src)                                                                       |
+| DE       | Differential Evolution                                           | [Link](https://github.com/ai-se/Smotuned_FFT/blob/master/src/DE.py)                                           |
+| Flash    | Flash                                                            | [Link](https://github.com/FlashRepo)                                                                          |
+| Short    | Short                                                            |                                                                                                               |
+| LDADE    | Latent Dirichlet Allocation Differential Evolution               | [Link](https://github.com/ai-se/Pits_lda/blob/master/src/06-17/DE_VEM.py)                                     |
+| LDA      | Laten Dirichlet Allocation                                       | [Link](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html) |
+| SMOTUNED | Synthetic Minority Oversampling Technique Differential Evolution | [Link](https://github.com/ai-se/Smote_tune)                                                                   |
+| SMOTE    | Synthetic Minority Oversampling Technique                        | [Link](http://contrib.scikit-learn.org/imbalanced-learn/stable/generated/imblearn.over_sampling.SMOTE.html)   |
+| sway     | SWAY                                                             | [Link](https://doi.org/10.5281/zenodo.495498)                                                                 |
+| riot     | RIOT                                                             |                                                                                                               |
+
 
 
 
