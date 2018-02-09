@@ -1,12 +1,11 @@
-[home](README.md) |
-[tools](TOOLS.md) |
-[data](DATA.md) |
-[contrib](CONTRIB.md) |
-[discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
-[citation](CITATION.md) |
-[copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018
-<br>
-[<img width=900 src="https://github.com/ai-se/ResourcesDataDrivenSBSE/raw/master/img/banner.png">](http://tiny.cc/sbse)<br>
+[Home](http://tiny.cc/data-SE) |
+[Data](DATA.md) |
+[Models](MODELS.md) |
+[Tools](TOOLS.md) |
+[Discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
+[Citation](CITATION.md) |
+[copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018    
+[![](https://github.com/ai-se/ResourceDataDrivenSBSE/raw/master/img/banner.png)](https://github.com/ai-se/ResourcesDataDrivenSBSE)
 
 
  [![DOI](https://zenodo.org/badge/116411075.svg)](https://zenodo.org/badge/latestdoi/116411075)
