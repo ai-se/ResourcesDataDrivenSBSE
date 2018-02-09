@@ -14,8 +14,8 @@
 id|name |Ver|Url|Doi
 ---|---|---|---|---
 StackExchange|StackExchange|StackExchange|[Link](https://archive.org/details/stackexchange)||
-SLR|Systematic literature review datasets||https://doi.org/10.5281/zenodo.1162952|10.5281/zenodo.1162952
-SPL|Software product line||https://doi.org/10.5281/zenodo.495498|10.5281/zenodo.495498
+SLR|Systematic literature review datasets||[Link](https://doi.org/10.5281/zenodo.1162952)|10.5281/zenodo.1162952
+SPL|Software product line||[Link](https://doi.org/10.5281/zenodo.495498)|10.5281/zenodo.495498
 Pegasus|Pegasus||[Link](https://confluence.pegasus.isi.edu/display/pegasus/WorkflowGenerator)||
 Citemap|Citemap|Citemap1|[Link](https://github.com/ai-se/Pits_lda/blob/master/dataset/preproc_citemap.csv)||
 Pits|Pits|PitsA, PitsB, PitsC, PitsD, PitsE, PitsF||https://doi.org/10.5281/zenodo.268475 https://doi.org/10.5281/zenodo.439580 https://doi.org/10.5281/zenodo.439581 https://doi.org/10.5281/zenodo.268447 https://doi.org/10.5281/zenodo.439582 https://doi.org/10.5281/zenodo.268513
