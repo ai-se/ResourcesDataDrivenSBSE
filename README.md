@@ -25,8 +25,3 @@ The resources of this repository are intended to encourage more experimentationi
 ![](https://github.com/ai-se/ResourceDataDrivenSBSE/raw/master/img/image0.png)
 
 References in the _related work_ column come from the paper http://tiny.cc/ddSbse1.
-
-## How to Contribute
-
-Please clone this [repo](https://github.com/ai-se/ResourcesDataDrivenSBSE), then make
- some changes, then post a pull request. Remember, the more the merrier!
