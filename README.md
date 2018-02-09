@@ -5,7 +5,7 @@
 [Discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
 [Citation](CITATION.md) |
 [copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018    
-<img width=800 align=right src="https://github.com/ai-se/ResourceDataDrivenSBSE/raw/master/img/banner.png">
+<img width=1000 align=right src="https://github.com/ai-se/ResourceDataDrivenSBSE/raw/master/img/banner.png">
 
 
  [![DOI](https://zenodo.org/badge/116411075.svg)](https://zenodo.org/badge/latestdoi/116411075)
