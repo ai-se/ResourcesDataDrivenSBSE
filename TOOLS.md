@@ -8,7 +8,8 @@
 
 ![](https://github.com/ai-se/ResourceDataDrivenSBSE/raw/master/img/banner.png)
 
-[![DOI](https://zenodo.org/badge/116411075.svg)](https://zenodo.org/badge/latestdoi/116411075)
+
+ [![DOI](https://zenodo.org/badge/116411075.svg)](https://zenodo.org/badge/latestdoi/116411075)
 
 
 
