@@ -13,7 +13,7 @@
 
 id|name |Ver|Url|Doi
 ---|---|---|---|---
-StackExchange|StackExchange|StackExchange|[Link](https://archive.org/details/stackexchange)||
+StackExchange|StackExchange|StackExchange|[Link](https://archive.org/details/stackexchange)||
 SLR|Systematic literature review datasets||https://doi.org/10.5281/zenodo.1162952|10.5281/zenodo.1162952
 SPL|Software product line||https://doi.org/10.5281/zenodo.495498|10.5281/zenodo.495498
 Pegasus|Pegasus||[Link](https://confluence.pegasus.isi.edu/display/pegasus/WorkflowGenerator)||
