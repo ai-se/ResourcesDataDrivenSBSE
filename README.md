@@ -1,10 +1,5 @@
-[Home](http://tiny.cc/data-SE) | [copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018 
+[Home](http://tiny.cc/data-SE) | [Data](DATA.md) | [Models](MODELS.md) | [Tools](TOOLS.md) | [Discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) | [Citation](CITATION.md) | [copyright](https://github.com/ai-se/ResourcesDataDrivenSBSE/blob/master/LICENSE.md) &copy;2018 
 <br>[<img width=900 src="https://github.com/ai-se/ResourceDataDrivenSBSE/raw/master/img/banner.png">](https://github.com/ai-se/ResourcesDataDrivenSBSE)<br>
-[Data](DATA.md) |
-[Models](MODELS.md) |
-[Tools](TOOLS.md) |
-[Discuss](https://github.com/ai-se/ResourcesDataDrivenSBSE/issues) |
-[Citation](CITATION.md) 
   
 
 
