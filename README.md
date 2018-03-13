@@ -20,4 +20,4 @@ The resources of this repository are intended to encourage more experimentationi
 
 ![](https://github.com/ai-se/ResourceDataDrivenSBSE/raw/master/img/image0.png)
 
-References in the _related work_ column come from the paper http://tiny.cc/ddSbse1.
+References in the _related work_ column come from the paper http://tiny.cc/dse_paper.
